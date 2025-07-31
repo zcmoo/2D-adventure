@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4xsfpxej1ti1"
+path="res://.godot/imported/Blade Slash Schwing 04.wav-ba4ceb6f97f4cd49618b5d287b9af96b.sample"
+
+[deps]
+
+source_file="res://audio/sword/Slash/Blade Slash Schwing 04.wav"
+dest_files=["res://.godot/imported/Blade Slash Schwing 04.wav-ba4ceb6f97f4cd49618b5d287b9af96b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

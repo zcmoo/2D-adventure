@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://cktwv4fg0lq3n"]
+
+[ext_resource type="Texture2D" uid="uid://dlsgujferqxds" path="res://texture/roles/brave/Sprites/Extras/TrainingDummy/Armored/Idle/Idle.png" id="1_hxa6v"]
+[ext_resource type="Script" uid="uid://drnsravdictq8" path="res://scenes/game/enemies/Base/enemy.gd" id="1_wtiw5"]
+[ext_resource type="Texture2D" uid="uid://drpd6bbheqo4p" path="res://texture/roles/brave/Sprites/Extras/TrainingDummy/Armored/Hited/Hited1.png" id="3_0p65b"]
+[ext_resource type="Texture2D" uid="uid://cj4a5aebq6kry" path="res://texture/roles/brave/Sprites/Extras/TrainingDummy/Armored/Hited/Hited2.png" id="4_f13yy"]
+[ext_resource type="Texture2D" uid="uid://c0wrotuic38nk" path="res://texture/roles/brave/Sprites/Extras/TrainingDummy/Armored/Hited/Hited3.png" id="5_u4dxy"]
+[ext_resource type="Texture2D" uid="uid://b15u21khfmpyo" path="res://texture/roles/brave/Sprites/Extras/TrainingDummy/Armored/Hited/Hited4.png" id="6_82n75"]
+[ext_resource type="Texture2D" uid="uid://dafm4wsjjhm20" path="res://texture/roles/brave/Sprites/Extras/TrainingDummy/Armored/Hited/Hited5.png" id="7_ckneu"]
+[ext_resource type="Script" uid="uid://ct30e65mirksv" path="res://scripts/StateMachine/EnemyStateMachine.gd" id="8_mtjyu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vdc8"]
+size = Vector2(13, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ti3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0p65b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f13yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u4dxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_82n75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ckneu")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hxa6v")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 4
+script = ExtResource("1_wtiw5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -17.5)
+shape = SubResource("RectangleShape2D_2vdc8")
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body"]
+position = Vector2(-1, -24)
+sprite_frames = SubResource("SpriteFrames_4ti3h")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="AtkArea" type="Area2D" parent="Body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/AtkArea"]
+
+[node name="EnemyStateMachine" type="Node" parent="."]
+script = ExtResource("8_mtjyu")

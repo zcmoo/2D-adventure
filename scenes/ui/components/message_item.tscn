@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://yuv5pq2trhao"]
+
+[ext_resource type="Script" uid="uid://cff53610dtg5m" path="res://scenes/ui/components/message_item.gd" id="1_7ked4"]
+
+[node name="MessageItem" type="Label"]
+custom_minimum_size = Vector2(300, 12)
+offset_right = 300.0
+offset_bottom = 12.0
+pivot_offset = Vector2(150, 6)
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "hfajhjfka"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_7ked4")

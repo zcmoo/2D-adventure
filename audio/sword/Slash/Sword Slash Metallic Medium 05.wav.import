@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5cxidwqw8m6m"
+path="res://.godot/imported/Sword Slash Metallic Medium 05.wav-82cd5cf9859615c84e4c32cb0bda6dc2.sample"
+
+[deps]
+
+source_file="res://audio/sword/Slash/Sword Slash Metallic Medium 05.wav"
+dest_files=["res://.godot/imported/Sword Slash Metallic Medium 05.wav-82cd5cf9859615c84e4c32cb0bda6dc2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

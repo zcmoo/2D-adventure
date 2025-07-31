@@ -1,0 +1,160 @@
+[gd_scene load_steps=20 format=3 uid="uid://cnxlh132qehjk"]
+
+[ext_resource type="Script" uid="uid://vu03v0gfpbq5" path="res://scenes/ui/components/talent_panel.gd" id="1_aerkq"]
+[ext_resource type="PackedScene" uid="uid://ckehtp1xhib3y" path="res://scenes/ui/components/TalentTreeButton.tscn" id="2_xhp7q"]
+[ext_resource type="Resource" uid="uid://cowij3yrpfg2j" path="res://db/talents/brave/storm_01.tres" id="3_bggrx"]
+[ext_resource type="Resource" uid="uid://dsqfcyjubmrun" path="res://db/talents/brave/storm_02.tres" id="4_i6frc"]
+[ext_resource type="Resource" uid="uid://cl8002frukk5b" path="res://db/talents/brave/storm_06.tres" id="5_20uok"]
+[ext_resource type="Resource" uid="uid://0cxonkkvd5td" path="res://db/talents/brave/block_01.tres" id="5_h6aft"]
+[ext_resource type="Resource" uid="uid://6a1351dpx4xf" path="res://db/talents/brave/storm_03.tres" id="5_lb11h"]
+[ext_resource type="Resource" uid="uid://g8cj10vlqnde" path="res://db/talents/brave/storm_07.tres" id="6_5c45j"]
+[ext_resource type="Resource" uid="uid://dwipxuuolsu4n" path="res://db/talents/brave/block_02.tres" id="6_d8bjm"]
+[ext_resource type="Resource" uid="uid://6k22g81d8mog" path="res://db/talents/brave/storm_04.tres" id="6_dlnwl"]
+[ext_resource type="Resource" uid="uid://d0m0wurvc2gk6" path="res://db/talents/brave/storm_05.tres" id="7_lkdin"]
+[ext_resource type="Resource" uid="uid://d2dmm1jwc8d4c" path="res://db/talents/brave/block_03.tres" id="8_rhiq3"]
+[ext_resource type="Resource" uid="uid://dhoopv5bwrkyr" path="res://db/talents/brave/buff_03.tres" id="10_wlox0"]
+[ext_resource type="Resource" uid="uid://0m51f52xe3t4" path="res://db/talents/brave/buff_04.tres" id="11_0jxhl"]
+[ext_resource type="Resource" uid="uid://dp41syg057ybf" path="res://db/talents/brave/block_04.tres" id="11_npu0s"]
+[ext_resource type="Resource" uid="uid://cyquygbvahs3j" path="res://db/talents/brave/block_05.tres" id="12_k7572"]
+[ext_resource type="Resource" uid="uid://5pblsx4sac8j" path="res://db/talents/brave/buff_01.tres" id="13_nqffs"]
+[ext_resource type="Resource" uid="uid://b7h6ads00uf1x" path="res://db/talents/brave/buff_02.tres" id="14_i0rbb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aa1vq"]
+
+[node name="TalentPanel" type="Panel"]
+custom_minimum_size = Vector2(1000, 1000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_aa1vq")
+script = ExtResource("1_aerkq")
+
+[node name="基础" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 491.0
+offset_right = 520.0
+offset_bottom = 531.0
+talent = ExtResource("3_bggrx")
+
+[node name="重击" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 408.0
+offset_right = 436.0
+offset_bottom = 448.0
+talent = ExtResource("4_i6frc")
+
+[node name="蓄力斩" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 408.0
+offset_right = 372.0
+offset_bottom = 448.0
+talent = ExtResource("5_20uok")
+
+[node name="瞬身斩" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 344.0
+offset_right = 372.0
+offset_bottom = 384.0
+talent = ExtResource("6_5c45j")
+
+[node name="闪烁" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 492.0
+offset_right = 436.0
+offset_bottom = 532.0
+talent = ExtResource("5_lb11h")
+
+[node name="疾跑" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 492.0
+offset_right = 372.0
+offset_bottom = 532.0
+talent = ExtResource("6_dlnwl")
+
+[node name="突刺" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 492.0
+offset_right = 308.0
+offset_bottom = 532.0
+talent = ExtResource("7_lkdin")
+
+[node name="守护" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 408.0
+offset_right = 604.0
+offset_bottom = 448.0
+talent = ExtResource("5_h6aft")
+
+[node name="回血术" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 640.0
+offset_right = 520.0
+offset_bottom = 680.0
+talent = ExtResource("10_wlox0")
+
+[node name="回天术" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 576.0
+offset_right = 436.0
+offset_bottom = 616.0
+talent = ExtResource("11_0jxhl")
+
+[node name="格挡" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 628.0
+offset_top = 408.0
+offset_right = 668.0
+offset_bottom = 448.0
+talent = ExtResource("6_d8bjm")
+
+[node name="盾牌猛击" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 692.0
+offset_top = 368.0
+offset_right = 732.0
+offset_bottom = 408.0
+talent = ExtResource("8_rhiq3")
+
+[node name="攻守兼备" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 692.0
+offset_top = 448.0
+offset_right = 732.0
+offset_bottom = 488.0
+talent = ExtResource("11_npu0s")
+
+[node name="护甲强化" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 576.0
+offset_right = 604.0
+offset_bottom = 616.0
+talent = ExtResource("12_k7572")
+
+[node name="全能" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 576.0
+offset_right = 520.0
+offset_bottom = 616.0
+talent = ExtResource("13_nqffs")
+
+[node name="附魔之剑" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 640.0
+offset_right = 604.0
+offset_bottom = 680.0
+talent = ExtResource("14_i0rbb")

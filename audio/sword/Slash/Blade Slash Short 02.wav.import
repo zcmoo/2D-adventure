@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://o27j36gmugeb"
+path="res://.godot/imported/Blade Slash Short 02.wav-2c36c2600f57c688e13a48879b549119.sample"
+
+[deps]
+
+source_file="res://audio/sword/Slash/Blade Slash Short 02.wav"
+dest_files=["res://.godot/imported/Blade Slash Short 02.wav-2c36c2600f57c688e13a48879b549119.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

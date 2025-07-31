@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccgnf8e0su63t"
+path="res://.godot/imported/Sword Slash Metallic Med Short 11.wav-4c961bfc1a8351a234fb7e1eb5bb3ca5.sample"
+
+[deps]
+
+source_file="res://audio/sword/Slash/Sword Slash Metallic Med Short 11.wav"
+dest_files=["res://.godot/imported/Sword Slash Metallic Med Short 11.wav-4c961bfc1a8351a234fb7e1eb5bb3ca5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

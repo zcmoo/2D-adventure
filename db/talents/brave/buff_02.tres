@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Talent" load_steps=7 format=3 uid="uid://b7h6ads00uf1x"]
+
+[ext_resource type="Script" uid="uid://b3xvajw8cspk5" path="res://scripts/Resource/Effects.gd" id="1_d170t"]
+[ext_resource type="Script" uid="uid://c4ueodtu1ddp5" path="res://scripts/Resource/Attribute.gd" id="2_wg7a5"]
+[ext_resource type="Texture2D" uid="uid://caeu5ge14ye2x" path="res://texture/skill/1-Battle-Roar.png" id="3_qxurf"]
+[ext_resource type="Script" uid="uid://skc0jhyhrgup" path="res://scripts/Resource/Talent.gd" id="4_2d8qo"]
+[ext_resource type="Resource" uid="uid://5pblsx4sac8j" path="res://db/talents/brave/buff_01.tres" id="5_7mgkj"]
+
+[sub_resource type="Resource" id="Resource_jrsup"]
+script = ExtResource("2_wg7a5")
+attribute = "atk"
+value = 15
+effect_type = 1
+buff_type = 0
+
+[resource]
+script = ExtResource("4_2d8qo")
+id = "buff_02"
+name = "附魔之剑"
+useType = 0
+strength = 25
+description = "【Buff】触发后大幅度提高攻击力[color=#c895e9](atk)[/color]点，持续25秒，冷却30秒。"
+type = 2
+icon = ExtResource("3_qxurf")
+max_level = 5
+effects = Array[ExtResource("1_d170t")]([SubResource("Resource_jrsup")])
+prerequisites = Array[ExtResource("4_2d8qo")]([ExtResource("5_7mgkj")])
+position = Vector2(0, 0)
+branches = []
+bindKye = "sword_buff"

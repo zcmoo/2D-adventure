@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Talent" load_steps=7 format=3 uid="uid://6a1351dpx4xf"]
+
+[ext_resource type="Script" uid="uid://b3xvajw8cspk5" path="res://scripts/Resource/Effects.gd" id="1_jnbie"]
+[ext_resource type="Script" uid="uid://c4ueodtu1ddp5" path="res://scripts/Resource/Attribute.gd" id="2_t7ryg"]
+[ext_resource type="Texture2D" uid="uid://c1rdnd0wbq4sp" path="res://texture/skill/125-Tackle.png" id="3_ffnfs"]
+[ext_resource type="Script" uid="uid://skc0jhyhrgup" path="res://scripts/Resource/Talent.gd" id="4_0bmu2"]
+[ext_resource type="Resource" uid="uid://cowij3yrpfg2j" path="res://db/talents/brave/storm_01.tres" id="5_66rkq"]
+
+[sub_resource type="Resource" id="Resource_c0r6a"]
+script = ExtResource("2_t7ryg")
+attribute = "buff"
+value = 10
+effect_type = 1
+buff_type = 0
+
+[resource]
+script = ExtResource("4_0bmu2")
+id = "storm_03"
+name = "冲刺"
+useType = 0
+strength = 5
+description = "【基础系】快速冲刺至前方，冲刺期间免疫所有伤害。"
+type = 2
+icon = ExtResource("3_ffnfs")
+max_level = 1
+effects = Array[ExtResource("1_jnbie")]([SubResource("Resource_c0r6a")])
+prerequisites = Array[ExtResource("4_0bmu2")]([ExtResource("5_66rkq")])
+position = Vector2(0, 0)
+branches = []
+bindKye = "dash"

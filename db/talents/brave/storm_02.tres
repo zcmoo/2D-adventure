@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Talent" load_steps=7 format=3 uid="uid://dsqfcyjubmrun"]
+
+[ext_resource type="Script" uid="uid://b3xvajw8cspk5" path="res://scripts/Resource/Effects.gd" id="1_bhkuj"]
+[ext_resource type="Texture2D" uid="uid://c1l0l3xvudjpq" path="res://texture/skill/63-Power-Strike.png" id="2_i34kg"]
+[ext_resource type="Script" uid="uid://c4ueodtu1ddp5" path="res://scripts/Resource/Attribute.gd" id="2_v2j2r"]
+[ext_resource type="Resource" uid="uid://cowij3yrpfg2j" path="res://db/talents/brave/storm_01.tres" id="4_0nvsx"]
+[ext_resource type="Script" uid="uid://skc0jhyhrgup" path="res://scripts/Resource/Talent.gd" id="4_uhx0f"]
+
+[sub_resource type="Resource" id="Resource_c0r6a"]
+script = ExtResource("2_v2j2r")
+attribute = "buff"
+value = 10
+effect_type = 1
+buff_type = 0
+
+[resource]
+script = ExtResource("4_uhx0f")
+id = "storm_02"
+name = "重击"
+useType = 0
+strength = 0
+description = "【进攻系】连招时可触发第三段重击攻击，造成[color=#c895e9](buff)%[/color]的额外伤害。"
+type = 0
+icon = ExtResource("2_i34kg")
+max_level = 5
+effects = Array[ExtResource("1_bhkuj")]([SubResource("Resource_c0r6a")])
+prerequisites = Array[ExtResource("4_uhx0f")]([ExtResource("4_0nvsx")])
+position = Vector2(0, 0)
+branches = []
+bindKye = ""

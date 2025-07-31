@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Talent" load_steps=7 format=3 uid="uid://6k22g81d8mog"]
+
+[ext_resource type="Script" uid="uid://b3xvajw8cspk5" path="res://scripts/Resource/Effects.gd" id="1_wvp6h"]
+[ext_resource type="Script" uid="uid://c4ueodtu1ddp5" path="res://scripts/Resource/Attribute.gd" id="2_xxp65"]
+[ext_resource type="Texture2D" uid="uid://dqiimq5kkyoda" path="res://texture/skill/2-Acrobatic-Move.png" id="3_wkbhw"]
+[ext_resource type="Script" uid="uid://skc0jhyhrgup" path="res://scripts/Resource/Talent.gd" id="4_38nvx"]
+[ext_resource type="Resource" uid="uid://6a1351dpx4xf" path="res://db/talents/brave/storm_03.tres" id="5_3xuni"]
+
+[sub_resource type="Resource" id="Resource_c0r6a"]
+script = ExtResource("2_xxp65")
+attribute = "buff"
+value = 10
+effect_type = 1
+buff_type = 0
+
+[resource]
+script = ExtResource("4_38nvx")
+id = "storm_04"
+name = "疾跑"
+useType = 0
+strength = 0
+description = "【基础系】奔跑超过1秒后变成疾跑。"
+type = 0
+icon = ExtResource("3_wkbhw")
+max_level = 1
+effects = Array[ExtResource("1_wvp6h")]([SubResource("Resource_c0r6a")])
+prerequisites = Array[ExtResource("4_38nvx")]([ExtResource("5_3xuni")])
+position = Vector2(0, 0)
+branches = []
+bindKye = ""

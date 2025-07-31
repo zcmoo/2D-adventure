@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RoleTalents" load_steps=3 format=3 uid="uid://dofco13jby3qk"]
+
+[ext_resource type="Script" uid="uid://skc0jhyhrgup" path="res://scripts/Resource/Talent.gd" id="1_osnla"]
+[ext_resource type="Script" uid="uid://1qqpxmlr7wwf" path="res://scripts/Resource/RoleTalents.gd" id="2_2kk46"]
+
+[resource]
+script = ExtResource("2_2kk46")
+id = "1"
+items = Array[ExtResource("1_osnla")]([])

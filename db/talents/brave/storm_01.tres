@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Talent" load_steps=6 format=3 uid="uid://cowij3yrpfg2j"]
+
+[ext_resource type="Script" uid="uid://b3xvajw8cspk5" path="res://scripts/Resource/Effects.gd" id="1_j1t2x"]
+[ext_resource type="Script" uid="uid://skc0jhyhrgup" path="res://scripts/Resource/Talent.gd" id="1_jqunb"]
+[ext_resource type="Script" uid="uid://c4ueodtu1ddp5" path="res://scripts/Resource/Attribute.gd" id="2_cyxvg"]
+[ext_resource type="Texture2D" uid="uid://2ghvtccf0k4d" path="res://texture/skill/76-Shove-Stab.png" id="3_1uds4"]
+
+[sub_resource type="Resource" id="Resource_lgw4n"]
+script = ExtResource("2_cyxvg")
+attribute = "atk"
+value = 25
+effect_type = 0
+buff_type = 0
+
+[resource]
+script = ExtResource("1_jqunb")
+id = "storm_01"
+name = "基础"
+useType = 0
+strength = 0
+description = "【基础系】天赋，提高勇者攻击力[color=#c895e9](atk)[/color]点。"
+type = 0
+icon = ExtResource("3_1uds4")
+max_level = 5
+effects = Array[ExtResource("1_j1t2x")]([SubResource("Resource_lgw4n")])
+prerequisites = Array[ExtResource("1_jqunb")]([])
+position = Vector2(0, 0)
+branches = []
+bindKye = ""

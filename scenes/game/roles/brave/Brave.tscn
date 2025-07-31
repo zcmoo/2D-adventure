@@ -1,0 +1,2217 @@
+[gd_scene load_steps=431 format=3 uid="uid://nmh3cj01pgrt"]
+
+[ext_resource type="Script" uid="uid://bxnb7hcf814k3" path="res://scenes/game/roles/brave/brave.gd" id="1_6j0f5"]
+[ext_resource type="Shader" uid="uid://h7pes6y33xco" path="res://scenes/shader/Hit.gdshader" id="2_nyna6"]
+[ext_resource type="Texture2D" uid="uid://bkqsfhj7avg8w" path="res://texture/roles/brave/Sprites/JumpAndFall/Falling/Fall1.png" id="2_vuibf"]
+[ext_resource type="Texture2D" uid="uid://ca2rs1w5s7vh7" path="res://texture/roles/brave/Sprites/Idle/Idle1.png" id="2_xlw57"]
+[ext_resource type="Texture2D" uid="uid://dabtxfvju8uds" path="res://texture/roles/brave/Sprites/JumpAndFall/Falling/Fall2.png" id="3_20oi0"]
+[ext_resource type="Texture2D" uid="uid://dd3cxxci48g08" path="res://texture/roles/brave/Sprites/Idle/Idle2.png" id="3_kiw5j"]
+[ext_resource type="Texture2D" uid="uid://bwbpr7a4idmlr" path="res://texture/roles/brave/Sprites/Attacks/AirAtk/FX/AirAtk1.png" id="3_wdllc"]
+[ext_resource type="Texture2D" uid="uid://tm654udfygga" path="res://texture/roles/brave/Sprites/Attacks/AirAtk/FX/AirAtk2.png" id="4_0hyic"]
+[ext_resource type="Texture2D" uid="uid://dqkigg0y0qqrc" path="res://texture/roles/brave/Sprites/Idle/Idle3.png" id="4_8chh1"]
+[ext_resource type="Texture2D" uid="uid://cb3b5hi2p23jd" path="res://texture/roles/brave/Sprites/JumpAndFall/Falling/Fall3.png" id="4_wsj2i"]
+[ext_resource type="Texture2D" uid="uid://22ra4p75nwbs" path="res://texture/roles/brave/Sprites/Idle/Idle4.png" id="5_34pas"]
+[ext_resource type="Texture2D" uid="uid://28ctqxq7imwy" path="res://texture/roles/brave/Sprites/JumpAndFall/Fall/Fall1.png" id="5_vf0ag"]
+[ext_resource type="Texture2D" uid="uid://dohcn4l3crije" path="res://texture/roles/brave/Sprites/Attacks/AirAtk/FX/AirAtk3.png" id="5_xopj1"]
+[ext_resource type="Texture2D" uid="uid://cdk0617cu8j43" path="res://texture/roles/brave/Sprites/Idle/Idle5.png" id="6_5vlsu"]
+[ext_resource type="Texture2D" uid="uid://duviigdg5ltsb" path="res://texture/roles/brave/Sprites/JumpAndFall/Fall/Fall2.png" id="6_84cvy"]
+[ext_resource type="Texture2D" uid="uid://cyh6l4reyop7q" path="res://texture/roles/brave/Sprites/Attacks/AirAtk/FX/AirAtk4.png" id="6_pssam"]
+[ext_resource type="Texture2D" uid="uid://7hle6bmqrnw0" path="res://texture/roles/brave/Sprites/Idle/Idle6.png" id="7_d3klo"]
+[ext_resource type="Texture2D" uid="uid://dpap0sd2tpyyk" path="res://texture/roles/brave/Sprites/JumpAndFall/Fall/Fall3.png" id="7_gfect"]
+[ext_resource type="Texture2D" uid="uid://bfamyq74ykw3h" path="res://texture/roles/brave/Sprites/Attacks/AirAtk/FX/AirAtk5.png" id="7_jroi3"]
+[ext_resource type="Script" uid="uid://crqdlhm442jrl" path="res://scripts/StateMachine/StateMachine.gd" id="8_2qelp"]
+[ext_resource type="Texture2D" uid="uid://bpp7e1ir5lh3m" path="res://texture/roles/brave/Sprites/Run/RunRight/Running/RunningRight1.png" id="8_8sxxl"]
+[ext_resource type="Texture2D" uid="uid://dl0acus8ococq" path="res://texture/roles/brave/Sprites/JumpAndFall/Land/FX/Land(FX)1.png" id="8_elh0o"]
+[ext_resource type="Texture2D" uid="uid://c32djfta6vndt" path="res://texture/roles/brave/Sprites/Run/ToRun/ToRun1.png" id="8_l8f2r"]
+[ext_resource type="Texture2D" uid="uid://wn6e8sxd683j" path="res://texture/roles/brave/Sprites/Attacks/AirAtk/FX/AirAtk6.png" id="8_nulw1"]
+[ext_resource type="Texture2D" uid="uid://cxqf4flvejxdy" path="res://texture/roles/brave/Sprites/Run/BreakRun/BreakRun1.png" id="8_pfkq0"]
+[ext_resource type="Texture2D" uid="uid://domox663pdwal" path="res://texture/roles/brave/Sprites/JumpAndFall/Jump/Jump1.png" id="8_r0unv"]
+[ext_resource type="Texture2D" uid="uid://nuca7lcf3cok" path="res://texture/roles/brave/Sprites/JumpAndFall/Jumping_/Jumping(2)1.png" id="8_v44l5"]
+[ext_resource type="Texture2D" uid="uid://b1p1blqobsgds" path="res://texture/roles/brave/Sprites/JumpAndFall/Jump/Jump2.png" id="9_4ixlg"]
+[ext_resource type="Texture2D" uid="uid://cygymf4d0ifbw" path="res://texture/roles/brave/Sprites/Run/ToRun/ToRun2.png" id="9_6k1kc"]
+[ext_resource type="Texture2D" uid="uid://c58c782m0c5l1" path="res://texture/roles/brave/Sprites/Run/RunRight/Running/RunningRight2.png" id="9_7x7bv"]
+[ext_resource type="Texture2D" uid="uid://dln1ark7slxsu" path="res://texture/roles/brave/Sprites/Run/BreakRun/BreakRun2.png" id="9_gqdjd"]
+[ext_resource type="Texture2D" uid="uid://cv1mj146cg1cx" path="res://texture/roles/brave/Sprites/JumpAndFall/Jumping_/Jumping(2)2.png" id="9_n45qc"]
+[ext_resource type="Texture2D" uid="uid://wck8vi53md56" path="res://texture/roles/brave/Sprites/Attacks/AirAtk/FX/AirAtk7.png" id="9_rryuq"]
+[ext_resource type="Texture2D" uid="uid://dqmd2e3qohfb0" path="res://texture/roles/brave/Sprites/JumpAndFall/Land/FX/Land(FX)2.png" id="9_yfs0b"]
+[ext_resource type="Texture2D" uid="uid://yqk123t5ep5o" path="res://texture/roles/brave/Sprites/Block/OutBlock/OutBlock1.png" id="10_52iig"]
+[ext_resource type="Texture2D" uid="uid://jxgm8io2jxm0" path="res://texture/roles/brave/Sprites/JumpAndFall/Land/FX/Land(FX)3.png" id="10_jwutp"]
+[ext_resource type="Texture2D" uid="uid://bscjt30ra5sd8" path="res://texture/roles/brave/Sprites/Run/RunRight/Running/RunningRight3.png" id="10_lsej7"]
+[ext_resource type="Texture2D" uid="uid://b43j1htrvh4s0" path="res://texture/roles/brave/Sprites/Run/ToRun/ToRun3.png" id="10_maanu"]
+[ext_resource type="Texture2D" uid="uid://df73uv7mhyaa5" path="res://texture/roles/brave/Sprites/Block/Blocking/Blocking.png" id="10_mjiup"]
+[ext_resource type="Texture2D" uid="uid://cqn2uslj6cd3s" path="res://texture/roles/brave/Sprites/Run/BreakRun/BreakRun3.png" id="10_s67gk"]
+[ext_resource type="Texture2D" uid="uid://bjpy23ud3x7lt" path="res://texture/roles/brave/Sprites/Block/ToBlock/ToBlock1.png" id="10_vwd2p"]
+[ext_resource type="Texture2D" uid="uid://oq6shdb0f6tq" path="res://texture/roles/brave/Sprites/JumpAndFall/Jumping_/Jumping(2)3.png" id="10_xl7p0"]
+[ext_resource type="Texture2D" uid="uid://cuxe7y7ronvj5" path="res://texture/roles/brave/Sprites/Run/RunRight/Running/RunningRight4.png" id="11_8t0tu"]
+[ext_resource type="Texture2D" uid="uid://ch6kqyjr1v3ku" path="res://texture/roles/brave/Sprites/ShieldAttack/ShieldAtk1.png" id="11_ap4ya"]
+[ext_resource type="Texture2D" uid="uid://bat2b5hefpgbu" path="res://texture/roles/brave/Sprites/Block/BreakBlock/Full/Fx/BreakBlock1.png" id="11_cj4ia"]
+[ext_resource type="Texture2D" uid="uid://qdjskttnkg3n" path="res://texture/roles/brave/Sprites/Run/BreakRun/BreakRun4.png" id="11_exjma"]
+[ext_resource type="Texture2D" uid="uid://vvxk45wnmuy0" path="res://texture/roles/brave/Sprites/Block/ToBlock/ToBlock2.png" id="11_kygga"]
+[ext_resource type="Texture2D" uid="uid://yls7xrobp6e8" path="res://texture/roles/brave/Sprites/Block/OutBlock/OutBlock2.png" id="11_ph74y"]
+[ext_resource type="Texture2D" uid="uid://vn5smrylgj1c" path="res://texture/roles/brave/Sprites/JumpAndFall/Land/FX/Land(FX)4.png" id="11_rwmk1"]
+[ext_resource type="Texture2D" uid="uid://5bwra7awi401" path="res://texture/roles/brave/Sprites/JumpAndFall/Land/FX/Land(FX)5.png" id="12_0s1tl"]
+[ext_resource type="Texture2D" uid="uid://b5rhaasqdi6u1" path="res://texture/roles/brave/Sprites/Block/ToBlock/ToBlock3.png" id="12_b1fpj"]
+[ext_resource type="Texture2D" uid="uid://bh3dijppvd2wy" path="res://texture/roles/brave/Sprites/Run/BreakRun/BreakRun5.png" id="12_lfctl"]
+[ext_resource type="Texture2D" uid="uid://b0grh55jggctw" path="res://texture/roles/brave/Sprites/ShieldAttack/ShieldAtk2.png" id="12_nonqu"]
+[ext_resource type="Texture2D" uid="uid://bku50iidt3vq7" path="res://texture/roles/brave/Sprites/Block/BreakBlock/Full/Fx/BreakBlock2.png" id="12_s7728"]
+[ext_resource type="Texture2D" uid="uid://i021euo1moob" path="res://texture/roles/brave/Sprites/Run/RunRight/Running/RunningRight5.png" id="12_vkilw"]
+[ext_resource type="Texture2D" uid="uid://d2wpk5qwk0qp1" path="res://texture/roles/brave/Sprites/Run/BreakRun/BreakRun6.png" id="13_73aei"]
+[ext_resource type="Texture2D" uid="uid://slay4wpwii0l" path="res://texture/roles/brave/Sprites/Block/ToBlock/ToBlock4.png" id="13_cm6lt"]
+[ext_resource type="Texture2D" uid="uid://dpu7pmx0afu03" path="res://texture/roles/brave/Sprites/Run/RunRight/Running/RunningRight6.png" id="13_j6p6h"]
+[ext_resource type="Texture2D" uid="uid://gs5faxu3h53o" path="res://texture/roles/brave/Sprites/ShieldAttack/ShieldAtk3.png" id="13_vr1k4"]
+[ext_resource type="Texture2D" uid="uid://cpgmrv31xgp3p" path="res://texture/roles/brave/Sprites/Block/BreakBlock/Full/Fx/BreakBlock3.png" id="13_xjjcg"]
+[ext_resource type="Texture2D" uid="uid://by6rlbk6ykefv" path="res://texture/roles/brave/Sprites/Run/RunRight/Running/RunningRight7.png" id="14_8w65e"]
+[ext_resource type="Texture2D" uid="uid://delwof14tdi0c" path="res://texture/roles/brave/Sprites/Block/ToBlock/ToBlock5.png" id="14_gmh7k"]
+[ext_resource type="Texture2D" uid="uid://ckliy1a7gw0hu" path="res://texture/roles/brave/Sprites/ShieldAttack/ShieldAtk4.png" id="14_l2xk4"]
+[ext_resource type="Texture2D" uid="uid://bny8q0pc7rk7v" path="res://texture/roles/brave/Sprites/Run/BreakRun/BreakRun7.png" id="14_m8bxc"]
+[ext_resource type="Texture2D" uid="uid://ctsnrxjw7ftem" path="res://texture/roles/brave/Sprites/Block/BreakBlock/Full/Fx/BreakBlock4.png" id="14_x3poa"]
+[ext_resource type="Texture2D" uid="uid://bmmw07dodv14x" path="res://texture/roles/brave/Sprites/Block/BreakBlock/Full/Fx/BreakBlock5.png" id="15_iiqhb"]
+[ext_resource type="Texture2D" uid="uid://dnul03jiraeb3" path="res://texture/roles/brave/Sprites/ShieldAttack/ShieldAtk5.png" id="15_jspp1"]
+[ext_resource type="Texture2D" uid="uid://in0l76ft3jkb" path="res://texture/roles/brave/Sprites/Run/RunRight/Running/RunningRight8.png" id="15_w2rk6"]
+[ext_resource type="Texture2D" uid="uid://cfk6vil8gkugl" path="res://texture/roles/brave/Sprites/ShieldAttack/ShieldAtk6.png" id="16_1s5yj"]
+[ext_resource type="Texture2D" uid="uid://cyusx8imptlc1" path="res://texture/roles/brave/Sprites/Block/BreakBlock/Full/Fx/BreakBlock6.png" id="16_mm4v5"]
+[ext_resource type="Texture2D" uid="uid://dxdknxnckvetf" path="res://texture/roles/brave/Sprites/ShieldAttack/ShieldAtk7.png" id="17_0c45l"]
+[ext_resource type="Texture2D" uid="uid://dnh4rli4wcnoe" path="res://texture/roles/brave/Sprites/Block/BreakBlock/Full/Fx/BreakBlock7.png" id="17_6bhbr"]
+[ext_resource type="Texture2D" uid="uid://b142jfcd06vjm" path="res://texture/roles/brave/Sprites/ShieldAttack/ShieldAtk8.png" id="18_y1aya"]
+[ext_resource type="Texture2D" uid="uid://d2a3qwqkt24vf" path="res://texture/roles/brave/Sprites/ShieldAttack/ShieldAtk9.png" id="19_lm0jn"]
+[ext_resource type="Texture2D" uid="uid://isn4y6asu0nv" path="res://texture/roles/brave/Sprites/Block/Block/FX/Block(FX)1.png" id="19_rvpns"]
+[ext_resource type="Texture2D" uid="uid://calhlgpg0ncjg" path="res://texture/roles/brave/Sprites/ShieldAttack/ShieldAtk10.png" id="20_hqvka"]
+[ext_resource type="Texture2D" uid="uid://cjfmnegdcmrpe" path="res://texture/roles/brave/Sprites/Block/Block/FX/Block(FX)2.png" id="20_u0dpj"]
+[ext_resource type="Texture2D" uid="uid://dq80svga60p78" path="res://texture/roles/brave/Sprites/ShieldAttack/ShieldAtk11.png" id="21_m0vsx"]
+[ext_resource type="Texture2D" uid="uid://csyk4xpdvb6rx" path="res://texture/roles/brave/Sprites/Block/Block/FX/Block(FX)3.png" id="21_uhglf"]
+[ext_resource type="Texture2D" uid="uid://b3n2dfxowq31r" path="res://texture/roles/brave/Sprites/Block/Block/FX/Block(FX)4.png" id="22_52vt6"]
+[ext_resource type="Texture2D" uid="uid://ditx0gyhgckhk" path="res://texture/roles/brave/Sprites/ShieldAttack/ShieldAtk12.png" id="22_mm3qo"]
+[ext_resource type="Script" uid="uid://enpab4nhvgs0" path="res://scenes/game/roles/brave/idle.gd" id="26_gpt8p"]
+[ext_resource type="Script" uid="uid://dyn2506cca3h3" path="res://scenes/game/roles/brave/run.gd" id="27_1kof1"]
+[ext_resource type="Texture2D" uid="uid://djeth380gl0ei" path="res://texture/roles/brave/Sprites/Dash/Full/Fx/Dash1.png" id="30_b10kv"]
+[ext_resource type="Texture2D" uid="uid://bsvechuowpr68" path="res://texture/roles/brave/Sprites/Dash/Full/Fx/Dash2.png" id="31_odd7v"]
+[ext_resource type="Texture2D" uid="uid://deiehe2ai6d8f" path="res://texture/roles/brave/Sprites/Dash/Full/Fx/Dash3.png" id="32_n1lgh"]
+[ext_resource type="Texture2D" uid="uid://du2gu617v1nlu" path="res://texture/roles/brave/Sprites/Dash/Full/Fx/Dash4.png" id="33_mf1fc"]
+[ext_resource type="Script" uid="uid://dhoq8pashg50r" path="res://scenes/game/roles/brave/run_break.gd" id="33_vca77"]
+[ext_resource type="Texture2D" uid="uid://dwvcg0br3k455" path="res://texture/roles/brave/Sprites/Dash/Full/Fx/Dash5.png" id="34_tnwoo"]
+[ext_resource type="Texture2D" uid="uid://dhfwpwe6x6hn3" path="res://texture/roles/brave/Sprites/Dash/Full/Fx/Dash6.png" id="35_mf8oa"]
+[ext_resource type="Texture2D" uid="uid://cqn2g8dlet8ux" path="res://texture/roles/brave/Sprites/Dash/Full/Fx/Dash7.png" id="36_mgh3l"]
+[ext_resource type="Texture2D" uid="uid://v7k55xescifq" path="res://texture/roles/brave/Sprites/Dash/Full/Fx/Dash8.png" id="37_dvn26"]
+[ext_resource type="Texture2D" uid="uid://cialdl47fkgu4" path="res://texture/roles/brave/Sprites/BackDash/BackDash1.png" id="38_whib7"]
+[ext_resource type="Texture2D" uid="uid://cgva00vr14qls" path="res://texture/roles/brave/Sprites/BackDash/BackDash2.png" id="39_hrnm0"]
+[ext_resource type="Texture2D" uid="uid://bsprrg5nkre36" path="res://texture/roles/brave/Sprites/Hurt/FX/Hurt1.png" id="39_s63ql"]
+[ext_resource type="Texture2D" uid="uid://gfgkt7ajv04g" path="res://texture/roles/brave/Sprites/BackDash/BackDash3.png" id="40_5fshe"]
+[ext_resource type="Texture2D" uid="uid://dtuuedcyt8om" path="res://texture/roles/brave/Sprites/Hurt/FX/Hurt2.png" id="40_hmc06"]
+[ext_resource type="Texture2D" uid="uid://r3bl1xkaj80f" path="res://texture/roles/brave/Sprites/BackDash/BackDash4.png" id="41_0ko0l"]
+[ext_resource type="Texture2D" uid="uid://c2smq2leqabos" path="res://texture/roles/brave/Sprites/Hurt/FX/Hurt3.png" id="41_n2cso"]
+[ext_resource type="Texture2D" uid="uid://dummv05yynv2m" path="res://texture/roles/brave/Sprites/BackDash/BackDash5.png" id="42_104xt"]
+[ext_resource type="Texture2D" uid="uid://c4g6u8dsawjwk" path="res://texture/roles/brave/Sprites/Hurt/FX/Hurt4.png" id="42_bn0hy"]
+[ext_resource type="Texture2D" uid="uid://cioosjynmwh1h" path="res://texture/roles/brave/Sprites/BackDash/BackDash6.png" id="43_bjnys"]
+[ext_resource type="Texture2D" uid="uid://snrolc0nd0ht" path="res://texture/roles/brave/Sprites/Hurt/FX/Hurt5.png" id="43_vhsx6"]
+[ext_resource type="Texture2D" uid="uid://x6hg7ceb3fak" path="res://texture/roles/brave/Sprites/Hurt/FX/Hurt6.png" id="44_k5oyr"]
+[ext_resource type="Texture2D" uid="uid://btpu75i0kq0rd" path="res://texture/roles/brave/Sprites/BackDash/BackDash7.png" id="44_lrvbp"]
+[ext_resource type="Texture2D" uid="uid://dxkfhob0bisct" path="res://texture/roles/brave/Sprites/BackDash/BackDash8.png" id="45_gr3lh"]
+[ext_resource type="Texture2D" uid="uid://34sfcjhjxff7" path="res://texture/roles/brave/Sprites/BackDash/BackDash9.png" id="46_aniwq"]
+[ext_resource type="Texture2D" uid="uid://bjvu662tmaxw0" path="res://texture/roles/brave/Sprites/BackDash/BackDash10.png" id="47_7whxx"]
+[ext_resource type="Texture2D" uid="uid://c1kbrwio1jbfa" path="res://texture/roles/brave/Sprites/BackDash/BackDash11.png" id="48_2kexo"]
+[ext_resource type="Texture2D" uid="uid://b8povt8vslmyh" path="res://texture/roles/brave/Sprites/JoannaD'ArcIIIAttacks-Sheet.png" id="49_gbml5"]
+[ext_resource type="Script" uid="uid://blemi4ylquowd" path="res://scenes/game/roles/brave/jump.gd" id="52_1447o"]
+[ext_resource type="Script" uid="uid://dwavxtgp6yhb2" path="res://scenes/game/roles/brave/jump_fall.gd" id="52_da0ho"]
+[ext_resource type="Script" uid="uid://cq1xu7vl6d13w" path="res://scenes/game/roles/brave/jump_end.gd" id="54_tcgnk"]
+[ext_resource type="Script" uid="uid://gq4d6c3p72ni" path="res://scenes/game/roles/brave/dash.gd" id="60_5a8e7"]
+[ext_resource type="Texture2D" uid="uid://camtlxn5ypi4x" path="res://texture/roles/brave/Sprites/Death/Death1.png" id="61_b4h6n"]
+[ext_resource type="Texture2D" uid="uid://ckfhd0eg1dusq" path="res://texture/roles/brave/Sprites/Death/Death2.png" id="62_d8wt6"]
+[ext_resource type="Texture2D" uid="uid://pk0x6wvnvkql" path="res://texture/roles/brave/Sprites/Death/Death3.png" id="63_xhc4h"]
+[ext_resource type="Texture2D" uid="uid://bvyrpul00iq15" path="res://texture/roles/brave/Sprites/Death/Death4.png" id="64_p0hgi"]
+[ext_resource type="Texture2D" uid="uid://dy0aeopmyhhvt" path="res://texture/roles/brave/Sprites/Death/Death5.png" id="65_jtt56"]
+[ext_resource type="Texture2D" uid="uid://8hqwqev4ke26" path="res://texture/roles/brave/Sprites/Death/Death6.png" id="66_pglcn"]
+[ext_resource type="Texture2D" uid="uid://cu1ybknj6lscp" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)1.png" id="67_dytox"]
+[ext_resource type="Texture2D" uid="uid://ckr3fna0n7i82" path="res://texture/roles/brave/Sprites/Death/Death7.png" id="67_ehvng"]
+[ext_resource type="Script" uid="uid://bmi83dxeqni3w" path="res://scenes/game/roles/brave/atk_air.gd" id="67_r73iw"]
+[ext_resource type="Texture2D" uid="uid://2qrv8uhipoox" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)2.png" id="68_1c5dt"]
+[ext_resource type="Texture2D" uid="uid://snmabrfwbgla" path="res://texture/roles/brave/Sprites/Death/Death8.png" id="68_ve4ht"]
+[ext_resource type="Texture2D" uid="uid://da40vd0q7gen4" path="res://texture/roles/brave/Sprites/Death/Death9.png" id="69_ewu5d"]
+[ext_resource type="Texture2D" uid="uid://b8eqlku1nj7an" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)3.png" id="69_yjh0j"]
+[ext_resource type="Texture2D" uid="uid://d2imubtf1chfl" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)4.png" id="70_aqu2a"]
+[ext_resource type="Texture2D" uid="uid://b87a4it5qvsmn" path="res://texture/roles/brave/Sprites/Death/Death10.png" id="70_b8amt"]
+[ext_resource type="Texture2D" uid="uid://dgex2gilh8y85" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)5.png" id="71_f5h8y"]
+[ext_resource type="Texture2D" uid="uid://l2nt4cqbbfjj" path="res://texture/roles/brave/Sprites/Death/Death11.png" id="71_vgwrx"]
+[ext_resource type="Texture2D" uid="uid://c77pp5xanoslq" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)6.png" id="72_n3del"]
+[ext_resource type="Texture2D" uid="uid://bb01p6drvy6bq" path="res://texture/roles/brave/Sprites/Death/Death12.png" id="72_ofsiv"]
+[ext_resource type="Texture2D" uid="uid://iktscuwyv5vm" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)7.png" id="73_f4vps"]
+[ext_resource type="Texture2D" uid="uid://caqvlh2d16k0v" path="res://texture/roles/brave/Sprites/Death/Death13.png" id="73_waql0"]
+[ext_resource type="Script" uid="uid://dehipk210kkm1" path="res://scenes/game/roles/brave/camera_2d.gd" id="74_4oytd"]
+[ext_resource type="Texture2D" uid="uid://p12lpfpkcb8o" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)8.png" id="74_df7fp"]
+[ext_resource type="Texture2D" uid="uid://c4j7mory8sy2t" path="res://texture/roles/brave/Sprites/Death/Death14.png" id="74_rtc41"]
+[ext_resource type="Texture2D" uid="uid://cn3hgsl5ocq0f" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)9.png" id="75_dt07f"]
+[ext_resource type="Texture2D" uid="uid://1n1sv2wprs5a" path="res://texture/roles/brave/Sprites/Death/Death15.png" id="75_ye844"]
+[ext_resource type="Texture2D" uid="uid://dqhd03n3wox62" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)10.png" id="76_kvhsi"]
+[ext_resource type="Texture2D" uid="uid://dkru5dxm35ptv" path="res://texture/roles/brave/Sprites/Death/Death16.png" id="76_xcgfk"]
+[ext_resource type="Texture2D" uid="uid://cs4bo5nqw62ar" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)11.png" id="77_i2i6u"]
+[ext_resource type="Texture2D" uid="uid://cgkkl5i1glucs" path="res://texture/roles/brave/Sprites/Death/Death17.png" id="77_j2db0"]
+[ext_resource type="Texture2D" uid="uid://cxw3ym0ucehir" path="res://texture/roles/brave/Sprites/Death/Death18.png" id="78_5e7sp"]
+[ext_resource type="Texture2D" uid="uid://k2vb16wob2tf" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)12.png" id="78_v2esn"]
+[ext_resource type="Script" uid="uid://bxhu7yhsv58b4" path="res://scenes/game/roles/brave/atk.gd" id="79_pasva"]
+[ext_resource type="Texture2D" uid="uid://drvuh5gou51fq" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)13.png" id="79_sqe0r"]
+[ext_resource type="Texture2D" uid="uid://ditfi0cnq7adi" path="res://texture/roles/brave/Sprites/Death/Death19.png" id="79_y7d6h"]
+[ext_resource type="Texture2D" uid="uid://st8d4cxpvygy" path="res://texture/roles/brave/Sprites/Death/Death20.png" id="80_4gn8b"]
+[ext_resource type="Texture2D" uid="uid://kfv1ty7gbtjm" path="res://texture/roles/brave/Sprites/GuardedAtk/Looped/All/FX2/GuardedAtkLoop(FX2)14.png" id="80_hxp5e"]
+[ext_resource type="Texture2D" uid="uid://d1ktocijf02mn" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/ToHeal/ToHeal(FX)1.png" id="81_8jvya"]
+[ext_resource type="Texture2D" uid="uid://b2meih7f4ybwy" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Heal/Heal(FX)1.png" id="81_sswl2"]
+[ext_resource type="Texture2D" uid="uid://c1dloancq0qbp" path="res://texture/roles/brave/Sprites/Death/Death21.png" id="81_xs1f3"]
+[ext_resource type="Texture2D" uid="uid://k6lw0crjqf67" path="res://texture/roles/brave/Sprites/Death/Death22.png" id="82_1v8if"]
+[ext_resource type="Script" uid="uid://bpgbmndk32wb" path="res://scenes/game/roles/brave/block.gd" id="82_shlba"]
+[ext_resource type="Texture2D" uid="uid://ddvc606e6phbd" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/ToHeal/ToHeal(FX)2.png" id="82_swkga"]
+[ext_resource type="Texture2D" uid="uid://do1y7wsoqr6dw" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Heal/Heal(FX)2.png" id="82_uy3yq"]
+[ext_resource type="Texture2D" uid="uid://cmv8eepniivum" path="res://texture/roles/brave/Sprites/Death/Death23.png" id="83_7dkyd"]
+[ext_resource type="Texture2D" uid="uid://b7q2biss8n1cc" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/ToHeal/ToHeal(FX)3.png" id="83_q63ed"]
+[ext_resource type="Texture2D" uid="uid://blmb81awwqd43" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Heal/Heal(FX)3.png" id="83_qr6yh"]
+[ext_resource type="Texture2D" uid="uid://dwundwepj0fa3" path="res://texture/roles/brave/Sprites/Death/Death24.png" id="84_3gbtg"]
+[ext_resource type="Texture2D" uid="uid://njpnyrbx4iid" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/ToHeal/ToHeal(FX)4.png" id="84_5tv6f"]
+[ext_resource type="Texture2D" uid="uid://baxqfdqbmpcci" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Heal/Heal(FX)4.png" id="84_776oi"]
+[ext_resource type="Texture2D" uid="uid://coq8gas1aoxob" path="res://texture/roles/brave/Sprites/Death/Death25.png" id="85_8cttn"]
+[ext_resource type="Texture2D" uid="uid://dptxpswkxcero" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Heal/Heal(FX)5.png" id="85_grlc6"]
+[ext_resource type="Texture2D" uid="uid://bgv7bi1jxdima" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/ToHeal/ToHeal(FX)5.png" id="85_v314m"]
+[ext_resource type="Texture2D" uid="uid://d3dc7xr53wtxq" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/ToHeal/ToHeal(FX)6.png" id="86_1118a"]
+[ext_resource type="Texture2D" uid="uid://dmqndwya0dk1e" path="res://texture/roles/brave/Sprites/Death/Death26.png" id="86_c61lb"]
+[ext_resource type="Texture2D" uid="uid://dqvejjk2l6bxx" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Heal/Heal(FX)6.png" id="86_hw21j"]
+[ext_resource type="Texture2D" uid="uid://cl6tj0uf7r6ki" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Heal/Heal(FX)7.png" id="87_kjf58"]
+[ext_resource type="Texture2D" uid="uid://cxefp3gyvuanu" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/ToHeal/ToHeal(FX)7.png" id="87_wn3uc"]
+[ext_resource type="Texture2D" uid="uid://c4pu2kb0um6bc" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/ToHeal/ToHeal(FX)8.png" id="88_4frhn"]
+[ext_resource type="Texture2D" uid="uid://3y1y4mjpn67v" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Heal/Heal(FX)8.png" id="88_k43c7"]
+[ext_resource type="Script" uid="uid://djqy1cojj84fa" path="res://scenes/game/roles/brave/hit.gd" id="89_ensfu"]
+[ext_resource type="Texture2D" uid="uid://dastrf2eqr5im" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Heal/Heal(FX)9.png" id="89_g28qt"]
+[ext_resource type="Texture2D" uid="uid://c1xsiokregcvj" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Heal/Heal(FX)10.png" id="90_1h3tm"]
+[ext_resource type="Texture2D" uid="uid://veyrsw8e16yq" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Charging/ChargingHeal(FX)1.png" id="91_154pd"]
+[ext_resource type="Texture2D" uid="uid://d1wj5iocpivfm" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Charging/ChargingHeal(FX)2.png" id="92_0k65v"]
+[ext_resource type="Texture2D" uid="uid://d2er4itkbtxbt" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Charging/ChargingHeal(FX)3.png" id="93_ly00v"]
+[ext_resource type="Texture2D" uid="uid://do7hfturg8qsb" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Charging/ChargingHeal(FX)4.png" id="94_0s0d5"]
+[ext_resource type="Texture2D" uid="uid://dc6pypk4ogruc" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Charging/ChargingHeal(FX)5.png" id="95_01ujy"]
+[ext_resource type="Texture2D" uid="uid://bhwkndj2v16b4" path="res://texture/roles/brave/Sprites/SprintAtk/SprintAtk1.png" id="95_op1l4"]
+[ext_resource type="Texture2D" uid="uid://bttrbwc8s73r1" path="res://texture/roles/brave/Sprites/SprintAtk/SprintAtk2.png" id="96_1gi2w"]
+[ext_resource type="Texture2D" uid="uid://c1c4nsteav7cj" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Charging/ChargingHeal(FX)6.png" id="96_fb0ex"]
+[ext_resource type="Texture2D" uid="uid://clkc7fo62hpiy" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Charging/ChargingHeal(FX)7.png" id="97_dgaj3"]
+[ext_resource type="Texture2D" uid="uid://b06bh1kbsawsq" path="res://texture/roles/brave/Sprites/SprintAtk/SprintAtk3.png" id="97_us1qq"]
+[ext_resource type="Texture2D" uid="uid://cvjjqq6kywcfv" path="res://texture/roles/brave/Sprites/Casts/HolyHeal/FX/Charging/ChargingHeal(FX)8.png" id="98_idt60"]
+[ext_resource type="Texture2D" uid="uid://bglx7h0rjn3e2" path="res://texture/roles/brave/Sprites/SprintAtk/SprintAtk4.png" id="98_rgr2w"]
+[ext_resource type="Texture2D" uid="uid://c67m130asonih" path="res://texture/roles/brave/Sprites/SprintAtk/SprintAtk5.png" id="99_4odtp"]
+[ext_resource type="Texture2D" uid="uid://dmfihw1j6rpdu" path="res://texture/roles/brave/Sprites/Casts/HolySlash/ToCharge/ToCharge1.png" id="99_6p8ry"]
+[ext_resource type="Texture2D" uid="uid://ct8d55oc43pex" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_1.png" id="99_48gey"]
+[ext_resource type="Texture2D" uid="uid://cjfiu2t0egw6q" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Charging/Charging1.png" id="99_bpabk"]
+[ext_resource type="Texture2D" uid="uid://dufe3g1rhpi7m" path="res://texture/roles/brave/Sprites/JoannaD'ArcIII-Sheet#4.png" id="100_0tb56"]
+[ext_resource type="Texture2D" uid="uid://bwryot4c2vk7l" path="res://texture/roles/brave/Sprites/SprintAtk/SprintAtk6.png" id="100_0wxbo"]
+[ext_resource type="Texture2D" uid="uid://daa73wacnni2" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_2.png" id="100_2b646"]
+[ext_resource type="Texture2D" uid="uid://cpypkwkld8wm3" path="res://texture/roles/brave/Sprites/Casts/HolySlash/ToCharge/ToCharge2.png" id="100_b24e2"]
+[ext_resource type="Texture2D" uid="uid://cvllgrlovyt1j" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Charging/Charging2.png" id="100_urvyb"]
+[ext_resource type="Texture2D" uid="uid://df4tqauiwhtwo" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Charging/Charging3.png" id="101_cni36"]
+[ext_resource type="Texture2D" uid="uid://4ejc821m2kc7" path="res://texture/roles/brave/Sprites/SprintAtk/SprintAtk7.png" id="101_up2iw"]
+[ext_resource type="Texture2D" uid="uid://igyhdqdawhby" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_3.png" id="101_wi4gx"]
+[ext_resource type="Texture2D" uid="uid://bfnjjoxdepyc4" path="res://texture/roles/brave/Sprites/Casts/HolySlash/ToCharge/ToCharge3.png" id="101_xerg4"]
+[ext_resource type="Texture2D" uid="uid://byh3s40wgooyd" path="res://texture/roles/brave/Sprites/Casts/HolySlash/ToCharge/ToCharge4.png" id="102_1lcog"]
+[ext_resource type="Texture2D" uid="uid://dckp3ycxdgovn" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_4.png" id="102_8qaau"]
+[ext_resource type="Texture2D" uid="uid://b6lcswtt46igx" path="res://texture/roles/brave/Sprites/SprintAtk/SprintAtk8.png" id="102_l32mw"]
+[ext_resource type="AudioStream" uid="uid://ctnkgmi15pak6" path="res://audio/sword/Sword Attack 1.ogg" id="103_ik73c"]
+[ext_resource type="Texture2D" uid="uid://d1v0im435dvqj" path="res://texture/roles/brave/Sprites/Casts/HolySlash/ToCharge/ToCharge5.png" id="103_qn5mc"]
+[ext_resource type="Texture2D" uid="uid://l8wwxxurs0gt" path="res://texture/roles/brave/Sprites/Run/Sprint/Loop/ToSprint/ToSprint1.png" id="103_thhyi"]
+[ext_resource type="Texture2D" uid="uid://ckjdb55uup1a0" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_5.png" id="103_v0jb4"]
+[ext_resource type="Texture2D" uid="uid://ch2m5logyskiv" path="res://texture/roles/brave/Sprites/SprintAtk/SprintAtk9.png" id="103_xgijc"]
+[ext_resource type="Texture2D" uid="uid://beb4jw410alra" path="res://texture/roles/brave/Sprites/SprintAtk/SprintAtk10.png" id="104_d0vrq"]
+[ext_resource type="AudioStream" uid="uid://dbmbtgovmbj86" path="res://audio/sword/Sword Attack 2.ogg" id="104_hfc7w"]
+[ext_resource type="Texture2D" uid="uid://dwj202gs58sdc" path="res://texture/roles/brave/Sprites/Casts/HolySlash/ToCharge/ToCharge6.png" id="104_o1774"]
+[ext_resource type="Texture2D" uid="uid://chhemwiumaleg" path="res://texture/roles/brave/Sprites/Run/Sprint/Loop/ToSprint/ToSprint2.png" id="104_qwbo5"]
+[ext_resource type="Texture2D" uid="uid://cxdixjpkklh43" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_6.png" id="104_rxbb0"]
+[ext_resource type="Texture2D" uid="uid://dd83n3xq01w1e" path="res://texture/roles/brave/Sprites/Casts/HolySlash/ToCharge/ToCharge7.png" id="105_7nlxh"]
+[ext_resource type="Texture2D" uid="uid://bqwmhiyyk36b3" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_7.png" id="105_i4gjc"]
+[ext_resource type="AudioStream" uid="uid://b4nasnkf525ih" path="res://audio/sword/Sword Attack 3.ogg" id="105_qf8uh"]
+[ext_resource type="Texture2D" uid="uid://cvio2yc7sjjps" path="res://texture/roles/brave/Sprites/Casts/HolySlash/ToCharge/ToCharge8.png" id="106_dkdk4"]
+[ext_resource type="Texture2D" uid="uid://bre4ndkb17e11" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_8.png" id="106_ofsqx"]
+[ext_resource type="AudioStream" uid="uid://igixodmewe2n" path="res://audio/sword/Sword Impact Hit 1.ogg" id="106_wfy65"]
+[ext_resource type="AudioStream" uid="uid://dumoxnvwkc54q" path="res://audio/sword/Sword Impact Hit 2.ogg" id="107_bep15"]
+[ext_resource type="Texture2D" uid="uid://cjjykkx2xv61c" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_9.png" id="107_hmg7s"]
+[ext_resource type="Texture2D" uid="uid://denbiv3ltgiq7" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_10.png" id="108_42qxq"]
+[ext_resource type="AudioStream" uid="uid://c5qsngouuhsd3" path="res://audio/sword/Sword Impact Hit 3.ogg" id="108_ce257"]
+[ext_resource type="Texture2D" uid="uid://mf1vofyu1gct" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_11.png" id="109_3w8l3"]
+[ext_resource type="Texture2D" uid="uid://cg4nq7dptrhcl" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_12.png" id="110_1cu41"]
+[ext_resource type="AudioStream" uid="uid://chbokucdminkf" path="res://audio/sword/Sword Blocked 2.ogg" id="110_o2rex"]
+[ext_resource type="Texture2D" uid="uid://co4m8s2b1vkda" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_13.png" id="111_anq8e"]
+[ext_resource type="Texture2D" uid="uid://bxhpro3ty3lrm" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_14.png" id="112_xdbi5"]
+[ext_resource type="Texture2D" uid="uid://cxmm8vxbaij0g" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_15.png" id="113_eva55"]
+[ext_resource type="Texture2D" uid="uid://dqc84tnauqdmq" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_16.png" id="114_ies73"]
+[ext_resource type="Texture2D" uid="uid://dp7l4jef4bkor" path="res://texture/roles/brave/Sprites/Casts/HolySlash/Cast/2/HolySlashCast2_17.png" id="115_1f0yt"]
+[ext_resource type="Texture2D" uid="uid://ch8sw3uuf5k5u" path="res://texture/roles/brave/Sprites/SprintJump/InpulseJump/ImpulseJumpI1.png" id="118_gn5lh"]
+[ext_resource type="Texture2D" uid="uid://wkjjncyajmwc" path="res://texture/roles/brave/Sprites/SprintJump/InpulseJump/ImpulseJumpI2.png" id="119_65r7g"]
+[ext_resource type="Texture2D" uid="uid://desi0gf6gr7ft" path="res://texture/roles/brave/Sprites/SprintJump/InpulseJump/ImpulseJumpI3.png" id="120_l8p88"]
+[ext_resource type="Script" uid="uid://k1cx84n16lpx" path="res://scenes/game/roles/brave/atk_sprint.gd" id="120_t2lgg"]
+[ext_resource type="Texture2D" uid="uid://denut75r0vc72" path="res://texture/roles/brave/Sprites/SprintJump/InpulseJump/ImpulseJumpI4.png" id="121_vkqea"]
+[ext_resource type="Texture2D" uid="uid://b8n3ex5mrn3hh" path="res://texture/roles/brave/Sprites/SprintJump/InpulseJump/ImpulseJumpI5.png" id="122_sj241"]
+[ext_resource type="Texture2D" uid="uid://dornxr2xbvghm" path="res://texture/roles/brave/Sprites/SprintJump/InpulseJump/ImpulseJumpI6.png" id="123_234qd"]
+[ext_resource type="Texture2D" uid="uid://cb4aam40nkvwx" path="res://texture/roles/brave/Sprites/SprintJump/InpulseJump/ImpulseJumpI7.png" id="124_44282"]
+[ext_resource type="Texture2D" uid="uid://bvwyugqs34kf" path="res://texture/roles/brave/Sprites/SprintJump/InpulseJump/ImpulseJumpI8.png" id="125_xwq4i"]
+[ext_resource type="Texture2D" uid="uid://bev288vd2h4rq" path="res://texture/roles/brave/Sprites/SprintJump/InpulseJump/ImpulseJumpI9.png" id="126_qvu7w"]
+[ext_resource type="Script" uid="uid://b1ejyjvc77yf8" path="res://scenes/game/roles/brave/sprint_jump.gd" id="126_uc2f7"]
+[ext_resource type="Texture2D" uid="uid://bfbh88smd6kqu" path="res://texture/roles/brave/Sprites/SprintJump/SLand/SLand1.png" id="127_3t2yk"]
+[ext_resource type="Texture2D" uid="uid://bcomc8esw2su4" path="res://texture/roles/brave/Sprites/SprintJump/SLand/SLand2.png" id="128_5gnpy"]
+[ext_resource type="Texture2D" uid="uid://cmxtha6ekcfhb" path="res://texture/roles/brave/Sprites/SprintJump/SLand/SLand3.png" id="129_c6li1"]
+[ext_resource type="Texture2D" uid="uid://c2kbqx1rtdemj" path="res://texture/roles/brave/Sprites/SprintJump/SLand/SLand4.png" id="130_ycim8"]
+[ext_resource type="Texture2D" uid="uid://bo4xcjlt2q3sp" path="res://texture/roles/brave/Sprites/SprintJump/SLand/SLand5.png" id="131_8pnus"]
+[ext_resource type="Texture2D" uid="uid://hfbmg3o23tuw" path="res://texture/roles/brave/Sprites/SprintJump/SLand/SLand6.png" id="132_37x4a"]
+[ext_resource type="Texture2D" uid="uid://ba0kkomrkt56" path="res://texture/roles/brave/Sprites/SprintJump/SLand/SLand7.png" id="133_dadkc"]
+[ext_resource type="Texture2D" uid="uid://c8pghrv4qttg7" path="res://texture/roles/brave/Sprites/SprintJump/SLand/SLand8.png" id="134_iflaa"]
+[ext_resource type="Texture2D" uid="uid://bak1o0c51s5pv" path="res://texture/roles/brave/Sprites/SprintJump/SLand/SLand9.png" id="135_obfmo"]
+[ext_resource type="Texture2D" uid="uid://qert7fmrbhxy" path="res://texture/roles/brave/Sprites/SprintJump/SLand/SLand10.png" id="136_t5rxh"]
+[ext_resource type="Texture2D" uid="uid://cw2gawuxqelo" path="res://texture/roles/brave/Sprites/SprintJump/SLand/SLand11.png" id="137_b4g5e"]
+[ext_resource type="Texture2D" uid="uid://cj60d6lgn0cbd" path="res://texture/roles/brave/Sprites/Casts/LightCut/ToLightCut/Glow/ToLightCut1.png" id="157_ab0q6"]
+[ext_resource type="Texture2D" uid="uid://b1aja1858st5a" path="res://texture/roles/brave/Sprites/Casts/LightCut/Cast/Glow/CastLightCut1.png" id="157_f36b5"]
+[ext_resource type="Texture2D" uid="uid://budi2mb8s6332" path="res://texture/roles/brave/Sprites/Casts/LightCut/Charging/Glow/ChargingLightCut1.png" id="157_sk8pd"]
+[ext_resource type="Texture2D" uid="uid://bde2s5nevpbsp" path="res://texture/roles/brave/Sprites/Casts/LightCut/ToLightCut/Glow/ToLightCut2.png" id="158_73smg"]
+[ext_resource type="Texture2D" uid="uid://c2n5qdi1wn7d5" path="res://texture/roles/brave/Sprites/Casts/LightCut/Charging/Glow/ChargingLightCut2.png" id="158_jy2yl"]
+[ext_resource type="Texture2D" uid="uid://j4xc7chik4cj" path="res://texture/roles/brave/Sprites/Casts/LightCut/Cast/Glow/CastLightCut2.png" id="158_x6i65"]
+[ext_resource type="Texture2D" uid="uid://c60jmgfc8iw31" path="res://texture/roles/brave/Sprites/Casts/LightCut/Cast/Glow/CastLightCut3.png" id="159_auhnc"]
+[ext_resource type="Script" uid="uid://cjqh3tyfh38bp" path="res://scenes/game/roles/brave/block_atk.gd" id="159_dch58"]
+[ext_resource type="Texture2D" uid="uid://cra0466ntk22v" path="res://texture/roles/brave/Sprites/Casts/LightCut/ToLightCut/Glow/ToLightCut3.png" id="159_f7he1"]
+[ext_resource type="Texture2D" uid="uid://ciqdd1iwgfvw0" path="res://texture/roles/brave/Sprites/Casts/LightCut/Charging/Glow/ChargingLightCut3.png" id="159_wscoe"]
+[ext_resource type="Texture2D" uid="uid://ccyuqdprxe8jx" path="res://texture/roles/brave/Sprites/Casts/LightCut/Cast/Glow/CastLightCut4.png" id="160_7yuia"]
+[ext_resource type="Texture2D" uid="uid://cu2foiyg3b3d4" path="res://texture/roles/brave/Sprites/Casts/LightCut/Charging/Glow/ChargingLightCut4.png" id="160_bi00t"]
+[ext_resource type="Texture2D" uid="uid://cflgqu0i3eqp2" path="res://texture/roles/brave/Sprites/Casts/LightCut/ToLightCut/Glow/ToLightCut4.png" id="160_op08d"]
+[ext_resource type="Texture2D" uid="uid://bboi2dtsn2n0x" path="res://texture/roles/brave/Sprites/Casts/LightCut/Charging/Glow/ChargingLightCut5.png" id="161_20ujb"]
+[ext_resource type="Texture2D" uid="uid://cwp1s3fcgkym2" path="res://texture/roles/brave/Sprites/Casts/LightCut/ToLightCut/Glow/ToLightCut5.png" id="161_bpu12"]
+[ext_resource type="Texture2D" uid="uid://dehhyffldsoxc" path="res://texture/roles/brave/Sprites/Casts/LightCut/Cast/Glow/CastLightCut5.png" id="161_u8ttl"]
+[ext_resource type="Texture2D" uid="uid://cc6cec2cns332" path="res://texture/roles/brave/Sprites/Casts/LightCut/Cast/Glow/CastLightCut6.png" id="162_daqqr"]
+[ext_resource type="Texture2D" uid="uid://bchj5drqbvscf" path="res://texture/roles/brave/Sprites/Casts/LightCut/Charging/Glow/ChargingLightCut6.png" id="162_kunxp"]
+[ext_resource type="Texture2D" uid="uid://di5d68sqisqje" path="res://texture/roles/brave/Sprites/Casts/LightCut/ToLightCut/Glow/ToLightCut6.png" id="162_y821b"]
+[ext_resource type="Texture2D" uid="uid://gkbnf3wrl21w" path="res://texture/roles/brave/Sprites/Casts/LightCut/Cast/Glow/CastLightCut7.png" id="163_fp6eb"]
+[ext_resource type="Texture2D" uid="uid://dnhbhknb2rw3n" path="res://texture/roles/brave/Sprites/Casts/LightCut/ToLightCut/Glow/ToLightCut7.png" id="163_l5o4k"]
+[ext_resource type="Texture2D" uid="uid://db36j5f10fnsf" path="res://texture/roles/brave/Sprites/Casts/LightCut/Charging/Glow/ChargingLightCut7.png" id="163_t050h"]
+[ext_resource type="Texture2D" uid="uid://ihlu6xsmh581" path="res://texture/roles/brave/Sprites/Casts/LightCut/Cast/Glow/CastLightCut8.png" id="164_hqu6d"]
+[ext_resource type="Texture2D" uid="uid://dxw3yl5ofib2o" path="res://texture/roles/brave/Sprites/Casts/LightCut/ToLightCut/Glow/ToLightCut8.png" id="164_lsj1p"]
+[ext_resource type="Texture2D" uid="uid://ceviwysgqhi7s" path="res://texture/roles/brave/Sprites/Casts/LightCut/Charging/Glow/ChargingLightCut8.png" id="164_xd3od"]
+[ext_resource type="Texture2D" uid="uid://ba3h02q1v04ck" path="res://texture/roles/brave/Sprites/Casts/LightCut/ToLightCut/Glow/ToLightCut9.png" id="165_8vs0r"]
+[ext_resource type="Texture2D" uid="uid://o2k8tw00pkx6" path="res://texture/roles/brave/Sprites/Casts/LightCut/Cast/Glow/CastLightCut9.png" id="165_apkb4"]
+[ext_resource type="Texture2D" uid="uid://csba7wu8rtj5a" path="res://texture/roles/brave/Sprites/Casts/LightCut/Cast/Glow/CastLightCut10.png" id="166_guwig"]
+[ext_resource type="Texture2D" uid="uid://dk7nvor58wa67" path="res://texture/roles/brave/Sprites/Casts/LightCut/ToLightCut/Glow/ToLightCut10.png" id="166_pve10"]
+[ext_resource type="Texture2D" uid="uid://d0y72cjv14x41" path="res://texture/roles/brave/Sprites/Casts/LightCut/ToLightCut/Glow/ToLightCut11.png" id="167_05pnw"]
+[ext_resource type="AudioStream" uid="uid://d3mqvvdxkss2b" path="res://audio/sword/Sword Blocked 1.ogg" id="177_vjrkj"]
+[ext_resource type="Texture2D" uid="uid://diqw1s7regarq" path="res://texture/Status_v1/ManaBar_05.png" id="177_ywc5s"]
+[ext_resource type="Texture2D" uid="uid://c5q8s3qxy4dtf" path="res://texture/Status_v1/ManaBar_11.png" id="178_ib0io"]
+[ext_resource type="Script" uid="uid://cqgm68xunis8v" path="res://scenes/game/roles/brave/heal.gd" id="195_ft6e1"]
+[ext_resource type="Script" uid="uid://ckn374xd687y0" path="res://scenes/game/roles/brave/heal_slah.gd" id="196_qfrv3"]
+[ext_resource type="Texture2D" uid="uid://d4kffghmm013k" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast1.png" id="204_6rcph"]
+[ext_resource type="Texture2D" uid="uid://bkaxjq6gy4vty" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Charging/Glow/Charging1.png" id="204_7vy3v"]
+[ext_resource type="Texture2D" uid="uid://d2300nd0dodcf" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/ToSaintHeal/Glow/ToSaintHeal1.png" id="204_jh43d"]
+[ext_resource type="Texture2D" uid="uid://bnu04vxd6opug" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Charging/Glow/Charging2.png" id="205_2gvpa"]
+[ext_resource type="Texture2D" uid="uid://b3tndganecgc" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast2.png" id="205_clkbw"]
+[ext_resource type="Texture2D" uid="uid://by1nphn6re64k" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/ToSaintHeal/Glow/ToSaintHeal2.png" id="205_pwi7q"]
+[ext_resource type="Texture2D" uid="uid://db0ckltx1eh7s" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/ToSaintHeal/Glow/ToSaintHeal3.png" id="206_34sey"]
+[ext_resource type="Texture2D" uid="uid://bb32ad3ksdfcv" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Charging/Glow/Charging3.png" id="206_dk7vu"]
+[ext_resource type="Texture2D" uid="uid://cho860rihiqio" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast3.png" id="206_o1e8x"]
+[ext_resource type="Texture2D" uid="uid://corws7x2ytu85" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Charging/Glow/Charging4.png" id="207_6tool"]
+[ext_resource type="Texture2D" uid="uid://d1e7lmveto5od" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast4.png" id="207_lkryc"]
+[ext_resource type="Texture2D" uid="uid://bk31i2qc6pi4h" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/ToSaintHeal/Glow/ToSaintHeal4.png" id="207_u7ii3"]
+[ext_resource type="Texture2D" uid="uid://dliyoacuj7d2e" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Charging/Glow/Charging5.png" id="208_5oa8d"]
+[ext_resource type="Texture2D" uid="uid://d3y43dj1a8pda" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/ToSaintHeal/Glow/ToSaintHeal5.png" id="208_jbofr"]
+[ext_resource type="Texture2D" uid="uid://c7ox3fik5jo1f" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast5.png" id="208_nsuhj"]
+[ext_resource type="Texture2D" uid="uid://b70nsf0c7tmqg" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Charging/Glow/Charging6.png" id="209_bhyky"]
+[ext_resource type="Texture2D" uid="uid://cqdiy68oy3kr0" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast6.png" id="209_es8ld"]
+[ext_resource type="Texture2D" uid="uid://x3cl6glabx4c" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Charging/Glow/Charging7.png" id="210_p7c3v"]
+[ext_resource type="Texture2D" uid="uid://bgxag4eiajvlu" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast7.png" id="210_r3j0u"]
+[ext_resource type="Texture2D" uid="uid://3g05q2unqxtc" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast8.png" id="211_lafce"]
+[ext_resource type="Texture2D" uid="uid://0xwwqrof866a" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Charging/Glow/Charging8.png" id="211_ququr"]
+[ext_resource type="Texture2D" uid="uid://ojwgigovfade" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast9.png" id="212_lqxn3"]
+[ext_resource type="Texture2D" uid="uid://diu0usuvvmtpp" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast10.png" id="213_0qh2d"]
+[ext_resource type="Texture2D" uid="uid://co5t5ldeor8r0" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast11.png" id="214_qbjg2"]
+[ext_resource type="Texture2D" uid="uid://mmpgw02gsfhn" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast12.png" id="215_dn8oa"]
+[ext_resource type="Texture2D" uid="uid://nt677tqmi8pn" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast13.png" id="216_q1bft"]
+[ext_resource type="Texture2D" uid="uid://chk7auc7rds20" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast14.png" id="217_r5g65"]
+[ext_resource type="Texture2D" uid="uid://crk1nrtrhhl58" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast15.png" id="218_gjslb"]
+[ext_resource type="Texture2D" uid="uid://bqd0cbcqhcp5b" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast16.png" id="219_dnifx"]
+[ext_resource type="Texture2D" uid="uid://yvq2vr1j3kha" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast17.png" id="220_35g4x"]
+[ext_resource type="Texture2D" uid="uid://cjdvjeegd7ca8" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast18.png" id="221_1w56a"]
+[ext_resource type="Texture2D" uid="uid://dv7kki3y7vivj" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast19.png" id="222_u2kd7"]
+[ext_resource type="Texture2D" uid="uid://ce7nhxham1400" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast20.png" id="223_3yli3"]
+[ext_resource type="Texture2D" uid="uid://bglel5pnh2cra" path="res://texture/roles/brave/Sprites/Casts/SaintHeal/Cast/Glow/Cast21.png" id="224_hu6pd"]
+[ext_resource type="Texture2D" uid="uid://ftt2ls2wvdf3" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast1.png" id="238_l7sv3"]
+[ext_resource type="Texture2D" uid="uid://cr0ueb7rhv86c" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast2.png" id="239_hso8f"]
+[ext_resource type="Texture2D" uid="uid://cva1a1kpdn8u1" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast3.png" id="240_l6p06"]
+[ext_resource type="Texture2D" uid="uid://cyknw3u5j34ce" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast4.png" id="241_48hly"]
+[ext_resource type="Texture2D" uid="uid://btq72gjukqc8m" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast5.png" id="242_nsapg"]
+[ext_resource type="Texture2D" uid="uid://dp522ldribwwx" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast6.png" id="243_bl6fs"]
+[ext_resource type="Texture2D" uid="uid://ce37cqohw3ust" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast7.png" id="244_a4kpj"]
+[ext_resource type="Texture2D" uid="uid://cede6ee21eo01" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast8.png" id="245_hyrhi"]
+[ext_resource type="Texture2D" uid="uid://cha5lkkxe8hyx" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast9.png" id="246_gsica"]
+[ext_resource type="Texture2D" uid="uid://core41e1048uc" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast10.png" id="247_pjf8x"]
+[ext_resource type="Texture2D" uid="uid://db27w2awfl8s2" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast11.png" id="248_38055"]
+[ext_resource type="Texture2D" uid="uid://rj6shy222al4" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast12.png" id="249_y0leq"]
+[ext_resource type="Texture2D" uid="uid://d0l118h7we1y8" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast13.png" id="250_dafol"]
+[ext_resource type="Texture2D" uid="uid://bob3s2wh28dm1" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast14.png" id="251_lsen1"]
+[ext_resource type="Texture2D" uid="uid://hr36emeji5ih" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast15.png" id="252_87x7h"]
+[ext_resource type="Texture2D" uid="uid://d2peqdlw3yoba" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast16.png" id="253_q207c"]
+[ext_resource type="Texture2D" uid="uid://ypb2j3sut8pg" path="res://texture/roles/brave/Sprites/Casts/ShieldBuff/Full(Glow)/ShiledCast17.png" id="254_f87tl"]
+[ext_resource type="Script" uid="uid://5rwug2eldgy6" path="res://scenes/game/roles/brave/light_cut.gd" id="254_wpckt"]
+[ext_resource type="Texture2D" uid="uid://023nyo1anaqi" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff1.png" id="288_msaca"]
+[ext_resource type="Script" uid="uid://de7n5tg38bxe" path="res://scenes/game/roles/brave/saint_heal.gd" id="289_ra7ln"]
+[ext_resource type="Texture2D" uid="uid://b17j8llcv1bmw" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff2.png" id="289_udnqu"]
+[ext_resource type="Texture2D" uid="uid://bhbxaj74mmtng" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff3.png" id="290_dy1x5"]
+[ext_resource type="Texture2D" uid="uid://b5cgb2o67qotk" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff4.png" id="291_dkyth"]
+[ext_resource type="Texture2D" uid="uid://b068i255pwnew" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff5.png" id="292_xwnvm"]
+[ext_resource type="Texture2D" uid="uid://wojvkiqyf7vv" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff6.png" id="293_bnw4k"]
+[ext_resource type="Texture2D" uid="uid://l0vk4mqnwefh" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff7.png" id="294_t0svf"]
+[ext_resource type="Texture2D" uid="uid://cpdou3ddr4ivq" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff8.png" id="295_f45xw"]
+[ext_resource type="Texture2D" uid="uid://cje7dlx1bjoy" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff9.png" id="296_y21wx"]
+[ext_resource type="Texture2D" uid="uid://oq1tq3r8aqjt" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff10.png" id="297_4fisl"]
+[ext_resource type="Texture2D" uid="uid://b4kixof1t423f" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff11.png" id="298_4ogjo"]
+[ext_resource type="Texture2D" uid="uid://d0ft1urxr1hgj" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff12.png" id="299_51gfb"]
+[ext_resource type="Texture2D" uid="uid://dsuf44gwh5iwe" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff13.png" id="300_cd12h"]
+[ext_resource type="Texture2D" uid="uid://djh0kt2ad1h2g" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff14.png" id="301_dhiqd"]
+[ext_resource type="Texture2D" uid="uid://caqt324r536j1" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff15.png" id="302_qofxc"]
+[ext_resource type="Texture2D" uid="uid://v8qwo0xewv08" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff16.png" id="303_vqpo5"]
+[ext_resource type="Texture2D" uid="uid://bjj7xl0rptqck" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff17.png" id="304_mhr46"]
+[ext_resource type="Texture2D" uid="uid://dtcfgmmoitwgv" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff18.png" id="305_dyt5u"]
+[ext_resource type="Texture2D" uid="uid://diqempmf27wcr" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff19.png" id="306_h8tt3"]
+[ext_resource type="Script" uid="uid://cvrcknqfxwrwu" path="res://scenes/game/roles/brave/shield_buff.gd" id="307_4sc82"]
+[ext_resource type="Texture2D" uid="uid://ch0vb86ryhalf" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff20.png" id="307_ifkjn"]
+[ext_resource type="Texture2D" uid="uid://pre1gnqdu63t" path="res://texture/roles/brave/Sprites/Casts/SwordBuff/Glow/Full/SwordBuff21.png" id="308_c2xac"]
+[ext_resource type="Script" uid="uid://ds8yl66lfu4wg" path="res://scenes/game/roles/brave/skill_state.gd" id="310_oiw2h"]
+[ext_resource type="Script" uid="uid://c55kf4bh6yn8" path="res://scenes/game/roles/brave/sword_buff.gd" id="329_htl8j"]
+[ext_resource type="Script" uid="uid://cmha8tv4ac74k" path="res://scenes/game/roles/brave/death.gd" id="339_3mu5k"]
+[ext_resource type="AudioStream" uid="uid://dt2nrwueosmi1" path="res://audio/sword/Slash/Sword Slash Metallic Medium 03.wav" id="340_rfljq"]
+[ext_resource type="AudioStream" uid="uid://ckuy01l8njowf" path="res://audio/sword/Slash/Sword Slash Double 02.wav" id="341_mrq55"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qao5i"]
+resource_local_to_scene = true
+shader = ExtResource("2_nyna6")
+shader_parameter/active = false
+shader_parameter/tint = Color(1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_011hc"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(0, 80, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1pn0"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(144, 80, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rb5w"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(288, 80, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bqjt"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(432, 80, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufyhf"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(576, 80, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2oxnv"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(720, 80, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr7eh"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(864, 80, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgtnr"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1008, 80, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7uk5"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1152, 80, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anfxp"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1296, 80, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gm4x"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1440, 80, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edony"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1584, 80, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x84t8"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(0, 160, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akw5l"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(144, 160, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofg2s"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(288, 160, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6uqp"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(432, 160, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_176wr"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(576, 160, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d3xo"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(720, 160, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80ub7"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(864, 160, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jt77g"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1008, 160, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwbw1"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1152, 160, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bb3a"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(0, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwyuc"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(144, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sgie"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(288, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw65w"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(432, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggg58"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(576, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld815"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(720, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ud4t"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(864, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjgvb"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1008, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uuga"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1152, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ptmt"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1296, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmi12"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1440, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m170u"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1584, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1irfh"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1728, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad4pw"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(1872, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va2b8"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(2016, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfgf2"]
+atlas = ExtResource("49_gbml5")
+region = Rect2(2160, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdevs"]
+atlas = ExtResource("100_0tb56")
+region = Rect2(1280, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh0yh"]
+atlas = ExtResource("100_0tb56")
+region = Rect2(1408, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4ksf"]
+atlas = ExtResource("100_0tb56")
+region = Rect2(1536, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fg35"]
+atlas = ExtResource("100_0tb56")
+region = Rect2(1664, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psg34"]
+atlas = ExtResource("100_0tb56")
+region = Rect2(1792, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptqom"]
+atlas = ExtResource("100_0tb56")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og4gw"]
+atlas = ExtResource("100_0tb56")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tloe4"]
+atlas = ExtResource("100_0tb56")
+region = Rect2(512, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wxq4"]
+atlas = ExtResource("100_0tb56")
+region = Rect2(640, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px1d2"]
+atlas = ExtResource("100_0tb56")
+region = Rect2(768, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87muw"]
+atlas = ExtResource("100_0tb56")
+region = Rect2(896, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hbuh"]
+atlas = ExtResource("100_0tb56")
+region = Rect2(1024, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8ewm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_011hc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1pn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rb5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bqjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufyhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2oxnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr7eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgtnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7uk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anfxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gm4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edony")
+}],
+"loop": false,
+"name": &"atk_1",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x84t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akw5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofg2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6uqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_176wr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d3xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80ub7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jt77g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwbw1")
+}],
+"loop": false,
+"name": &"atk_2",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bb3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwyuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sgie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw65w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggg58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld815")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ud4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjgvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uuga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ptmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmi12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m170u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1irfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad4pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va2b8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfgf2")
+}],
+"loop": false,
+"name": &"atk_3",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wdllc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0hyic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xopj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pssam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jroi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nulw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rryuq")
+}],
+"loop": false,
+"name": &"atk_air",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ap4ya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nonqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vr1k4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_l2xk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jspp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1s5yj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0c45l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_y1aya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_lm0jn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hqvka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_m0vsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mm3qo")
+}],
+"loop": false,
+"name": &"block_atk",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_cj4ia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s7728")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xjjcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_x3poa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_iiqhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mm4v5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_6bhbr")
+}],
+"loop": false,
+"name": &"block_break",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_52iig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ph74y")
+}],
+"loop": false,
+"name": &"block_end",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_mjiup")
+}],
+"loop": true,
+"name": &"block_ing",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_vwd2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kygga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_b1fpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cm6lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gmh7k")
+}],
+"loop": false,
+"name": &"block_start",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_rvpns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_u0dpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_uhglf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_52vt6")
+}],
+"loop": false,
+"name": &"block_suc",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_b10kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_odd7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_n1lgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_mf1fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_tnwoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_mf8oa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_mgh3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_dvn26")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_whib7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_hrnm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_5fshe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_0ko0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_104xt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_bjnys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_lrvbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_gr3lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_aniwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_7whxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_2kexo")
+}],
+"loop": false,
+"name": &"dash_back",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_b4h6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_d8wt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_xhc4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_p0hgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_jtt56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_pglcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_ehvng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_ve4ht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_ewu5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_b8amt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_vgwrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_ofsiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_waql0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_rtc41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_ye844")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_xcgfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_j2db0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_5e7sp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_y7d6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_4gn8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_xs1f3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_1v8if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_7dkyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_3gbtg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_8cttn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_c61lb")
+}],
+"loop": false,
+"name": &"death",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vuibf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_20oi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wsj2i")
+}],
+"loop": true,
+"name": &"fall_ing",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vf0ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_84cvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gfect")
+}],
+"loop": false,
+"name": &"fall_start",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("67_dytox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_1c5dt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_yjh0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_aqu2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_f5h8y")
+}],
+"loop": false,
+"name": &"guarded_atk_1",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("72_n3del")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_f4vps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_df7fp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_dt07f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_kvhsi")
+}],
+"loop": false,
+"name": &"guarded_atk_2",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("77_i2i6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_v2esn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_sqe0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_hxp5e")
+}],
+"loop": false,
+"name": &"guarded_atk_3",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("81_sswl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_uy3yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_qr6yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_776oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_grlc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_hw21j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_kjf58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_k43c7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_g28qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_1h3tm")
+}],
+"loop": false,
+"name": &"heal_end",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("91_154pd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_0k65v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_ly00v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_0s0d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_01ujy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_fb0ex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_dgaj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_idt60")
+}],
+"loop": true,
+"name": &"heal_ing",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("99_48gey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_2b646")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_wi4gx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_8qaau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_v0jb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_rxbb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_i4gjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_ofsqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_hmg7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_42qxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_3w8l3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_1cu41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_anq8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_xdbi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_eva55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_ies73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_1f0yt")
+}],
+"loop": false,
+"name": &"heal_slash_end",
+"speed": 22.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("99_bpabk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_urvyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_cni36")
+}],
+"loop": true,
+"name": &"heal_slash_ing",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("99_6p8ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_b24e2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_xerg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_1lcog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_qn5mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_o1774")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_7nlxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_dkdk4")
+}],
+"loop": false,
+"name": &"heal_slash_start",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("81_8jvya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_swkga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_q63ed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_5tv6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_v314m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_1118a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_wn3uc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_4frhn")
+}],
+"loop": false,
+"name": &"heal_start",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_s63ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_hmc06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_n2cso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_bn0hy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_vhsx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_k5oyr")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xlw57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kiw5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8chh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_34pas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5vlsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d3klo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_elh0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yfs0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jwutp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rwmk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0s1tl")
+}],
+"loop": false,
+"name": &"jump_end",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_v44l5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n45qc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xl7p0")
+}],
+"loop": true,
+"name": &"jump_ing",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_r0unv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4ixlg")
+}],
+"loop": false,
+"name": &"jump_start",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("157_f36b5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_x6i65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_auhnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_7yuia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_u8ttl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_daqqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_fp6eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_hqu6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_apkb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_guwig")
+}],
+"loop": false,
+"name": &"light_cut_end",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("157_sk8pd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_jy2yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_wscoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_bi00t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_20ujb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_kunxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_t050h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_xd3od")
+}],
+"loop": true,
+"name": &"light_cut_ing",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("157_ab0q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_73smg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_f7he1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_op08d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_bpu12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_y821b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_l5o4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_lsj1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_8vs0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_pve10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_05pnw")
+}],
+"loop": false,
+"name": &"light_cut_start",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_pfkq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gqdjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_s67gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_exjma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lfctl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_73aei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_m8bxc")
+}],
+"loop": false,
+"name": &"run_break",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_8sxxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7x7bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lsej7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8t0tu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vkilw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_j6p6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8w65e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_w2rk6")
+}],
+"loop": true,
+"name": &"run_ing",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_l8f2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6k1kc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_maanu")
+}],
+"loop": false,
+"name": &"run_start",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("204_6rcph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_clkbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_o1e8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_lkryc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_nsuhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_es8ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_r3j0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_lafce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_lqxn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_0qh2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_qbjg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_dn8oa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_q1bft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_r5g65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_gjslb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_dnifx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_35g4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_1w56a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_u2kd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_3yli3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_hu6pd")
+}],
+"loop": false,
+"name": &"saint_heal_end",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("204_7vy3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_2gvpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_dk7vu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_6tool")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_5oa8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_bhyky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_p7c3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_ququr")
+}],
+"loop": true,
+"name": &"saint_heal_ing",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("204_jh43d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_pwi7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_34sey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_u7ii3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_jbofr")
+}],
+"loop": false,
+"name": &"saint_heal_start",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("238_l7sv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("239_hso8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("240_l6p06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241_48hly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("242_nsapg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("243_bl6fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_a4kpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_hyrhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_gsica")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_pjf8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("248_38055")
+}, {
+"duration": 1.0,
+"texture": ExtResource("249_y0leq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_dafol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251_lsen1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("252_87x7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_q207c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("254_f87tl")
+}],
+"loop": false,
+"name": &"shield_buff",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("95_op1l4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_1gi2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_us1qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_rgr2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_4odtp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_0wxbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_up2iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_l32mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_xgijc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_d0vrq")
+}],
+"loop": false,
+"name": &"sprint_atk",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdevs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh0yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4ksf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fg35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psg34")
+}],
+"loop": false,
+"name": &"sprint_break",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptqom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og4gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tloe4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wxq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px1d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87muw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hbuh")
+}],
+"loop": true,
+"name": &"sprint_ing",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("118_gn5lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_65r7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_l8p88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_vkqea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_sj241")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_234qd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_44282")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_xwq4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_qvu7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_3t2yk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_5gnpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_c6li1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_ycim8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_8pnus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_37x4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_dadkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_iflaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_obfmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_t5rxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_b4g5e")
+}],
+"loop": false,
+"name": &"sprint_jump",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("103_thhyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_qwbo5")
+}],
+"loop": false,
+"name": &"sprint_start",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("288_msaca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("289_udnqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("290_dy1x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("291_dkyth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("292_xwnvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("293_bnw4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("294_t0svf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("295_f45xw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("296_y21wx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("297_4fisl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("298_4ogjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("299_51gfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("300_cd12h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("301_dhiqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("302_qofxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("303_vqpo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("304_mhr46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("305_dyt5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("306_h8tt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("307_ifkjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("308_c2xac")
+}],
+"loop": false,
+"name": &"sword_buff",
+"speed": 14.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uyuw"]
+radius = 7.0
+height = 28.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sc5q8"]
+radius = 15.0
+height = 42.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7adko"]
+radius = 5.0
+height = 66.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_si6xn"]
+height = 58.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6be08"]
+radius = 8.0
+height = 20.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ycnj7"]
+radius = 9.0
+height = 58.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kfyu6"]
+radius = 21.0
+height = 96.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mp4j5"]
+radius = 12.0
+height = 40.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbf71"]
+radius = 8.0
+height = 42.0
+
+[node name="Brave" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_6j0f5")
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body"]
+material = SubResource("ShaderMaterial_qao5i")
+position = Vector2(0, -21)
+sprite_frames = SubResource("SpriteFrames_t8ewm")
+animation = &"death"
+autoplay = "idle"
+frame = 25
+frame_progress = 1.0
+
+[node name="AtkChecks" type="Node2D" parent="Body"]
+
+[node name="atk_1" type="Area2D" parent="Body/AtkChecks"]
+position = Vector2(21, -14)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/AtkChecks/atk_1"]
+position = Vector2(13, -4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6uyuw")
+
+[node name="atk_2" type="Area2D" parent="Body/AtkChecks"]
+position = Vector2(21, -14)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/AtkChecks/atk_2"]
+position = Vector2(12, -11)
+shape = SubResource("CapsuleShape2D_sc5q8")
+
+[node name="atk_3" type="Area2D" parent="Body/AtkChecks"]
+position = Vector2(21, -14)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/AtkChecks/atk_3"]
+position = Vector2(24, -7)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7adko")
+
+[node name="guarded_atk" type="Area2D" parent="Body/AtkChecks"]
+position = Vector2(21, -14)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/AtkChecks/guarded_atk"]
+position = Vector2(11, -4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_si6xn")
+
+[node name="block_atk" type="Area2D" parent="Body/AtkChecks"]
+position = Vector2(21, -14)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/AtkChecks/block_atk"]
+position = Vector2(-4, -5)
+shape = SubResource("CapsuleShape2D_6be08")
+
+[node name="sprint_atk" type="Area2D" parent="Body/AtkChecks"]
+position = Vector2(21, -14)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/AtkChecks/sprint_atk"]
+position = Vector2(14, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ycnj7")
+
+[node name="heal_slash" type="Area2D" parent="Body/AtkChecks"]
+position = Vector2(21, -14)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/AtkChecks/heal_slash"]
+position = Vector2(30, -13)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_kfyu6")
+
+[node name="light_cut" type="Area2D" parent="Body/AtkChecks"]
+position = Vector2(21, -14)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/AtkChecks/light_cut"]
+position = Vector2(-13, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mp4j5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -21)
+shape = SubResource("CapsuleShape2D_cbf71")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("8_2qelp")
+
+[node name="SkillState" type="Node" parent="StateMachine"]
+script = ExtResource("310_oiw2h")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("26_gpt8p")
+
+[node name="Dash" type="Node" parent="StateMachine"]
+script = ExtResource("60_5a8e7")
+
+[node name="Death" type="Node" parent="StateMachine"]
+script = ExtResource("339_3mu5k")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("27_1kof1")
+
+[node name="RunBreak" type="Node" parent="StateMachine"]
+script = ExtResource("33_vca77")
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("52_1447o")
+
+[node name="SprintJump" type="Node" parent="StateMachine"]
+script = ExtResource("126_uc2f7")
+
+[node name="JumpFall" type="Node" parent="StateMachine"]
+script = ExtResource("52_da0ho")
+
+[node name="JumpEnd" type="Node" parent="StateMachine"]
+script = ExtResource("54_tcgnk")
+
+[node name="AtkAir" type="Node" parent="StateMachine"]
+script = ExtResource("67_r73iw")
+
+[node name="Atk" type="Node" parent="StateMachine"]
+script = ExtResource("79_pasva")
+
+[node name="AtkSprint" type="Node" parent="StateMachine"]
+script = ExtResource("120_t2lgg")
+
+[node name="Hit" type="Node" parent="StateMachine"]
+script = ExtResource("89_ensfu")
+
+[node name="Block" type="Node" parent="StateMachine"]
+script = ExtResource("82_shlba")
+
+[node name="Timer" type="Timer" parent="StateMachine/Block"]
+wait_time = 0.5
+autostart = true
+
+[node name="BlockAtk" type="Node" parent="StateMachine"]
+script = ExtResource("159_dch58")
+
+[node name="Heal" type="Node" parent="StateMachine"]
+script = ExtResource("195_ft6e1")
+
+[node name="HealSlash" type="Node" parent="StateMachine"]
+script = ExtResource("196_qfrv3")
+
+[node name="LightCut" type="Node" parent="StateMachine"]
+script = ExtResource("254_wpckt")
+
+[node name="SaintHeal" type="Node" parent="StateMachine"]
+script = ExtResource("289_ra7ln")
+
+[node name="ShieldBuff" type="Node" parent="StateMachine"]
+script = ExtResource("307_4sc82")
+
+[node name="Timer" type="Timer" parent="StateMachine/ShieldBuff"]
+
+[node name="SwordBuff" type="Node" parent="StateMachine"]
+script = ExtResource("329_htl8j")
+
+[node name="Timer" type="Timer" parent="StateMachine/SwordBuff"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+limit_bottom = 320
+position_smoothing_speed = 6.0
+script = ExtResource("74_4oytd")
+
+[node name="Audios" type="Node" parent="."]
+
+[node name="atk_1" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("103_ik73c")
+
+[node name="atk_2" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("104_hfc7w")
+
+[node name="atk_3" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("105_qf8uh")
+
+[node name="atk_1_hit" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("106_wfy65")
+
+[node name="atk_2_hit" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("107_bep15")
+
+[node name="atk_3_hit" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("108_ce257")
+
+[node name="block" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("110_o2rex")
+
+[node name="blockbreak" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("177_vjrkj")
+
+[node name="hit" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("108_ce257")
+
+[node name="light_cut" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("340_rfljq")
+volume_db = -8.0
+
+[node name="heal_slash" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("341_mrq55")
+
+[node name="ShieldHp" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -21.0
+offset_top = -49.0
+offset_right = 22.0
+offset_bottom = -43.0
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_right = 1
+texture_under = ExtResource("177_ywc5s")
+texture_progress = ExtResource("178_ib0io")
+
+[connection signal="timeout" from="StateMachine/Block/Timer" to="StateMachine/Block" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateMachine/ShieldBuff/Timer" to="StateMachine/ShieldBuff" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateMachine/SwordBuff/Timer" to="StateMachine/SwordBuff" method="_on_timer_timeout"]

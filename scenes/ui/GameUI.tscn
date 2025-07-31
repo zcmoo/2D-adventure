@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk438laoril8j"]
+
+[ext_resource type="Script" uid="uid://bjgv2qurbfi4" path="res://scenes/ui/game_ui.gd" id="1_yts88"]
+[ext_resource type="PackedScene" uid="uid://dsxhjixmx2alb" path="res://scenes/ui/input_ui.tscn" id="3_qcwb3"]
+[ext_resource type="PackedScene" uid="uid://3mdcurpgqty6" path="res://scenes/ui/talents_ui.tscn" id="4_lfh8b"]
+[ext_resource type="PackedScene" uid="uid://doo8w6ec2elhh" path="res://scenes/ui/main_ui.tscn" id="5_d4m0v"]
+[ext_resource type="PackedScene" uid="uid://cmkfyyhc4a28y" path="res://scenes/ui/settings.tscn" id="17_q5w2h"]
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_yts88")
+
+[node name="InputUI" parent="." instance=ExtResource("3_qcwb3")]
+
+[node name="MainUI" parent="." instance=ExtResource("5_d4m0v")]
+
+[node name="TalentsUI" parent="." instance=ExtResource("4_lfh8b")]
+visible = false
+
+[node name="Settings" parent="." instance=ExtResource("17_q5w2h")]
+visible = false

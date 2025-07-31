@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnxlh132qehjk"]
+
+[ext_resource type="Script" path="res://scenes/ui/components/talent_panel.gd" id="1_aerkq"]
+[ext_resource type="PackedScene" uid="uid://ckehtp1xhib3y" path="res://scenes/ui/components/TalentTreeButton.tscn" id="2_xhp7q"]
+[ext_resource type="Resource" uid="uid://cowij3yrpfg2j" path="res://db/talents/brave/storm_01.tres" id="3_bggrx"]
+[ext_resource type="Resource" uid="uid://dsqfcyjubmrun" path="res://db/talents/brave/storm_02.tres" id="4_i6frc"]
+
+[node name="TalentPanel" type="Panel"]
+custom_minimum_size = Vector2(1000, 1000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aerkq")
+
+[node name="强攻" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 462.0
+offset_right = 497.0
+offset_bottom = 502.0
+talent = ExtResource("3_bggrx")
+
+[node name="强攻二段" parent="." instance=ExtResource("2_xhp7q")]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 384.0
+offset_right = 401.0
+offset_bottom = 424.0
+talent = ExtResource("4_i6frc")

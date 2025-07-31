@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Talent" load_steps=7 format=3 uid="uid://dp41syg057ybf"]
+
+[ext_resource type="Script" uid="uid://b3xvajw8cspk5" path="res://scripts/Resource/Effects.gd" id="1_04w1l"]
+[ext_resource type="Script" uid="uid://c4ueodtu1ddp5" path="res://scripts/Resource/Attribute.gd" id="2_s335q"]
+[ext_resource type="Texture2D" uid="uid://dmvsiomkh11" path="res://texture/skill/36-Guardian-Stance.png" id="3_4ke6t"]
+[ext_resource type="Script" uid="uid://skc0jhyhrgup" path="res://scripts/Resource/Talent.gd" id="4_7u6xw"]
+[ext_resource type="Resource" uid="uid://dwipxuuolsu4n" path="res://db/talents/brave/block_02.tres" id="5_vml6x"]
+
+[sub_resource type="Resource" id="Resource_5h7d2"]
+script = ExtResource("2_s335q")
+attribute = "max_hp"
+value = 100
+effect_type = 0
+buff_type = 0
+
+[resource]
+script = ExtResource("4_7u6xw")
+id = "block_04"
+name = "攻守兼备"
+useType = 0
+strength = 15
+description = "【防御系】天赋，处于格挡状态时，按下攻击键可快速攻击敌人。"
+type = 0
+icon = ExtResource("3_4ke6t")
+max_level = 5
+effects = Array[ExtResource("1_04w1l")]([SubResource("Resource_5h7d2")])
+prerequisites = Array[ExtResource("4_7u6xw")]([ExtResource("5_vml6x")])
+position = Vector2(0, 0)
+branches = []
+bindKye = ""

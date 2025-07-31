@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Talent" load_steps=7 format=3 uid="uid://g8cj10vlqnde"]
+
+[ext_resource type="Script" uid="uid://b3xvajw8cspk5" path="res://scripts/Resource/Effects.gd" id="1_sa1d2"]
+[ext_resource type="Script" uid="uid://c4ueodtu1ddp5" path="res://scripts/Resource/Attribute.gd" id="2_ih45d"]
+[ext_resource type="Texture2D" uid="uid://dldiftra2mjay" path="res://texture/skill/69-Repel.png" id="3_b3cjd"]
+[ext_resource type="Script" uid="uid://skc0jhyhrgup" path="res://scripts/Resource/Talent.gd" id="4_f6ffu"]
+[ext_resource type="Resource" uid="uid://dsqfcyjubmrun" path="res://db/talents/brave/storm_02.tres" id="5_of71d"]
+
+[sub_resource type="Resource" id="Resource_f3jxv"]
+script = ExtResource("2_ih45d")
+attribute = "atk"
+value = 12
+effect_type = 1
+buff_type = 0
+
+[resource]
+script = ExtResource("4_f6ffu")
+id = "storm_07"
+name = "瞬身斩"
+useType = 1
+strength = 25
+description = "长按可蓄力，瞬移到前方一段距离，对所有敌人造成[color=#c895e9](atk)%[/color]的额外伤害。每蓄力1秒额外提高5%的伤害，最高蓄力5秒。"
+type = 2
+icon = ExtResource("3_b3cjd")
+max_level = 1
+effects = Array[ExtResource("1_sa1d2")]([SubResource("Resource_f3jxv")])
+prerequisites = Array[ExtResource("4_f6ffu")]([ExtResource("5_of71d")])
+position = Vector2(0, 0)
+branches = []
+bindKye = "light_cut"

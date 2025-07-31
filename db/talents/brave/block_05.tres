@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Talent" load_steps=5 format=3 uid="uid://cyquygbvahs3j"]
+
+[ext_resource type="Script" uid="uid://b3xvajw8cspk5" path="res://scripts/Resource/Effects.gd" id="1_tjpxu"]
+[ext_resource type="Texture2D" uid="uid://lowrje5a37qk" path="res://texture/skill/46-Iron-Clad.png" id="3_s61e8"]
+[ext_resource type="Script" uid="uid://skc0jhyhrgup" path="res://scripts/Resource/Talent.gd" id="4_1oa3o"]
+[ext_resource type="Resource" uid="uid://5pblsx4sac8j" path="res://db/talents/brave/buff_01.tres" id="5_2scn0"]
+
+[resource]
+script = ExtResource("4_1oa3o")
+id = "block_05"
+name = "强化护甲"
+useType = 0
+strength = 15
+description = "【Buff】，触发后获得伤害免疫15%的BUFF，持续25秒，冷却时间30秒。"
+type = 2
+icon = ExtResource("3_s61e8")
+max_level = 1
+effects = Array[ExtResource("1_tjpxu")]([])
+prerequisites = Array[ExtResource("4_1oa3o")]([ExtResource("5_2scn0")])
+position = Vector2(0, 0)
+branches = []
+bindKye = "shield_buff"

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Talent" load_steps=7 format=3 uid="uid://cl8002frukk5b"]
+
+[ext_resource type="Script" uid="uid://b3xvajw8cspk5" path="res://scripts/Resource/Effects.gd" id="1_8mh1e"]
+[ext_resource type="Script" uid="uid://c4ueodtu1ddp5" path="res://scripts/Resource/Attribute.gd" id="2_q7d43"]
+[ext_resource type="Texture2D" uid="uid://crbr7ggpewpjs" path="res://texture/skill/47-Lightning.png" id="3_yemyk"]
+[ext_resource type="Script" uid="uid://skc0jhyhrgup" path="res://scripts/Resource/Talent.gd" id="4_pskx5"]
+[ext_resource type="Resource" uid="uid://dsqfcyjubmrun" path="res://db/talents/brave/storm_02.tres" id="5_f4lnt"]
+
+[sub_resource type="Resource" id="Resource_cpon6"]
+script = ExtResource("2_q7d43")
+attribute = "atk"
+value = 30
+effect_type = 1
+buff_type = 0
+
+[resource]
+script = ExtResource("4_pskx5")
+id = "storm_06"
+name = "蓄力斩"
+useType = 1
+strength = 100
+description = "长按可蓄力，对前方所有敌人造成[color=#c895e9](atk)%[/color]的额外伤害。每蓄力1秒额外提高5%的伤害，最高蓄力5秒。"
+type = 2
+icon = ExtResource("3_yemyk")
+max_level = 5
+effects = Array[ExtResource("1_8mh1e")]([SubResource("Resource_cpon6")])
+prerequisites = Array[ExtResource("4_pskx5")]([ExtResource("5_f4lnt")])
+position = Vector2(0, 0)
+branches = []
+bindKye = "heal_slash"
