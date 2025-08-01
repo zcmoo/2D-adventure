@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp4bawtylexuy"]
-
-[ext_resource type="Script" uid="uid://dtijcqs5n6c40" path="res://scenes/game/effect/dash_trail.gd" id="1_vglex"]
-
-[node name="DashTrail" type="Sprite2D"]
-modulate = Color(1, 1, 1, 0.784314)
-script = ExtResource("1_vglex")
