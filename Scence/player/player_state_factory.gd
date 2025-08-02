@@ -8,6 +8,8 @@ func _init() -> void:
 		Player.State.JUMP: PlayerStateJump,
 		Player.State.FALL: PlayerStateFall,
 		Player.State.Land: PlayerStateLand,
+		Player.State.SLIDE: PlayerStateSlide,
+		Player.State.WALL_JUMP: PlayerWallJUMP,
 	}
 
 func get_fresh_state(state: Player.State) -> PlayerStateMachine:
