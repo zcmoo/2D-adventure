@@ -15,9 +15,7 @@ func _physics_process(_delta: float) -> void:
 	player.move_and_slide()
 	if player.is_on_floor():
 		transition_state(Player.State.MOVE)
-	elif not player.is_on_wall():
-		transition_state(Player.State.FALL)
-	elif player.is_on_wall() and player.jump_request_timer.time_left > 0:
+	if player.jump_request_timer.time_left > 0:
 		transition_state(Player.State.WALL_JUMP)
 
 func _exit_tree() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://gpcdxl8lqrhg"]
+[gd_scene load_steps=16 format=3 uid="uid://gpcdxl8lqrhg"]
 
 [ext_resource type="PackedScene" uid="uid://icss871mb2hk" path="res://Scence/enemy/enemy.tscn" id="1_k3xo0"]
 [ext_resource type="Script" uid="uid://c10nc54uwu0pl" path="res://Scence/enemy/boar.gd" id="2_lx8ay"]
@@ -6,6 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://b1yb1wag1glp0" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Run/Run-Sheet.png" id="3_bcjiq"]
 [ext_resource type="Texture2D" uid="uid://brvkks7pqex08" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Walk/Walk-Base-Sheet.png" id="4_c8btu"]
 [ext_resource type="Texture2D" uid="uid://v2bo0u0ypf1k" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Hit-Vanish/Hit-Sheet.png" id="5_otako"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3aobe"]
+size = Vector2(39, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lx8ay"]
+size = Vector2(39, 28.75)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c8btu"]
 radius = 12.0
@@ -251,6 +257,8 @@ _data = {
 
 [node name="Boar" instance=ExtResource("1_k3xo0")]
 script = ExtResource("2_lx8ay")
+damage = 10
+health = 20
 
 [node name="Sprite2D" parent="Graphics" index="0"]
 position = Vector2(0, -16)
@@ -264,11 +272,21 @@ target_position = Vector2(-14, 0)
 [node name="PlayerChecker" type="RayCast2D" parent="Graphics" index="2"]
 position = Vector2(-11, -11)
 target_position = Vector2(-70, 0)
-collision_mask = 2
+collision_mask = 3
 
 [node name="FloorChecker" type="RayCast2D" parent="Graphics" index="3"]
 position = Vector2(-14, -1)
 target_position = Vector2(0, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Graphics/HitBox" index="0"]
+position = Vector2(-1.5, -12)
+shape = SubResource("RectangleShape2D_3aobe")
+debug_color = Color(0.502957, 0.576201, 0.19843, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Graphics/HurtBox" index="0"]
+position = Vector2(-1, -12.625)
+shape = SubResource("RectangleShape2D_lx8ay")
+debug_color = Color(0.425786, 0.584377, 0.421486, 0.42)
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, -11)

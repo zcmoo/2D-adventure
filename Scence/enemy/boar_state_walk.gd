@@ -9,7 +9,7 @@ func _enter_tree() -> void:
 	animation_player.play("walk")
 
 func _physics_process(_delta: float) -> void:
-	if boar_player_checker.is_colliding():
+	if boar_player_checker.get_collider() is Player:
 		transition_boar_state(Boar.State.RUN)
 	if boar_wall_checker.is_colliding() or not boar_floor_checker.is_colliding():
 		transition_boar_state(Boar.State.IDLE)

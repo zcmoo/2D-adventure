@@ -12,7 +12,7 @@ func _enter_tree() -> void:
 	time_since_idle_state = Time.get_ticks_msec()
 
 func _physics_process(_delta: float) -> void:
-	if boar_player_checker.is_colliding():
+	if boar_player_checker.get_collider() is Player:
 		transition_boar_state(Boar.State.RUN)
 	if Time.get_ticks_msec() - time_since_idle_state > DURATION_IDLE_STATE:
 		transition_boar_state(Boar.State.WALK)

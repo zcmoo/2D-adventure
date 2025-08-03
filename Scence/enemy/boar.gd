@@ -7,6 +7,7 @@ enum State {IDLE, WALK, RUN}
 
 
 func _ready() -> void:
+	super._ready()
 	switch_state(State.WALK)
 
 func switch_state(state: State) -> void:

@@ -21,5 +21,5 @@ func _physics_process(_delta: float) -> void:
 	if player.is_on_wall() and hand_checker.is_colliding() and foot_checker.is_colliding():
 		transition_state(Player.State.SLIDE)
 		
-	
+
 	

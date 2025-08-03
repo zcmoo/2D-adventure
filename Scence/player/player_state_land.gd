@@ -7,4 +7,3 @@ func _enter_tree() -> void:
 
 func on_animation_complete() -> void:
 	transition_state(Player.State.MOVE)
-	

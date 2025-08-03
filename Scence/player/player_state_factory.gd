@@ -10,6 +10,9 @@ func _init() -> void:
 		Player.State.Land: PlayerStateLand,
 		Player.State.SLIDE: PlayerStateSlide,
 		Player.State.WALL_JUMP: PlayerWallJUMP,
+		Player.State.ATTACK_1: PlayerStateAttack_1,
+		Player.State.ATTACK_2: PlayerStateAttack_2,
+		Player.State.ATTACK_3: PlayerStateAttack_3,
 	}
 
 func get_fresh_state(state: Player.State) -> PlayerStateMachine:

@@ -26,4 +26,7 @@ func on_animation_complete() -> void:
 	pass # override me
 
 func can_handle_move() -> bool:
-	return true # override
+	return true # override me
+
+func should_fall() -> bool:
+	return true # override me

@@ -1,0 +1,19 @@
+class_name PlayerStateAttack_2
+extends PlayerStateMachine
+
+
+func _enter_tree() -> void:
+	animation_player.play("attack_2")
+	player.is_combo_requested = false
+
+func _physics_process(delta: float) -> void:
+	player.common_stand(delta)
+	player.move_and_slide()
+	if not animation_player.is_playing():
+		if player.is_combo_requested:
+			transition_state(Player.State.ATTACK_3)
+		else:
+			transition_state(Player.State.MOVE)
+
+func can_handle_move() -> bool:
+	return false

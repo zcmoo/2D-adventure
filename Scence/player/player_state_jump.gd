@@ -12,4 +12,6 @@ func _physics_process(_delta: float) -> void:
 	player.move_and_slide()
 	if player.velocity.y >= 0:
 		transition_state(Player.State.FALL)
-	
+
+func should_fall() -> bool:
+	return false

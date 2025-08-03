@@ -12,11 +12,12 @@ func _physics_process(_delta: float) -> void:
 	if player.is_on_floor() != was_on_floor:
 		if was_on_floor :
 			coyote_timer.start()
-			transition_state(Player.State.FALL)
 		else:
 			coyote_timer.stop()
-	if player.is_on_floor() and jump_request_timer.time_left > 0:
+	if jump_request_timer.time_left > 0:
 		transition_state(Player.State.JUMP)
+	if Input.is_action_just_pressed("攻击"):
+		transition_state(Player.State.ATTACK_1)
 
 
 
