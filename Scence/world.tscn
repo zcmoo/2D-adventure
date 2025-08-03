@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bjur6sqs5aeqy"]
+[gd_scene load_steps=10 format=4 uid="uid://bjur6sqs5aeqy"]
 
 [ext_resource type="Script" uid="uid://w6sc0ahaiq77" path="res://Scence/world.gd" id="1_8k32h"]
 [ext_resource type="Texture2D" uid="uid://8ou4ym78die2" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="1_gccee"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c3fau6dilprvq" path="res://assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="4_j3sgp"]
 [ext_resource type="Texture2D" uid="uid://dwcs26ahcnms7" path="res://assets/Background-Hills.png" id="5_vhsna"]
 [ext_resource type="Texture2D" uid="uid://boo74nwy4d07o" path="res://assets/Background-Trees.png" id="6_5pxw7"]
+[ext_resource type="PackedScene" uid="uid://gpcdxl8lqrhg" path="res://Scence/enemy/Boar.tscn" id="7_5pxw7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_euwfo"]
 texture = ExtResource("1_gccee")
@@ -612,4 +613,16 @@ scale = Vector2(-1, 1)
 [node name="FootChecker" parent="player" index="7"]
 scale = Vector2(-1, 1)
 
+[node name="Boar" parent="." instance=ExtResource("7_5pxw7")]
+position = Vector2(505, -2)
+
+[node name="Boar2" parent="." instance=ExtResource("7_5pxw7")]
+position = Vector2(237, 26)
+
+[node name="Boar3" parent="." instance=ExtResource("7_5pxw7")]
+position = Vector2(166, -247)
+
 [editable path="player"]
+[editable path="Boar"]
+[editable path="Boar2"]
+[editable path="Boar3"]

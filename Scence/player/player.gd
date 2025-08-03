@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	if current_state.can_handle_move():
 		handle_move(delta)
 	else:
-		stand(delta)
+		wall_stand(delta)
 
 func switch_state(state: State) -> void:
 	if current_state != null:
@@ -63,7 +63,7 @@ func handle_move(delta) -> void:
 	velocity.x = move_toward(velocity.x, direction * RUN_SPEED, acceleration * delta)
 	velocity.y += gravity * delta
 
-func stand(delta) -> void:
+func wall_stand(delta) -> void:
 	sprite_2d.flip_h = (get_wall_normal().x == -1.0)
 	hand_checker.scale.x = get_wall_normal().x
 	foot_checker.scale.x = get_wall_normal().x

@@ -10,7 +10,7 @@ func _enter_tree() -> void:
 	player.velocity.x *= player.get_wall_normal().x
 	animation_player.play("jump")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	jump_request_timer.stop()
 	player.move_and_slide()
 	if player.is_on_wall():

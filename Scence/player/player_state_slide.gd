@@ -11,7 +11,7 @@ func _enter_tree() -> void:
 	player.gravity = slide_gravity
 	animation_player.play("wall_sliding")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	player.move_and_slide()
 	if player.is_on_floor():
 		transition_state(Player.State.MOVE)

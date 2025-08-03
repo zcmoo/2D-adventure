@@ -5,7 +5,7 @@ extends PlayerStateMachine
 func _enter_tree() -> void:
 	animation_player.play("fall")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	player.move_and_slide()
 	if player.coyote_timer.time_left > 0 and jump_request_timer.time_left > 0:
 		player.velocity.y = player.JUMP_VELOCITY
