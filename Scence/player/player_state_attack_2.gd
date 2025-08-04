@@ -5,6 +5,7 @@ extends PlayerStateMachine
 func _enter_tree() -> void:
 	animation_player.play("attack_2")
 	player.is_combo_requested = false
+	hit_box.monitoring = true
 
 func _physics_process(delta: float) -> void:
 	player.common_stand(delta)
@@ -17,3 +18,7 @@ func _physics_process(delta: float) -> void:
 
 func can_handle_move() -> bool:
 	return false
+
+func _exit_tree() -> void:
+	hit_box.monitoring = false
+	

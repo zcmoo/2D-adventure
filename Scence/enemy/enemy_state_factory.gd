@@ -7,6 +7,8 @@ func _init() -> void:
 		Boar.State.IDLE: BoarStateIDLE,
 		Boar.State.WALK: BoarStateWalk,
 		Boar.State.RUN: BoarStateRun,
+		Boar.State.HURT: BoarStateHurt,
+		Boar.State.DIE: BoarStateDie
 	}
 
 func get_fresh_boar_state(state: Boar.State) -> EnemyStateMachine:

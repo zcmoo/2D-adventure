@@ -13,6 +13,8 @@ func _init() -> void:
 		Player.State.ATTACK_1: PlayerStateAttack_1,
 		Player.State.ATTACK_2: PlayerStateAttack_2,
 		Player.State.ATTACK_3: PlayerStateAttack_3,
+		Player.State.HURT: PlayerStateHurt,
+		Player.State.DIE: PlayerStateDie,
 	}
 
 func get_fresh_state(state: Player.State) -> PlayerStateMachine:

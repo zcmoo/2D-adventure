@@ -11,10 +11,12 @@ enum Direction {LEFT = -1, RIGHT = +1}
 @export var acceleration: float = 2000.0
 @export var damage: int
 @export var health: int
+const KNOCKBACK_AMOUNT = 650.0
 var speed: float
 var gravity = ProjectSettings.get("physics/2d/default_gravity") as float
 var current_state: EnemyStateMachine = null
 var state_factory: EnemyStateFactory = EnemyStateFactory.new()
+var is_hurting: bool = false
 
 
 func _ready() -> void:
@@ -22,8 +24,12 @@ func _ready() -> void:
 	DamageReceiver.enemy_damage_receiver.connect(on_rececive_damage.bind())
 
 func _physics_process(delta: float) -> void:
-	set_heading()
-	handle_move(delta)
+	if is_on_floor():
+		set_heading()
+	if health > 0:
+		handle_move(delta)
+	elif health == 0 or is_hurting:
+		stand(delta)
 	move_and_slide()
 
 func set_heading() -> void:
@@ -39,6 +45,13 @@ func on_emit_damage(target_hurt_box: Area2D) -> void:
 
 func on_rececive_damage(target_hurt_box: Area2D, current_damage: int, current_direction: Vector2) -> void:
 	if hurt_box == target_hurt_box:
-		health = clamp(health - current_damage, 0, health)
-		if health == 0:
-			queue_free()
+		health = clampi(health - current_damage, 0, health)
+		velocity = current_direction * KNOCKBACK_AMOUNT
+		if current_direction.x > 0:
+			direction = Direction.LEFT
+		else:
+			direction = Direction.RIGHT
+
+func stand(delta) -> void:
+	velocity.x = move_toward(velocity.x, 0.0, acceleration * delta)
+	velocity.y += gravity * delta
