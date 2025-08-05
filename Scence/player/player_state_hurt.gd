@@ -5,8 +5,9 @@ extends PlayerStateMachine
 func _enter_tree() -> void:
 	animation_player.play("hurt")
 	invincible_timer.start()
-	player.velocity = player.hurt_direction * player.KNOCKBACK_AMOUNT
+	player.velocity.x = player.hurt_direction.x * player.KNOCKBACK_AMOUNT
 	hurt_box.monitorable = false
+	hit_box.monitoring = false
 	player.is_hurting = true
 
 func _physics_process(delta: float) -> void:

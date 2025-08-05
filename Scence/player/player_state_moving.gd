@@ -16,7 +16,7 @@ func _physics_process(_delta: float) -> void:
 			coyote_timer.stop()
 	if jump_request_timer.time_left > 0:
 		transition_state(Player.State.JUMP)
-	if Input.is_action_just_pressed("攻击"):
+	if attack_request_timer.time_left > 0:
 		transition_state(Player.State.ATTACK_1)
 
 

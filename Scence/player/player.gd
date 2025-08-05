@@ -3,18 +3,17 @@ extends CharacterBody2D
 @export var can_combo: bool
 @export var damage: int
 @export var health: int
+@onready var coyote_timer: Timer = $Timer/CoyoteTimer
+@onready var jump_request_timer: Timer = $Timer/JumpRequestTimer
+@onready var invincible_timer: Timer = $Timer/InvincibleTimer
+@onready var attack_request_timer: Timer = $Timer/AttackRequestTimer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var coyote_timer: Timer = $CoyoteTimer
-@onready var jump_request_timer: Timer = $JumpRequestTimer
 @onready var hand_checker: RayCast2D = $HandChecker
 @onready var foot_checker: RayCast2D = $FootChecker
 @onready var hit_box: Area2D = $HitBox
 @onready var hurt_box: Area2D = $HurtBox
 @onready var attack_shape: CollisionShape2D = $HitBox/AttackShape
-@onready var attack_shape_2: CollisionShape2D = $HitBox/AttackShape2
-@onready var attack_shape_3: CollisionShape2D = $HitBox/AttackShape3
-@onready var invincible_timer: Timer = $InvincibleTimer
 const JUMP_VELOCITY = -380.0
 const WALL_JUMP_VELOCITY = Vector2(400, -280)
 const RUN_SPEED = 160.0
@@ -34,9 +33,11 @@ var is_hurting: bool
 
 func _ready() -> void:
 	switch_state(State.FALL)
+	hurt_box.monitorable = true	
+	hit_box.monitoring = false
 	hit_box.area_entered.connect(on_emit_damage.bind())
 	DamageReceiver.player_damage_receiver.connect(on_rececive_damage.bind())
-	
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("跳跃"):
 		jump_request_timer.start()
@@ -44,15 +45,19 @@ func _unhandled_input(event: InputEvent) -> void:
 		jump_request_timer.stop()
 		if velocity.y < JUMP_VELOCITY / 2:
 			velocity.y = JUMP_VELOCITY / 2
-	if event.is_action_pressed("攻击") and can_combo:
+	if event.is_action_pressed("攻击"):
+		attack_request_timer.start()	
+	if event.is_action_released("攻击"):
+		attack_request_timer.stop()
+	if attack_request_timer.time_left > 0 and can_combo:
 		is_combo_requested = true
 
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("向左移动","向右移动")
 	acceleration = FlOOR_ACCELERARION if is_on_floor() else AIR_ACCELERARION
-	if current_state.should_fall() and not is_on_floor() and not is_on_wall() and not is_hurting:
+	if current_state.should_fall() and not is_on_floor() and not is_on_wall() and not is_hurting and current_state != PlayerStateFall:
 		switch_state(Player.State.FALL)
-	if health == 0:
+	if health == 0 and current_state != PlayerStateDie:
 		switch_state(Player.State.DIE)
 	if current_state.can_handle_move():
 		set_heading()
@@ -66,7 +71,7 @@ func switch_state(state: State) -> void:
 	if current_state != null:
 		current_state.queue_free()
 	current_state = state_factory.get_fresh_state(state)
-	current_state.setup(self, sprite_2d, animation_player, coyote_timer, jump_request_timer, hand_checker, foot_checker, hit_box, hurt_box, invincible_timer)
+	current_state.setup(self, sprite_2d, animation_player, coyote_timer, jump_request_timer, hand_checker, foot_checker, hit_box, hurt_box, invincible_timer, attack_request_timer)
 	current_state.state_transition_requested.connect(switch_state.bind())
 	current_state.name = "PlayerState" + str(State.keys()[state])
 	call_deferred("add_child", current_state) 
@@ -115,5 +120,5 @@ func on_rececive_damage(current_damage: int, current_direction: Vector2) -> void
 		return
 	hurt_direction = current_direction
 	health = clampi(health - current_damage, 0, health)
-	if attack_shape.disabled and attack_shape_2.disabled and attack_shape_3.disabled:
+	if current_state != PlayerStateHurt:
 		switch_state(State.HURT)

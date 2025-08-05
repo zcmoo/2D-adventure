@@ -7,6 +7,7 @@ const DURATION = 2500
 func _enter_tree() -> void:
 	animation_player.play("run")
 	enemy.speed = enemy.max_speed
+	boar_hit_box.monitoring = true
 
 func _physics_process(_delta: float) -> void:
 	if boar_wall_checker.is_colliding() or not boar_floor_checker.is_colliding():
@@ -15,6 +16,11 @@ func _physics_process(_delta: float) -> void:
 		time = Time.get_ticks_msec()
 	if Time.get_ticks_msec() - time > DURATION:
 		transition_boar_state(Boar.State.WALK)
+	
+func _exit_tree() -> void:
+	boar_hit_box.monitoring = false
+
+
 		
 
 

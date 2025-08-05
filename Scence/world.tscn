@@ -609,37 +609,64 @@ region_rect = Rect2(210, 101, 124, 86)
 position = Vector2(7, -254)
 scale = Vector2(1, 1)
 
-[node name="HandChecker" parent="player" index="6"]
+[node name="HandChecker" parent="player" index="5"]
 scale = Vector2(-1, 1)
 
-[node name="FootChecker" parent="player" index="7"]
+[node name="FootChecker" parent="player" index="6"]
 scale = Vector2(-1, 1)
 
 [node name="Boar" parent="." instance=ExtResource("7_5pxw7")]
 position = Vector2(505, -2)
 
+[node name="HitBox" parent="Boar/Graphics" index="4"]
+monitoring = true
+monitorable = true
+
 [node name="HurtBox" parent="Boar/Graphics" index="5"]
+monitoring = true
 script = SubResource("GDScript_5pxw7")
 
 [node name="Boar2" parent="." instance=ExtResource("7_5pxw7")]
 position = Vector2(174, -247)
 
+[node name="HitBox" parent="Boar2/Graphics" index="4"]
+monitoring = true
+monitorable = true
+
 [node name="HurtBox" parent="Boar2/Graphics" index="5"]
+monitoring = true
 script = SubResource("GDScript_5pxw7")
 
 [node name="Boar3" parent="." instance=ExtResource("7_5pxw7")]
 position = Vector2(289, 19)
 
+[node name="HitBox" parent="Boar3/Graphics" index="4"]
+monitoring = true
+monitorable = true
+
+[node name="HurtBox" parent="Boar3/Graphics" index="5"]
+monitoring = true
+
 [node name="Boar4" parent="." instance=ExtResource("7_5pxw7")]
 position = Vector2(617, 15)
 
+[node name="HitBox" parent="Boar4/Graphics" index="4"]
+monitoring = true
+monitorable = true
+
 [node name="HurtBox" parent="Boar4/Graphics" index="5"]
+monitoring = true
 script = SubResource("GDScript_5pxw7")
 
 [node name="Boar5" parent="." instance=ExtResource("7_5pxw7")]
 position = Vector2(365, -147)
 
+[node name="HitBox" parent="Boar5/Graphics" index="4"]
+monitoring = true
+monitorable = true
+
 [node name="HurtBox" parent="Boar5/Graphics" index="5"]
+monitoring = true
 script = SubResource("GDScript_5pxw7")
 
 [editable path="player"]
