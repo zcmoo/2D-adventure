@@ -29,14 +29,19 @@ var acceleration: float
 var is_combo_requested = false
 var hurt_direction: Vector2
 var is_hurting: bool
+var current_health: int
 
+
+func _init() -> void:
+	DamageReceiver.player_damage_receiver.connect(on_rececive_damage.bind())
+	DamageManager.health_change.emit(current_health, health)
 
 func _ready() -> void:
+	current_health = health
 	switch_state(State.FALL)
 	hurt_box.monitorable = true	
 	hit_box.monitoring = false
 	hit_box.area_entered.connect(on_emit_damage.bind())
-	DamageReceiver.player_damage_receiver.connect(on_rececive_damage.bind())
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("跳跃"):
@@ -55,9 +60,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("向左移动","向右移动")
 	acceleration = FlOOR_ACCELERARION if is_on_floor() else AIR_ACCELERARION
-	if current_state.should_fall() and not is_on_floor() and not is_on_wall() and not is_hurting and current_state != PlayerStateFall:
+	if current_state.should_fall() and not is_on_floor() and not is_on_wall() and not is_hurting and current_state != PlayerStateFall and health > 0: 
 		switch_state(Player.State.FALL)
-	if health == 0 and current_state != PlayerStateDie:
+	if current_health == 0 and current_state != PlayerStateDie:
 		switch_state(Player.State.DIE)
 	if current_state.can_handle_move():
 		set_heading()
@@ -119,6 +124,7 @@ func on_rececive_damage(current_damage: int, current_direction: Vector2) -> void
 	if invincible_timer.time_left > 0:
 		return
 	hurt_direction = current_direction
-	health = clampi(health - current_damage, 0, health)
+	current_health = clampi(current_health - current_damage, 0, health)
+	DamageManager.health_change.emit(current_health, health)
 	if current_state != PlayerStateHurt:
 		switch_state(State.HURT)

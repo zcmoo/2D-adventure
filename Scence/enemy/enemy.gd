@@ -41,6 +41,10 @@ func handle_move(delta) -> void:
 	velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
 	velocity.y += gravity * delta
 
+func stand(delta) -> void:
+	velocity.x = move_toward(velocity.x, 0.0, acceleration * delta)
+	velocity.y += gravity * delta
+
 func on_emit_damage(target_hurt_box: Area2D) -> void:
 	var current_direction = Vector2.LEFT if direction == Direction.LEFT else Vector2.RIGHT
 	DamageReceiver.player_damage_receiver.emit(damage, current_direction)
@@ -52,7 +56,3 @@ func on_rececive_damage(target_hurt_box: Area2D, current_damage: int, current_di
 			direction = Direction.LEFT
 		else:
 			direction = Direction.RIGHT
-
-func stand(delta) -> void:
-	velocity.x = move_toward(velocity.x, 0.0, acceleration * delta)
-	velocity.y += gravity * delta

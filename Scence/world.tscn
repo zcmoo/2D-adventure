@@ -607,7 +607,6 @@ region_rect = Rect2(210, 101, 124, 86)
 
 [node name="player" parent="." instance=ExtResource("2_euwfo")]
 position = Vector2(7, -254)
-scale = Vector2(1, 1)
 
 [node name="HandChecker" parent="player" index="5"]
 scale = Vector2(-1, 1)

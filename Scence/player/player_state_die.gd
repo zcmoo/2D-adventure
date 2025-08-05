@@ -6,7 +6,6 @@ func _enter_tree() -> void:
 	animation_player.play("die")
 	hurt_box.monitorable = false
 	invincible_timer.stop()
-	player.velocity.x = player.hurt_direction.x * 200 
 
 func _physics_process(delta: float) -> void:
 	player.common_stand(delta)
