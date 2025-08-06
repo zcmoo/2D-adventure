@@ -17,6 +17,9 @@ func _physics_process(delta: float) -> void:
 func on_animation_complete() -> void:
 	transition_state(Player.State.MOVE)
 
+func can_handle_move() -> bool:
+	return false
+
 func _exit_tree() -> void:
 	hurt_box.monitorable = true
 	player.is_hurting = false

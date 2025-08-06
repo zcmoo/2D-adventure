@@ -18,6 +18,8 @@ func _physics_process(_delta: float) -> void:
 		transition_state(Player.State.JUMP)
 	if attack_request_timer.time_left > 0:
 		transition_state(Player.State.ATTACK_1)
+	if slide_request_timer.time_left > 0 and player.current_energy > player.SLIDE_ENERGY:
+		transition_state(Player.State.SLID_START)
 
 
 

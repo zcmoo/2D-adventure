@@ -15,6 +15,9 @@ func _init() -> void:
 		Player.State.ATTACK_3: PlayerStateAttack_3,
 		Player.State.HURT: PlayerStateHurt,
 		Player.State.DIE: PlayerStateDie,
+		Player.State.SLID_START: PlayerStateSlideStart,
+		Player.State.SLID_LOOP: PlayerStateSlideLOOP,
+		Player.State.SLID_END: PlayerStateSlideEnd,
 	}
 
 func get_fresh_state(state: Player.State) -> PlayerStateMachine:
