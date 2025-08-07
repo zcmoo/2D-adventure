@@ -28,9 +28,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		set_heading()
-	if health > 0:
+	if health > 0 and current_state.can_handle_move():
 		handle_move(delta)
-	elif health == 0 or is_hurting or is_dead:
+	elif health == 0 or is_hurting:
 		stand(delta)
 	move_and_slide()
 

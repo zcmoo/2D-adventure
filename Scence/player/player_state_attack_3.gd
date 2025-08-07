@@ -3,9 +3,9 @@ extends PlayerStateMachine
 
 
 func _enter_tree() -> void:
-	animation_player.play("attack_3")
 	player.is_combo_requested = false
 	hit_box.monitoring = true
+	animation_player.play("attack_3")
 
 func _physics_process(delta: float) -> void:
 	player.common_stand(delta)

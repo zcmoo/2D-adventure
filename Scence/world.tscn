@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bjur6sqs5aeqy"]
+[gd_scene load_steps=13 format=4 uid="uid://bjur6sqs5aeqy"]
 
 [ext_resource type="Script" uid="uid://w6sc0ahaiq77" path="res://Scence/world.gd" id="1_8k32h"]
 [ext_resource type="Texture2D" uid="uid://8ou4ym78die2" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="1_gccee"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dwcs26ahcnms7" path="res://assets/Background-Hills.png" id="5_vhsna"]
 [ext_resource type="Texture2D" uid="uid://boo74nwy4d07o" path="res://assets/Background-Trees.png" id="6_5pxw7"]
 [ext_resource type="PackedScene" uid="uid://gpcdxl8lqrhg" path="res://Scence/enemy/Boar.tscn" id="7_5pxw7"]
+[ext_resource type="Script" uid="uid://dxuvhqre5s0i5" path="res://utils/interactable.gd" id="8_eopwm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_euwfo"]
 texture = ExtResource("1_gccee")
@@ -364,6 +365,8 @@ sources/0 = SubResource("TileSetAtlasSource_euwfo")
 
 [sub_resource type="GDScript" id="GDScript_5pxw7"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eopwm"]
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_8k32h")
 
@@ -667,6 +670,22 @@ monitorable = true
 [node name="HurtBox" parent="Boar5/Graphics" index="5"]
 monitoring = true
 script = SubResource("GDScript_5pxw7")
+
+[node name="Interactable" type="Area2D" parent="."]
+script = ExtResource("8_eopwm")
+metadata/_custom_type_script = "uid://dxuvhqre5s0i5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(27, -40)
+shape = SubResource("RectangleShape2D_eopwm")
+
+[node name="Interactable2" type="Area2D" parent="."]
+script = ExtResource("8_eopwm")
+metadata/_custom_type_script = "uid://dxuvhqre5s0i5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable2"]
+position = Vector2(10, -42)
+shape = SubResource("RectangleShape2D_eopwm")
 
 [editable path="player"]
 [editable path="Boar"]

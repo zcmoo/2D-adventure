@@ -24,3 +24,6 @@ func transition_boar_state(new_state: Boar.State) -> void:
 
 func on_animation_complete() -> void:
 	pass # override me
+
+func can_handle_move() -> bool:
+	return true # override me

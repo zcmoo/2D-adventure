@@ -5,6 +5,7 @@ extends PlayerStateMachine
 func _enter_tree() -> void:
 	animation_player.play("fall")
 	player.fall_from_y = player.global_position.y
+	player.is_fall = true
 
 func _physics_process(_delta: float) -> void:
 	player.move_and_slide()
@@ -18,6 +19,7 @@ func _physics_process(_delta: float) -> void:
 				transition_state(Player.State.JUMP)
 			if height > player.LANDING_HEIGHT:
 				if height > player.DAMMAGE_HEIGHT:
+					player.hurt_direction.x = 0
 					player.current_health = clampi(player.current_health - player.HEIGHT_DAMMAGE, 0, player.health)
 					DamageManager.health_change.emit(player.current_health, player.health)
 				transition_state(Player.State.Land)
@@ -27,6 +29,7 @@ func _physics_process(_delta: float) -> void:
 			transition_state(Player.State.MOVE)
 	if player.is_on_wall() and hand_checker.is_colliding() and foot_checker.is_colliding():
 		transition_state(Player.State.SLIDE)
-		
 
+func _exit_tree() -> void:
+	player.is_fall = false
 	

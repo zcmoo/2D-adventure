@@ -17,6 +17,7 @@ extends CharacterBody2D
 @onready var hit_box: Area2D = $HitBox
 @onready var hurt_box: Area2D = $HurtBox
 @onready var attack_shape: CollisionShape2D = $HitBox/AttackShape
+@onready var interation_icon: AnimatedSprite2D = $InterationIcon
 const JUMP_VELOCITY = -380.0
 const WALL_JUMP_VELOCITY = Vector2(400, -280)
 const RUN_SPEED = 160.0
@@ -24,8 +25,8 @@ const AIR_ACCELERARION = RUN_SPEED / 0.1
 const FlOOR_ACCELERARION = RUN_SPEED / 0.2
 const KNOCKBACK_AMOUNT = 500.0
 const SLIDE_SPEED = 180.0
-const LANDING_HEIGHT = 3.5
-const DAMMAGE_HEIGHT = 4.0
+const LANDING_HEIGHT = 80.0
+const DAMMAGE_HEIGHT = 120.0
 const HEIGHT_DAMMAGE = 20
 const SLIDE_ENERGY = 25.0
 enum State {MOVE, JUMP, FALL, Land, SLIDE, WALL_JUMP, ATTACK_1, ATTACK_2, ATTACK_3, HURT, DIE, SLID_START, SLID_LOOP, SLID_END}
@@ -37,9 +38,12 @@ var acceleration: float
 var is_combo_requested = false
 var hurt_direction: Vector2
 var is_hurting: bool
+var is_dead: bool
+var is_fall: bool
 var current_health: int
 var current_energy: float
 var fall_from_y: float
+var interacting_with: Array[Interactable]   
 
 
 func _init() -> void:
@@ -72,14 +76,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		slide_request_timer.stop()
 	if attack_request_timer.time_left > 0 and can_combo:
 		is_combo_requested = true
+	if event.is_action_pressed("交互") and interacting_with:
+		interacting_with.back().interact()
 
 func _physics_process(delta: float) -> void:
 	energy_revive(delta)
+	interation_icon.visible = not interacting_with.is_empty()
 	direction = Input.get_axis("向左移动","向右移动")
 	acceleration = FlOOR_ACCELERARION if is_on_floor() else AIR_ACCELERARION
-	if current_state.should_fall() and not is_on_floor() and not is_on_wall() and not is_hurting and current_state != PlayerStateFall and health > 0: 
+	if not is_fall and not is_hurting and not is_dead and current_state.should_fall() and not is_on_floor() and not is_on_wall(): 
 		switch_state(Player.State.FALL)
-	if current_health == 0 and current_state != PlayerStateDie:
+	if not is_dead and current_health == 0:
 		switch_state(Player.State.DIE)
 	if current_state.can_handle_move():
 		handle_move(delta)
@@ -100,6 +107,16 @@ func switch_state(state: State) -> void:
 func energy_revive(delta) -> void:
 	current_energy = clampf(current_energy + energy_regen * delta, 0.0, energy)
 	EnergyManager.energy_change.emit(current_energy, energy)
+
+func register_interactable(v: Interactable) -> void:
+	if is_dead:
+		return
+	if v in interacting_with:
+		return
+	interacting_with.append(v)
+
+func unregister_interactable(v: Interactable) -> void:
+	interacting_with.erase(v)
 
 func set_heading() -> void:
 	if not is_zero_approx(direction):
@@ -128,7 +145,7 @@ func handle_move(delta) -> void:
 
 func slide(delta) -> void:
 	set_heading()
-	velocity.x = hand_checker.scale.x * SLIDE_SPEED
+	velocity.x = move_toward(velocity.x, hand_checker.scale.x * SLIDE_SPEED, acceleration * delta)
 	velocity.y += gravity * delta
 
 func common_stand(delta) -> void:
@@ -139,6 +156,10 @@ func common_stand(delta) -> void:
 func wall_stand(delta) -> void:
 	set_wall_slide_heading()
 	velocity.x = move_toward(velocity.x, 0.0, acceleration * delta)
+	velocity.y += gravity * delta
+
+func dead_move(delta) -> void:
+	velocity.x = hurt_direction.x * KNOCKBACK_AMOUNT
 	velocity.y += gravity * delta
 
 func on_animation_complete() -> void:
@@ -155,5 +176,5 @@ func on_rececive_damage(current_damage: int, current_direction: Vector2) -> void
 	hurt_direction = current_direction
 	current_health = clampi(current_health - current_damage, 0, health)
 	DamageManager.health_change.emit(current_health, health)
-	if current_state != PlayerStateHurt:
+	if not is_hurting and not is_dead:
 		switch_state(State.HURT)

@@ -8,8 +8,11 @@ func _enter_tree() -> void:
 	enemy.is_hurting = true
 
 func on_animation_complete() -> void:
-	enemy.is_hurting = false
 	transition_boar_state(Boar.State.RUN)
 
 func _exit_tree() -> void:
 	enemy.hurt_box.monitorable = true
+	enemy.is_hurting = false
+
+func can_handle_move() -> bool:
+	return false 
