@@ -20,6 +20,7 @@ var is_dead: bool = false
 
 
 func _ready() -> void:
+	add_to_group("enemies")
 	hurt_box.monitorable = true	
 	hit_box.monitoring = false	
 	hit_box.area_entered.connect(on_emit_damage.bind())

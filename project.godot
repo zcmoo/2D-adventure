@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 DamageReceiver="*res://utils/damage_receiver.gd"
 DamageManager="*res://utils/damage_manager.gd"
 EnergyManager="*res://utils/energy_manager.gd"
-GameManager="*res://utils/game_manager.gd"
+GameManager="*res://utils/game_manager.tscn"
 
 [display]
 
