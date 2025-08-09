@@ -21,7 +21,7 @@ func _physics_process(_delta: float) -> void:
 				if height > player.DAMMAGE_HEIGHT:
 					player.hurt_direction.x = 0
 					player.current_health = clampi(player.current_health - player.HEIGHT_DAMMAGE, 0, player.health)
-					DamageManager.health_change.emit(player.current_health, player.health)
+					DamageManager.health_change.emit(player, player.current_health, player.health)
 				transition_state(Player.State.Land)
 			else:
 				transition_state(Player.State.MOVE)

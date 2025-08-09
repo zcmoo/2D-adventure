@@ -30,6 +30,7 @@ const DAMMAGE_HEIGHT = 120.0
 const HEIGHT_DAMMAGE = 20
 const SLIDE_ENERGY = 25.0
 enum State {MOVE, JUMP, FALL, Land, SLIDE, WALL_JUMP, ATTACK_1, ATTACK_2, ATTACK_3, HURT, DIE, SLID_START, SLID_LOOP, SLID_END}
+enum Direction {LEFT = -1, RIGHT = +1}
 var gravity = ProjectSettings.get("physics/2d/default_gravity") as float
 var current_state: PlayerStateMachine = null
 var state_factory: PlayerStateFactory = PlayerStateFactory.new()
@@ -47,11 +48,12 @@ var interacting_with: Array[Interactable]
 
 
 func _init() -> void:
+	DamageManager.health_change.emit(self, current_health, health)
 	DamageReceiver.player_damage_receiver.connect(on_rececive_damage.bind())
-	DamageManager.health_change.emit(current_health, health)
 	EnergyManager.energy_change.emit(current_energy, energy)
 
 func _ready() -> void:
+	add_to_group("player")
 	current_health = health
 	current_energy = energy
 	switch_state(State.FALL)
@@ -86,7 +88,7 @@ func _physics_process(delta: float) -> void:
 	acceleration = FlOOR_ACCELERARION if is_on_floor() else AIR_ACCELERARION
 	if not is_fall and not is_hurting and not is_dead and current_state.should_fall() and not is_on_floor() and not is_on_wall(): 
 		switch_state(Player.State.FALL)
-	if not is_dead and current_health == 0:
+	if not is_dead and not is_hurting and current_health == 0:
 		switch_state(Player.State.DIE)
 	if current_state.can_handle_move():
 		handle_move(delta)
@@ -133,6 +135,20 @@ func set_heading() -> void:
 			hit_box.scale.x = -1
 			hurt_box.scale.x = -1
 
+func set_entry_heading(heading: int) -> void:
+	if heading < 0:
+		sprite_2d.flip_h = true
+		hand_checker.scale.x = -1
+		foot_checker.scale.x = -1
+		hit_box.scale.x = 1
+		hurt_box.scale.x = 1
+	else:
+		sprite_2d.flip_h = false
+		hand_checker.scale.x = 1
+		foot_checker.scale.x = 1
+		hit_box.scale.x = -1
+		hurt_box.scale.x = -1
+
 func set_wall_slide_heading() -> void:
 	sprite_2d.flip_h = (get_wall_normal().x == -1.0)
 	hand_checker.scale.x = get_wall_normal().x
@@ -175,6 +191,6 @@ func on_rececive_damage(current_damage: int, current_direction: Vector2) -> void
 		return
 	hurt_direction = current_direction
 	current_health = clampi(current_health - current_damage, 0, health)
-	DamageManager.health_change.emit(current_health, health)
+	DamageManager.health_change.emit(self, current_health, health)
 	if not is_hurting and not is_dead:
 		switch_state(State.HURT)

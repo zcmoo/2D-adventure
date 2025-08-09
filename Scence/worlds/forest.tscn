@@ -1,16 +1,17 @@
 [gd_scene load_steps=13 format=4 uid="uid://bjur6sqs5aeqy"]
 
-[ext_resource type="Script" uid="uid://w6sc0ahaiq77" path="res://Scence/world.gd" id="1_8k32h"]
-[ext_resource type="Texture2D" uid="uid://8ou4ym78die2" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="1_gccee"]
-[ext_resource type="PackedScene" uid="uid://lb2lmkheerjb" path="res://Scence/player/player.tscn" id="2_euwfo"]
-[ext_resource type="Texture2D" uid="uid://c3fau6dilprvq" path="res://assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="4_j3sgp"]
-[ext_resource type="Texture2D" uid="uid://dwcs26ahcnms7" path="res://assets/Background-Hills.png" id="5_vhsna"]
-[ext_resource type="Texture2D" uid="uid://boo74nwy4d07o" path="res://assets/Background-Trees.png" id="6_5pxw7"]
-[ext_resource type="PackedScene" uid="uid://gpcdxl8lqrhg" path="res://Scence/enemy/Boar.tscn" id="7_5pxw7"]
-[ext_resource type="Script" uid="uid://dxuvhqre5s0i5" path="res://utils/interactable.gd" id="8_eopwm"]
+[ext_resource type="Script" uid="uid://w6sc0ahaiq77" path="res://Scence/world.gd" id="1_017eq"]
+[ext_resource type="Texture2D" uid="uid://8ou4ym78die2" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="2_bpbio"]
+[ext_resource type="PackedScene" uid="uid://cnd6u6khdjjw3" path="res://Scence/worlds/mine_gate.tscn" id="3_m042o"]
+[ext_resource type="Script" uid="uid://g7rkw3hxn580" path="res://utils/entery_point.gd" id="4_3p0dx"]
+[ext_resource type="Texture2D" uid="uid://c3fau6dilprvq" path="res://assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="5_lwg74"]
+[ext_resource type="Texture2D" uid="uid://dwcs26ahcnms7" path="res://assets/Background-Hills.png" id="6_qc46u"]
+[ext_resource type="Texture2D" uid="uid://boo74nwy4d07o" path="res://assets/Background-Trees.png" id="7_ohu8a"]
+[ext_resource type="PackedScene" uid="uid://lb2lmkheerjb" path="res://Scence/player/player.tscn" id="8_1ha5j"]
+[ext_resource type="PackedScene" uid="uid://gpcdxl8lqrhg" path="res://Scence/enemy/Boar.tscn" id="9_e7hi8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_euwfo"]
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 1:2/0 = 0
 1:2/0/terrain_set = 0
 1:2/0/terrain = 1
@@ -365,10 +366,8 @@ sources/0 = SubResource("TileSetAtlasSource_euwfo")
 
 [sub_resource type="GDScript" id="GDScript_5pxw7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eopwm"]
-
-[node name="World" type="Node2D"]
-script = ExtResource("1_8k32h")
+[node name="forests" type="Node2D"]
+script = ExtResource("1_017eq")
 
 [node name="TileMap" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -386,6 +385,16 @@ tile_set = SubResource("TileSet_8k32h")
 tile_map_data = PackedByteArray("AAAFAPD/AAAIAAIAAAAGAPD/AAAKAAIAAAALAPD/AAAJAAMAAAAOAPD/AAAJAAMAAAARAPD/AAAJAAIAAAAVAPb/AAAIAAIAAAASAPP/AAAJAAIAAAAUAPP/AAAJAAMAAAAXAPb/AAAJAAIAAAAYAPb/AAAIAAMAAAADAAEAAAAIAAMAAAAHAAEAAAAIAAMAAAALAAEAAAAIAAMAAAANAAEAAAAJAAIAAAASAAEAAAAIAAIAAAATAAEAAAAJAAMAAAAeAP//AAAJAAMAAAAfAP//AAAGAAMAAAAhAP//AAAJAAIAAAAYAP//AAAJAAIAAAAiAP//AAAIAAMAAAAAAP3/AAAJAAIAAAABAP3/AAAIAAMAAAA=")
 tile_set = SubResource("TileSet_8k32h")
 
+[node name="MineGate" parent="TileMap" instance=ExtResource("3_m042o")]
+position = Vector2(730, -16)
+path = "uid://b4yij46hb5egq"
+entry_point = "EntryPoint"
+
+[node name="EntryPoint2" type="Marker2D" parent="TileMap"]
+position = Vector2(680, 32)
+script = ExtResource("4_3p0dx")
+metadata/_custom_type_script = "uid://g7rkw3hxn580"
+
 [node name="Decorations" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
@@ -400,7 +409,7 @@ motion_mirroring = Vector2(480, 0)
 [node name="Background" type="Sprite2D" parent="Decorations/Background/sky"]
 position = Vector2(5, -156)
 scale = Vector2(1.34167, 1.30147)
-texture = ExtResource("4_j3sgp")
+texture = ExtResource("5_lwg74")
 centered = false
 
 [node name="hills" type="ParallaxLayer" parent="Decorations/Background"]
@@ -410,25 +419,25 @@ motion_mirroring = Vector2(370, 0)
 
 [node name="Background" type="Sprite2D" parent="Decorations/Background/hills"]
 position = Vector2(0, -104)
-texture = ExtResource("5_vhsna")
+texture = ExtResource("6_qc46u")
 centered = false
 region_rect = Rect2(800, 0, 96, 256)
 
 [node name="Background2" type="Sprite2D" parent="Decorations/Background/hills"]
 position = Vector2(96, -102)
-texture = ExtResource("5_vhsna")
+texture = ExtResource("6_qc46u")
 centered = false
 region_rect = Rect2(800, 0, 96, 256)
 
 [node name="Background3" type="Sprite2D" parent="Decorations/Background/hills"]
 position = Vector2(192, -102)
-texture = ExtResource("5_vhsna")
+texture = ExtResource("6_qc46u")
 centered = false
 region_rect = Rect2(800, 0, 96, 256)
 
 [node name="Background4" type="Sprite2D" parent="Decorations/Background/hills"]
 position = Vector2(288, -105)
-texture = ExtResource("5_vhsna")
+texture = ExtResource("6_qc46u")
 centered = false
 region_rect = Rect2(800, 0, 96, 256)
 
@@ -438,25 +447,25 @@ motion_mirroring = Vector2(360, 0)
 
 [node name="Background" type="Sprite2D" parent="Decorations/Background/trees"]
 position = Vector2(0, -29)
-texture = ExtResource("6_5pxw7")
+texture = ExtResource("7_ohu8a")
 centered = false
 region_rect = Rect2(112, 0, 96, 256)
 
 [node name="Background2" type="Sprite2D" parent="Decorations/Background/trees"]
 position = Vector2(96, -29)
-texture = ExtResource("6_5pxw7")
+texture = ExtResource("7_ohu8a")
 centered = false
 region_rect = Rect2(112, 0, 96, 256)
 
 [node name="Background3" type="Sprite2D" parent="Decorations/Background/trees"]
 position = Vector2(192, -29)
-texture = ExtResource("6_5pxw7")
+texture = ExtResource("7_ohu8a")
 centered = false
 region_rect = Rect2(112, 0, 96, 256)
 
 [node name="Background4" type="Sprite2D" parent="Decorations/Background/trees"]
 position = Vector2(288, -29)
-texture = ExtResource("6_5pxw7")
+texture = ExtResource("7_ohu8a")
 centered = false
 region_rect = Rect2(112, 0, 96, 256)
 
@@ -464,63 +473,63 @@ region_rect = Rect2(112, 0, 96, 256)
 
 [node name="Tree-assets" type="Sprite2D" parent="Decorations/Background/bushes"]
 position = Vector2(3, -23)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 5, 124, 86)
 
 [node name="Tree-assets9" type="Sprite2D" parent="Decorations/Background/bushes"]
 position = Vector2(183, -19)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 5, 124, 86)
 
 [node name="Tree-assets3" type="Sprite2D" parent="Decorations/Background/bushes"]
 position = Vector2(662, -40)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 5, 124, 86)
 
 [node name="Tree-assets8" type="Sprite2D" parent="Decorations/Background/bushes"]
 position = Vector2(498, -42)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 5, 124, 86)
 
 [node name="Tree-assets4" type="Sprite2D" parent="Decorations/Background/bushes"]
 position = Vector2(409, -43)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 5, 124, 86)
 
 [node name="Tree-assets6" type="Sprite2D" parent="Decorations/Background/bushes"]
 position = Vector2(121, -285)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 5, 124, 86)
 
 [node name="Tree-assets2" type="Sprite2D" parent="Decorations/Background/bushes"]
 position = Vector2(431, -202)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 293, 124, 86)
 
 [node name="Tree-assets7" type="Sprite2D" parent="Decorations/Background/bushes"]
 position = Vector2(667, -121)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 293, 124, 86)
 
 [node name="Tree-assets5" type="Sprite2D" parent="Decorations/Background/bushes"]
 position = Vector2(393, -247)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 293, 124, 86)
@@ -533,82 +542,82 @@ motion_scale = Vector2(1.1, 1.1)
 
 [node name="Tree-assets" type="Sprite2D" parent="Decorations/Forground/bushes"]
 position = Vector2(16, 18)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 197, 124, 86)
 
 [node name="Tree-assets10" type="Sprite2D" parent="Decorations/Forground/bushes"]
 position = Vector2(-64, 13)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 197, 124, 86)
 
 [node name="Tree-assets2" type="Sprite2D" parent="Decorations/Forground/bushes"]
 position = Vector2(154, 10)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 197, 124, 86)
 
 [node name="Tree-assets7" type="Sprite2D" parent="Decorations/Forground/bushes"]
 position = Vector2(243, 5)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 197, 124, 86)
 
 [node name="Tree-assets3" type="Sprite2D" parent="Decorations/Forground/bushes"]
 position = Vector2(81, 12)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 197, 124, 86)
 
 [node name="Tree-assets4" type="Sprite2D" parent="Decorations/Forground/bushes"]
 position = Vector2(315, 6)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 293, 124, 86)
 
 [node name="Tree-assets8" type="Sprite2D" parent="Decorations/Forground/bushes"]
 position = Vector2(565, -2)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 293, 124, 86)
 
 [node name="Tree-assets9" type="Sprite2D" parent="Decorations/Forground/bushes"]
 position = Vector2(654, 4)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 293, 124, 86)
 
 [node name="Tree-assets11" type="Sprite2D" parent="Decorations/Forground/bushes"]
 position = Vector2(717, 6)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 293, 124, 86)
 
 [node name="Tree-assets5" type="Sprite2D" parent="Decorations/Forground/bushes"]
 position = Vector2(398, 3)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 197, 124, 86)
 
 [node name="Tree-assets6" type="Sprite2D" parent="Decorations/Forground/bushes"]
 position = Vector2(484, 3)
-texture = ExtResource("1_gccee")
+texture = ExtResource("2_bpbio")
 centered = false
 region_enabled = true
 region_rect = Rect2(210, 101, 124, 86)
 
-[node name="player" parent="." instance=ExtResource("2_euwfo")]
+[node name="player" parent="." instance=ExtResource("8_1ha5j")]
 position = Vector2(7, -254)
 
 [node name="HandChecker" parent="player" index="5"]
@@ -617,7 +626,10 @@ scale = Vector2(-1, 1)
 [node name="FootChecker" parent="player" index="6"]
 scale = Vector2(-1, 1)
 
-[node name="Boar" parent="." instance=ExtResource("7_5pxw7")]
+[node name="StatusPanel" parent="player/CanvasLayer" index="0" node_paths=PackedStringArray("player")]
+player = NodePath("../..")
+
+[node name="Boar" parent="." instance=ExtResource("9_e7hi8")]
 position = Vector2(505, -2)
 
 [node name="HitBox" parent="Boar/Graphics" index="4"]
@@ -628,18 +640,7 @@ monitorable = true
 monitoring = true
 script = SubResource("GDScript_5pxw7")
 
-[node name="Boar2" parent="." instance=ExtResource("7_5pxw7")]
-position = Vector2(174, -247)
-
-[node name="HitBox" parent="Boar2/Graphics" index="4"]
-monitoring = true
-monitorable = true
-
-[node name="HurtBox" parent="Boar2/Graphics" index="5"]
-monitoring = true
-script = SubResource("GDScript_5pxw7")
-
-[node name="Boar3" parent="." instance=ExtResource("7_5pxw7")]
+[node name="Boar3" parent="." instance=ExtResource("9_e7hi8")]
 position = Vector2(289, 19)
 
 [node name="HitBox" parent="Boar3/Graphics" index="4"]
@@ -649,8 +650,8 @@ monitorable = true
 [node name="HurtBox" parent="Boar3/Graphics" index="5"]
 monitoring = true
 
-[node name="Boar4" parent="." instance=ExtResource("7_5pxw7")]
-position = Vector2(617, 15)
+[node name="Boar4" parent="." instance=ExtResource("9_e7hi8")]
+position = Vector2(616, 32)
 
 [node name="HitBox" parent="Boar4/Graphics" index="4"]
 monitoring = true
@@ -660,7 +661,7 @@ monitorable = true
 monitoring = true
 script = SubResource("GDScript_5pxw7")
 
-[node name="Boar5" parent="." instance=ExtResource("7_5pxw7")]
+[node name="Boar5" parent="." instance=ExtResource("9_e7hi8")]
 position = Vector2(365, -147)
 
 [node name="HitBox" parent="Boar5/Graphics" index="4"]
@@ -671,25 +672,20 @@ monitorable = true
 monitoring = true
 script = SubResource("GDScript_5pxw7")
 
-[node name="Interactable" type="Area2D" parent="."]
-script = ExtResource("8_eopwm")
-metadata/_custom_type_script = "uid://dxuvhqre5s0i5"
+[node name="Boar6" parent="." instance=ExtResource("9_e7hi8")]
+position = Vector2(152, -240)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(27, -40)
-shape = SubResource("RectangleShape2D_eopwm")
+[node name="HitBox" parent="Boar6/Graphics" index="4"]
+monitoring = true
+monitorable = true
 
-[node name="Interactable2" type="Area2D" parent="."]
-script = ExtResource("8_eopwm")
-metadata/_custom_type_script = "uid://dxuvhqre5s0i5"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable2"]
-position = Vector2(10, -42)
-shape = SubResource("RectangleShape2D_eopwm")
+[node name="HurtBox" parent="Boar6/Graphics" index="5"]
+monitoring = true
+script = SubResource("GDScript_5pxw7")
 
 [editable path="player"]
 [editable path="Boar"]
-[editable path="Boar2"]
 [editable path="Boar3"]
 [editable path="Boar4"]
 [editable path="Boar5"]
+[editable path="Boar6"]

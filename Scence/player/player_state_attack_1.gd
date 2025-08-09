@@ -15,13 +15,12 @@ func _physics_process(delta: float) -> void:
 		if player.is_combo_requested:
 			transition_state(Player.State.ATTACK_2)
 		else:
+			hit_box.monitoring = false
 			transition_state(Player.State.MOVE)
 
 func can_handle_move() -> bool:
 	return false
 
-func _exit_tree() -> void:
-	hit_box.monitoring = false
 
 
 	

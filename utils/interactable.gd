@@ -11,7 +11,6 @@ func _ready() -> void:
 
 func interact() -> void:
 	interacted.emit()
-	print("emit!")
 
 func _on_body_entered(body: Object) -> void:
 	if body is Player: 
