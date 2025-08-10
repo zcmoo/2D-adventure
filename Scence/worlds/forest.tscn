@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=4 uid="uid://bjur6sqs5aeqy"]
+[gd_scene load_steps=14 format=4 uid="uid://bjur6sqs5aeqy"]
 
 [ext_resource type="Script" uid="uid://w6sc0ahaiq77" path="res://Scence/world.gd" id="1_017eq"]
 [ext_resource type="Texture2D" uid="uid://8ou4ym78die2" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="2_bpbio"]
+[ext_resource type="PackedScene" uid="uid://25over6hcbj5" path="res://UI/status_panel.tscn" id="2_m042o"]
 [ext_resource type="PackedScene" uid="uid://cnd6u6khdjjw3" path="res://Scence/worlds/mine_gate.tscn" id="3_m042o"]
 [ext_resource type="Script" uid="uid://g7rkw3hxn580" path="res://utils/entery_point.gd" id="4_3p0dx"]
 [ext_resource type="Texture2D" uid="uid://c3fau6dilprvq" path="res://assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="5_lwg74"]
@@ -387,7 +388,7 @@ tile_set = SubResource("TileSet_8k32h")
 
 [node name="MineGate" parent="TileMap" instance=ExtResource("3_m042o")]
 position = Vector2(730, -16)
-path = "uid://b4yij46hb5egq"
+path = "uid://bhoiix73f4lt0"
 entry_point = "EntryPoint"
 
 [node name="EntryPoint2" type="Marker2D" parent="TileMap"]
@@ -626,9 +627,6 @@ scale = Vector2(-1, 1)
 [node name="FootChecker" parent="player" index="6"]
 scale = Vector2(-1, 1)
 
-[node name="StatusPanel" parent="player/CanvasLayer" index="0" node_paths=PackedStringArray("player")]
-player = NodePath("../..")
-
 [node name="Boar" parent="." instance=ExtResource("9_e7hi8")]
 position = Vector2(505, -2)
 
@@ -682,6 +680,8 @@ monitorable = true
 [node name="HurtBox" parent="Boar6/Graphics" index="5"]
 monitoring = true
 script = SubResource("GDScript_5pxw7")
+
+[node name="StatusPanel" parent="." instance=ExtResource("2_m042o")]
 
 [editable path="player"]
 [editable path="Boar"]

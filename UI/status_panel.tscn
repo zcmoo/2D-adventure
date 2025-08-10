@@ -36,12 +36,13 @@ region = Rect2(307, 6, 58, 4)
 atlas = ExtResource("2_1u1vb")
 region = Rect2(308, 135, 56, 2)
 
-[node name="StatusPanel" type="HBoxContainer"]
+[node name="StatusPanel" type="CanvasLayer"]
 script = ExtResource("1_moavk")
 
 [node name="AvatarBox" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(26, 26)
-layout_mode = 2
+offset_right = 26.0
+offset_bottom = 27.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ntcf7")
 
 [node name="Avatar" type="TextureRect" parent="AvatarBox"]
@@ -50,10 +51,12 @@ texture = SubResource("AtlasTexture_alxs0")
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
+offset_left = 30.0
+offset_right = 88.0
+offset_bottom = 27.0
 alignment = 1
 
-[node name="HealthBar" type="TextureProgressBar" parent="VBoxContainer"]
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 max_value = 1.0
@@ -63,7 +66,7 @@ texture_over = SubResource("AtlasTexture_vehos")
 texture_progress = SubResource("AtlasTexture_uhj2c")
 texture_progress_offset = Vector2(1, 1)
 
-[node name="EasedHealthBar" type="TextureProgressBar" parent="VBoxContainer/HealthBar"]
+[node name="EasedHealthBar" type="TextureProgressBar" parent="VBoxContainer/PlayerHealthBar"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -86,3 +89,38 @@ value = 1.0
 texture_over = SubResource("AtlasTexture_1u1vb")
 texture_progress = SubResource("AtlasTexture_0wo71")
 texture_progress_offset = Vector2(1, 1)
+
+[node name="BossHealthBar" type="ProgressBar" parent="."]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -27.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+max_value = 1.0
+step = 0.0
+value = 1.0
+
+[node name="Label" type="Label" parent="BossHealthBar"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -49.0
+offset_right = -34.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "Stone Golem"
+vertical_alignment = 1

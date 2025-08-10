@@ -48,7 +48,6 @@ var interacting_with: Array[Interactable]
 
 
 func _init() -> void:
-	DamageManager.health_change.emit(self, current_health, health)
 	DamageReceiver.player_damage_receiver.connect(on_rececive_damage.bind())
 	EnergyManager.energy_change.emit(current_energy, energy)
 
