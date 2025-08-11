@@ -13,21 +13,23 @@ func _ready() -> void:
 	camera_2d.limit_left = used.position.x * tile_size.x
 	camera_2d.reset_smoothing()
 	camera_2d.force_update_scroll()
-# 场景转化后玩家更新
-func update_player(pos: Vector2, direction: Player.Direction, player_current_health: int) -> void:
+
+func update_player(pos: Vector2, direction: Player.Direction, player_current_health: int, player_current_energy: int) -> void:
 	player.current_health = player_current_health
 	DamageManager.health_change.emit(player, player.current_health, player.health, true)
+	player.current_energy = player_current_energy
+	EnergyManager.energy_change.emit(player.current_energy, player.energy)
 	player.global_position = pos
 	player.set_entry_heading(direction)
 	camera_2d.reset_smoothing()
 	camera_2d.force_update_scroll()
-# 保持场景状态
+
 func to_dict() -> Dictionary:
 	var enemies_alive = []
 	var player_current_health: int
 	var tree = get_tree()
 	for node in tree.get_nodes_in_group("enemies"):
-		var path = get_path_to(node)
+		var path = get_path_to(node) as String
 		enemies_alive.append(path)
 	var players = tree.get_nodes_in_group("player")
 	var player = players[0]
@@ -40,7 +42,7 @@ func to_dict() -> Dictionary:
 func from_dict(dict: Dictionary) -> void:
 	var tree = get_tree()
 	for node in tree.get_nodes_in_group("enemies"):
-		var path = get_path_to(node)
+		var path = get_path_to(node) as String
 		if path not in dict.enemies_alive:
 			node.queue_free()
 	var players = tree.get_nodes_in_group("player")
@@ -48,7 +50,7 @@ func from_dict(dict: Dictionary) -> void:
 	player.current_health = dict.player_current_health
 	DamageManager.health_change.emit(player, player.current_health, player.health, true)
 		
-	
+
 	
 
 	

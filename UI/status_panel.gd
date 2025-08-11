@@ -2,10 +2,12 @@ extends CanvasLayer
 @export var player: Player
 @export var boss: Boss
 @onready var player_health_bar: TextureProgressBar = $VBoxContainer/PlayerHealthBar
-@onready var eased_health_bar: TextureProgressBar = $VBoxContainer/PlayerHealthBar/EasedHealthBar
+@onready var player_eased_health_bar: TextureProgressBar = $VBoxContainer/PlayerHealthBar/PlayerEasedHealthBar
 @onready var energy_bar: TextureProgressBar = $VBoxContainer/EnergyBar
-@onready var boss_health_bar: ProgressBar = $BossHealthBar
-@onready var boss_label: Label = $BossHealthBar/BossLabel
+@onready var boss_health_bar: TextureProgressBar = $VBoxContainer2/BossHealthBar
+@onready var boss_ease_health_bar: TextureProgressBar = $VBoxContainer2/BossHealthBar/BossEaseHealthBar
+@onready var sprite_2d: Sprite2D = $VBoxContainer2/Sprite2D
+@onready var v_box_container_2: VBoxContainer = $VBoxContainer2
 
 
 func _init() -> void:
@@ -17,17 +19,16 @@ func on_health_change(character: CharacterBody2D, current_health: int, max_healt
 	if character == player:
 		player_health_bar.value = percentage
 		if not skip_animation:
-			create_tween().tween_property(eased_health_bar, "value", percentage, 0.3)
+			create_tween().tween_property(player_eased_health_bar, "value", percentage, 0.3)
 		else:
-			eased_health_bar.value = percentage
+			player_eased_health_bar.value = percentage
 	if character == boss:
 		boss_health_bar.value = percentage
+		create_tween().tween_property(boss_ease_health_bar, "value", percentage, 0.3)
 		if current_health > 0:
-			boss_health_bar.visible = true
-			boss_label.visible = true
+			v_box_container_2.visible = true
 		else:
-			boss_health_bar.visible = false
-			boss_label.visible = false
+			v_box_container_2.visible = false
 
 func on_energy_change(current_energy: float, max_energy: float) -> void:
 	var percentage = current_energy / float(max_energy)

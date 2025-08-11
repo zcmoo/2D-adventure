@@ -12,12 +12,18 @@ func exit():
 
 func transition():
 	var distance = owner.direction.length()
-	#if distance < 30:
-		#get_parent().change_state("MeleeAttack")
-	if distance < 15:
-		var chance = randi() % 2
+	if distance > 200:
+		get_parent().change_state("Dash")
+	elif distance < 150 and distance > 100:
+		get_parent().change_state("HomingMissile")
+	elif distance <= 50:
+		var chance = randi() % 3
 		match chance:
 			0:
 				get_parent().change_state("HomingMissile")
 			1:
 				get_parent().change_state("LaserBean")
+			2:
+				get_parent().change_state("LaserBean")
+	else:
+		pass

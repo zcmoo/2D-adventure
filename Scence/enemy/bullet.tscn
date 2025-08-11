@@ -60,7 +60,6 @@ size = Vector2(37, 14)
 collision_layer = 0
 collision_mask = 10
 script = ExtResource("1_ku0s2")
-damage = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mx04w")

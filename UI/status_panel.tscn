@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://25over6hcbj5"]
+[gd_scene load_steps=15 format=3 uid="uid://25over6hcbj5"]
 
 [ext_resource type="Script" uid="uid://bwh40q24putx" path="res://UI/status_panel.gd" id="1_moavk"]
 [ext_resource type="Texture2D" uid="uid://cj1lv8uytpjhc" path="res://assets/Legacy-Fantasy - High Forest 2.3/HUD/Base-01.png" id="2_1u1vb"]
 [ext_resource type="Texture2D" uid="uid://cyerq502ex70b" path="res://assets/generic_char_v0.2/png/blue/char_blue_1.png" id="3_0wo71"]
+[ext_resource type="Texture2D" uid="uid://u3cfosns5im0" path="res://assets/Mecha-stone Golem 0.1/石头人艺术字.png" id="4_1u1vb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ntcf7"]
 content_margin_left = 3.0
@@ -36,6 +37,18 @@ region = Rect2(307, 6, 58, 4)
 atlas = ExtResource("2_1u1vb")
 region = Rect2(308, 135, 56, 2)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mctm"]
+atlas = ExtResource("2_1u1vb")
+region = Rect2(307, 21, 58, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1l86m"]
+atlas = ExtResource("2_1u1vb")
+region = Rect2(308, 86, 56, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2dw0"]
+atlas = ExtResource("2_1u1vb")
+region = Rect2(308, 150, 56, 4)
+
 [node name="StatusPanel" type="CanvasLayer"]
 script = ExtResource("1_moavk")
 
@@ -66,7 +79,7 @@ texture_over = SubResource("AtlasTexture_vehos")
 texture_progress = SubResource("AtlasTexture_uhj2c")
 texture_progress_offset = Vector2(1, 1)
 
-[node name="EasedHealthBar" type="TextureProgressBar" parent="VBoxContainer/PlayerHealthBar"]
+[node name="PlayerEasedHealthBar" type="TextureProgressBar" parent="VBoxContainer/PlayerHealthBar"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -90,38 +103,53 @@ texture_over = SubResource("AtlasTexture_1u1vb")
 texture_progress = SubResource("AtlasTexture_0wo71")
 texture_progress_offset = Vector2(1, 1)
 
-[node name="BossHealthBar" type="ProgressBar" parent="."]
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
 visible = false
-custom_minimum_size = Vector2(200, 0)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -27.0
-offset_right = 100.0
+offset_left = -91.0
+offset_top = -21.0
+offset_right = 109.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(4.5, 3)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="BossHealthBar" type="TextureProgressBar" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
 size_flags_vertical = 8
 max_value = 1.0
 step = 0.0
 value = 1.0
+texture_over = SubResource("AtlasTexture_3mctm")
+texture_progress = SubResource("AtlasTexture_1l86m")
+texture_progress_offset = Vector2(1, 1)
 
-[node name="BossLabel" type="Label" parent="BossHealthBar"]
-visible = false
+[node name="BossEaseHealthBar" type="TextureProgressBar" parent="VBoxContainer2/BossHealthBar"]
+show_behind_parent = true
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -96.0
-offset_top = -49.0
-offset_right = -34.0
-offset_bottom = -26.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 10
-text = "Stone Golem"
-vertical_alignment = 1
+grow_vertical = 2
+size_flags_vertical = 8
+max_value = 1.0
+step = 0.0
+value = 1.0
+texture_over = SubResource("AtlasTexture_3mctm")
+texture_progress = SubResource("AtlasTexture_e2dw0")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer2"]
+position = Vector2(-7.33333, 3.33333)
+scale = Vector2(0.0329548, 0.0460922)
+texture = ExtResource("4_1u1vb")
