@@ -23,3 +23,6 @@ func on_animation_complete() -> void:
 
 func can_handle_move() -> bool:
 	return false
+
+func should_fall() -> bool:
+	return false

@@ -1,7 +1,7 @@
 class_name BossState
 extends Node2D
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
-@onready var debug: Label = %debug
+@onready var boss_debug: Label = %BossDebug
 @onready var player = owner.player
 
 
@@ -19,4 +19,4 @@ func transition():
 
 func _physics_process(_delta: float) -> void:
 	transition()
-	debug.text = name
+	boss_debug.text = name

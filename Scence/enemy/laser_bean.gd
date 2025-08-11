@@ -14,9 +14,12 @@ func play_animation(anim_name):
 	await animation_player.animation_finished
 
 func set_target():
-	pivot.rotation = (owner.direction - pivot.position).angle()
+	pivot.rotation = (owner.direction_shoot - pivot.position).angle()
+	owner.hit_box.rotation = pivot.rotation
+	owner.hit_box.monitoring = true
 
 func transition():
 	if can_transition:
 		can_transition = false
+		owner.hit_box.monitoring = false
 		get_parent().change_state("Dash")

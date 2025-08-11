@@ -12,6 +12,8 @@ func _physics_process(_delta: float) -> void:
 	if player.coyote_timer.time_left > 0 and jump_request_timer.time_left > 0:
 		player.velocity.y = player.JUMP_VELOCITY
 		transition_state(Player.State.JUMP)
+	if attack_request_timer.time_left > 0:
+		transition_state(Player.State.ATTACK_1)
 	if player.is_on_floor():
 		var height = player.global_position.y - player.fall_from_y
 		if player.velocity == Vector2.ZERO:

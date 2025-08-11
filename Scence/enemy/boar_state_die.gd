@@ -7,7 +7,6 @@ func _enter_tree() -> void:
 	boar_hurt_box.monitorable = false
 	enemy.is_dead = true
 	
-
 func on_animation_complete() -> void:
 	enemy.is_dead = false
 	enemy.queue_free()

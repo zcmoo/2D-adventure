@@ -19,3 +19,6 @@ func can_handle_move() -> bool:
 
 func _exit_tree() -> void:
 	hit_box.monitoring = false
+
+func should_fall() -> bool:
+	return false

@@ -621,10 +621,10 @@ region_rect = Rect2(210, 101, 124, 86)
 [node name="player" parent="." instance=ExtResource("8_1ha5j")]
 position = Vector2(7, -254)
 
-[node name="HandChecker" parent="player" index="5"]
+[node name="HandChecker" parent="player" index="6"]
 scale = Vector2(-1, 1)
 
-[node name="FootChecker" parent="player" index="6"]
+[node name="FootChecker" parent="player" index="7"]
 scale = Vector2(-1, 1)
 
 [node name="Boar" parent="." instance=ExtResource("9_e7hi8")]
@@ -681,7 +681,8 @@ monitorable = true
 monitoring = true
 script = SubResource("GDScript_5pxw7")
 
-[node name="StatusPanel" parent="." instance=ExtResource("2_m042o")]
+[node name="StatusPanel" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_m042o")]
+player = NodePath("../player")
 
 [editable path="player"]
 [editable path="Boar"]

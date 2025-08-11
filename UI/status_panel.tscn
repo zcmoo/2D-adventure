@@ -108,7 +108,8 @@ max_value = 1.0
 step = 0.0
 value = 1.0
 
-[node name="Label" type="Label" parent="BossHealthBar"]
+[node name="BossLabel" type="Label" parent="BossHealthBar"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

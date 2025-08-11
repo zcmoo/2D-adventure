@@ -7,7 +7,7 @@ func enter():
 	animation_player.play("armor_buff")
 	await animation_player.animation_finished
 	can_transition = true
-	
+
 func transition():
 	if can_transition:
 		can_transition = false

@@ -710,16 +710,16 @@ position = Vector2(848, 512)
 position = Vector2(984, 512)
 
 [node name="player" parent="." instance=ExtResource("8_yq2g8")]
-position = Vector2(1840, 512)
+position = Vector2(1544, 512)
 
-[node name="HandChecker" parent="player" index="5"]
+[node name="HandChecker" parent="player" index="6"]
 scale = Vector2(-1, 1)
 
-[node name="FootChecker" parent="player" index="6"]
+[node name="FootChecker" parent="player" index="7"]
 scale = Vector2(-1, 1)
 
 [node name="Boss" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_wm5s2")]
-position = Vector2(1640, 384)
+position = Vector2(1400, 416)
 player = NodePath("../player")
 
 [node name="StatusPanel" parent="." node_paths=PackedStringArray("player", "boss") instance=ExtResource("2_2rwh3")]

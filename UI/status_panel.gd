@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var eased_health_bar: TextureProgressBar = $VBoxContainer/PlayerHealthBar/EasedHealthBar
 @onready var energy_bar: TextureProgressBar = $VBoxContainer/EnergyBar
 @onready var boss_health_bar: ProgressBar = $BossHealthBar
+@onready var boss_label: Label = $BossHealthBar/BossLabel
 
 
 func _init() -> void:
@@ -21,7 +22,12 @@ func on_health_change(character: CharacterBody2D, current_health: int, max_healt
 			eased_health_bar.value = percentage
 	if character == boss:
 		boss_health_bar.value = percentage
-		boss_health_bar.visible = true
+		if current_health > 0:
+			boss_health_bar.visible = true
+			boss_label.visible = true
+		else:
+			boss_health_bar.visible = false
+			boss_label.visible = false
 
 func on_energy_change(current_energy: float, max_energy: float) -> void:
 	var percentage = current_energy / float(max_energy)

@@ -58,8 +58,9 @@ size = Vector2(37, 14)
 
 [node name="Bullet" type="Area2D"]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 10
 script = ExtResource("1_ku0s2")
+damage = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mx04w")
@@ -69,4 +70,5 @@ autoplay = "default"
 position = Vector2(27.5, -13)
 shape = SubResource("RectangleShape2D_r0sn8")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

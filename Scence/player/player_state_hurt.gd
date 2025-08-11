@@ -23,3 +23,6 @@ func can_handle_move() -> bool:
 func _exit_tree() -> void:
 	hurt_box.monitorable = true
 	player.is_hurting = false
+
+func should_fall() -> bool:
+	return false
