@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var hit_box: Area2D = $HitBox
 @onready var hurt_box: Area2D = $HurtBox
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var point_light_2d: PointLight2D = $PointLight2D
+@onready var point_light_2d_2: PointLight2D = $HitBox/PointLight2D2
 const SPEED = 80
 const KNOCKBACK_AMOUNT = 1500
 var direction: Vector2
@@ -20,6 +22,8 @@ func _ready() -> void:
 	current_health = health
 	hit_box.area_entered.connect(on_emit_damage.bind())
 	DamageReceiver.enemy_damage_receiver.connect(on_rececive_damage.bind())
+	point_light_2d.visible = false
+	point_light_2d_2.visible = false
 	set_physics_process(false)
 
 func _process(_delta: float) -> void:

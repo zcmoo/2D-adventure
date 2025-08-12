@@ -29,7 +29,10 @@ func on_rececive_damage(target_hurt_box: Area2D, current_damage: int, current_di
 	super.on_rececive_damage(target_hurt_box, current_damage, current_direction)
 	if not is_hurting and not is_dead and hurt_box == target_hurt_box:
 		velocity = current_direction * KNOCKBACK_AMOUNT
-		switch_state(State.HURT)
+		if health > 0:
+			switch_state(State.HURT)
+		else:
+			switch_state(State.DIE)
 
 func on_animation_complete() -> void:
 	if current_state != null:

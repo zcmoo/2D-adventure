@@ -83,6 +83,6 @@ func load_game() -> void:
 		)
 	})
 
-#func _unhandled_input(event: InputEvent) -> void:
-	#if event.is_action_pressed("ui_left"):
-		#load_game()
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_right"):
+		load_game()

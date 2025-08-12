@@ -91,8 +91,6 @@ func _physics_process(delta: float) -> void:
 	acceleration = FlOOR_ACCELERARION if is_on_floor() else AIR_ACCELERARION
 	if not is_fall and current_state.should_fall() and not is_on_floor() and not is_on_wall(): 
 		switch_state(Player.State.FALL)
-	if not is_dead and not is_hurting and current_health == 0:
-		switch_state(Player.State.DIE)
 	if current_state.can_handle_move():
 		handle_move(delta)
 	if invincible_timer.time_left > 0:
@@ -196,5 +194,7 @@ func on_rececive_damage(current_damage: int, current_direction: Vector2) -> void
 	hurt_direction = current_direction
 	current_health = clampi(current_health - current_damage, 0, health)
 	DamageManager.health_change.emit(self, current_health, health)
-	if not is_hurting and not is_dead:
+	if current_health > 0 and not is_hurting:
 		switch_state(State.HURT)
+	elif current_health == 0:
+		switch_state(State.DIE)

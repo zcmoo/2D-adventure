@@ -50,6 +50,7 @@ atlas = ExtResource("2_1u1vb")
 region = Rect2(308, 150, 56, 4)
 
 [node name="StatusPanel" type="CanvasLayer"]
+layer = 20
 script = ExtResource("1_moavk")
 
 [node name="AvatarBox" type="PanelContainer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b7cp1116h8e6q"]
+[gd_scene load_steps=32 format=3 uid="uid://b7cp1116h8e6q"]
 
 [ext_resource type="Texture2D" uid="uid://48bs33e0lld1" path="res://assets/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" id="2_eyl83"]
 [ext_resource type="Script" uid="uid://dpn0aswd6wf0k" path="res://Scence/enemy/boss.gd" id="2_o2o5t"]
@@ -16,6 +16,16 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oxtqr"]
 size = Vector2(249, 15)
+
+[sub_resource type="Gradient" id="Gradient_i0s8v"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i0s8v"]
+gradient = SubResource("Gradient_i0s8v")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o2o5t"]
 radius = 20.0
@@ -62,6 +72,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitBox/PointLight2D2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_mk0ry"]
@@ -250,6 +272,18 @@ tracks/1/keys = {
 "method": &"set_target"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitBox/PointLight2D2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 0.654852),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_2jpx4"]
 resource_name = "laser_cast"
@@ -356,6 +390,13 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_ugvon"]
 radius = 100.0
 
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oxtqr"]
+gradient = SubResource("Gradient_i0s8v")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
 [node name="Boss" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 0
@@ -367,14 +408,22 @@ health = 200
 [node name="HitBox" type="Area2D" parent="."]
 position = Vector2(2, -17)
 collision_layer = 0
-collision_mask = 8
+collision_mask = 24
 monitoring = false
 monitorable = false
 
 [node name="LaserBeanCollisionShape" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(124, 0)
 shape = SubResource("RectangleShape2D_oxtqr")
-debug_color = Color(0.297055, 0.0460471, 0.0670063, 0.42)
+debug_color = Color(1, 0.264753, 0.445802, 0.42)
+
+[node name="PointLight2D2" type="PointLight2D" parent="HitBox"]
+position = Vector2(135.688, 0)
+scale = Vector2(1.16992, 0.078125)
+color = Color(0.0735702, 0.444994, 0.744392, 1)
+energy = 5.0
+texture = SubResource("GradientTexture2D_i0s8v")
+texture_scale = 3.0
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 16
@@ -463,5 +512,13 @@ script = ExtResource("11_mk0ry")
 
 [node name="Death" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("13_i0s8v")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+scale = Vector2(1, 0.75)
+color = Color(0.0735702, 0.444994, 0.744392, 1)
+energy = 2.0
+texture = SubResource("GradientTexture2D_oxtqr")
+texture_scale = 3.0
 
 [connection signal="body_entered" from="PlayerDectetion" to="FiniteStateMachine/Idle" method="_on_player_dectetion_body_entered"]

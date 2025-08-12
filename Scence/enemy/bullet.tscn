@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://2r8g8au6iqmc"]
+[gd_scene load_steps=13 format=3 uid="uid://2r8g8au6iqmc"]
 
 [ext_resource type="Script" uid="uid://dtheqe4qernql" path="res://Scence/enemy/bullet.gd" id="1_ku0s2"]
 [ext_resource type="Texture2D" uid="uid://c7lpeqa2g4vei" path="res://assets/Mecha-stone Golem 0.1/weapon PNG/arm_projectile_glowing.png" id="1_r0sn8"]
@@ -56,10 +56,21 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0sn8"]
 size = Vector2(37, 14)
 
+[sub_resource type="Gradient" id="Gradient_rkb54"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ku0s2"]
+gradient = SubResource("Gradient_rkb54")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 1)
+metadata/_snap_enabled = true
+
 [node name="Bullet" type="Area2D"]
 collision_layer = 0
 collision_mask = 10
 script = ExtResource("1_ku0s2")
+damage = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mx04w")
@@ -68,6 +79,14 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(27.5, -13)
 shape = SubResource("RectangleShape2D_r0sn8")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(27.5, -13)
+scale = Vector2(0.192708, 0.0729166)
+color = Color(0.0735702, 0.444994, 0.744392, 1)
+energy = 3.0
+texture = SubResource("GradientTexture2D_ku0s2")
+texture_scale = 3.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

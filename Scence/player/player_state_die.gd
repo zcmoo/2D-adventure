@@ -9,6 +9,7 @@ func _enter_tree() -> void:
 	player.is_dead = true
 	player.interacting_with.clear()
 	hurt_box.monitorable = false
+	hit_box.monitoring = false
 	invincible_timer.stop()
 
 func _physics_process(delta: float) -> void:
@@ -17,7 +18,6 @@ func _physics_process(delta: float) -> void:
 		player.move_and_slide()
 
 func on_animation_complete() -> void:
-	hurt_box.monitorable = true
 	player.is_dead = false
 	get_tree().reload_current_scene()
 
@@ -26,3 +26,9 @@ func can_handle_move() -> bool:
 
 func should_fall() -> bool:
 	return false
+
+func _exit_tree() -> void:
+	await animation_player.animation_finished
+	player.is_dead = false
+	get_tree().reload_current_scene()
+	
