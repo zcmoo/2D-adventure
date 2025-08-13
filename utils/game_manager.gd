@@ -2,6 +2,7 @@ extends Node
 @onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 var world_states = {}
 const SAVE_PATH = "user://data.sav"
+signal camera_should_shake(amount: float)
 
 
 func _ready() -> void:
@@ -83,6 +84,5 @@ func load_game() -> void:
 		)
 	})
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_right"):
-		load_game()
+func shake_camera(amount: float) -> void:
+	camera_should_shake.emit(amount)

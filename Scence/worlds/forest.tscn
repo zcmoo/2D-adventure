@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bjur6sqs5aeqy"]
+[gd_scene load_steps=16 format=4 uid="uid://bjur6sqs5aeqy"]
 
 [ext_resource type="Script" uid="uid://w6sc0ahaiq77" path="res://Scence/world.gd" id="1_017eq"]
 [ext_resource type="AudioStream" uid="uid://bama5iv0jqs0u" path="res://assets/bgm/21 11 forest LOOP.mp3" id="2_3p0dx"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://lb2lmkheerjb" path="res://Scence/player/player.tscn" id="8_1ha5j"]
 [ext_resource type="PackedScene" uid="uid://gpcdxl8lqrhg" path="res://Scence/enemy/Boar.tscn" id="9_e7hi8"]
 [ext_resource type="PackedScene" uid="uid://cjgdrumjrr5iy" path="res://Scence/worlds/save_stone.tscn" id="11_m042o"]
-[ext_resource type="Texture2D" uid="uid://bpgynwsk14okv" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Idle/Idle-Sheet-export-Back.png" id="12_lwg74"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_euwfo"]
 texture = ExtResource("2_bpbio")
@@ -637,9 +636,6 @@ scale = Vector2(-1, 1)
 [node name="Boar" parent="." instance=ExtResource("9_e7hi8")]
 position = Vector2(505, -2)
 
-[node name="Sprite2D" parent="Boar/Graphics" index="0"]
-texture = ExtResource("12_lwg74")
-
 [node name="HitBox" parent="Boar/Graphics" index="4"]
 monitoring = true
 monitorable = true
@@ -651,9 +647,6 @@ script = SubResource("GDScript_5pxw7")
 [node name="Boar3" parent="." instance=ExtResource("9_e7hi8")]
 position = Vector2(289, 19)
 
-[node name="Sprite2D" parent="Boar3/Graphics" index="0"]
-texture = ExtResource("12_lwg74")
-
 [node name="HitBox" parent="Boar3/Graphics" index="4"]
 monitoring = true
 monitorable = true
@@ -663,9 +656,6 @@ monitoring = true
 
 [node name="Boar4" parent="." instance=ExtResource("9_e7hi8")]
 position = Vector2(616, 32)
-
-[node name="Sprite2D" parent="Boar4/Graphics" index="0"]
-texture = ExtResource("12_lwg74")
 
 [node name="HitBox" parent="Boar4/Graphics" index="4"]
 monitoring = true
@@ -678,9 +668,6 @@ script = SubResource("GDScript_5pxw7")
 [node name="Boar5" parent="." instance=ExtResource("9_e7hi8")]
 position = Vector2(600, -144)
 
-[node name="Sprite2D" parent="Boar5/Graphics" index="0"]
-texture = ExtResource("12_lwg74")
-
 [node name="HitBox" parent="Boar5/Graphics" index="4"]
 monitoring = true
 monitorable = true
@@ -691,9 +678,6 @@ script = SubResource("GDScript_5pxw7")
 
 [node name="Boar6" parent="." instance=ExtResource("9_e7hi8")]
 position = Vector2(152, -240)
-
-[node name="Sprite2D" parent="Boar6/Graphics" index="0"]
-texture = ExtResource("12_lwg74")
 
 [node name="HitBox" parent="Boar6/Graphics" index="4"]
 monitoring = true
