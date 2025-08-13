@@ -9,6 +9,7 @@ func _enter_tree() -> void:
 	player.velocity = player.WALL_JUMP_VELOCITY
 	player.velocity.x *= player.get_wall_normal().x
 	animation_player.play("jump")
+	SoundManager.play_sfx("Jump")
 
 func _physics_process(delta: float) -> void:
 	player.wall_stand(delta)

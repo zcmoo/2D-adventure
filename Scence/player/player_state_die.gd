@@ -6,6 +6,7 @@ const DURATION_DEAD_MOVE = 300
 
 func _enter_tree() -> void:
 	animation_player.play("die")
+	SoundManager.play_sfx("Die")
 	player.is_dead = true
 	player.interacting_with.clear()
 	hurt_box.monitorable = false

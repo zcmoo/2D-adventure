@@ -5,6 +5,8 @@ extends PlayerStateMachine
 func _enter_tree() -> void:
 	slide_request_timer.stop()
 	animation_player.play("slid_start")
+	SoundManager.play_sfx("Slide")
+	hurt_box.monitorable = false
 	player.current_energy = clampf(player.current_energy - player.SLIDE_ENERGY, 0, player.energy)
 	EnergyManager.energy_change.emit(player.current_energy, player.energy)
 

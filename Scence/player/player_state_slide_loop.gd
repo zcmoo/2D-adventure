@@ -7,7 +7,6 @@ const DURATION_SLIDE_LOOP_STATE = 500
 func _enter_tree() -> void:
 	time_since_slide_loop_state = Time.get_ticks_msec()
 	animation_player.play("slide_loop")
-	hurt_box.monitorable = false
 
 func _physics_process(delta: float) -> void:
 	player.slide(delta)
@@ -17,6 +16,3 @@ func _physics_process(delta: float) -> void:
 
 func can_handle_move() -> bool:
 	return false
-
-func _exit_tree() -> void:
-	hurt_box.monitorable = true	

@@ -6,6 +6,7 @@ var can_transition: bool = false
 func enter():
 	super.enter()
 	await play_animation("laser_cast")
+	SoundManager.play_sfx("Laser")
 	await play_animation("laser")
 	can_transition = true
 

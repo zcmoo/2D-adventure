@@ -17,6 +17,7 @@ var current_state: EnemyStateMachine = null
 var state_factory: EnemyStateFactory = EnemyStateFactory.new()
 var is_hurting: bool = false
 var is_dead: bool = false
+var is_shout = false
 
 
 func _ready() -> void:

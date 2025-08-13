@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var point_light_2d: PointLight2D = $PointLight2D
 @onready var point_light_2d_2: PointLight2D = $HitBox/PointLight2D2
 const SPEED = 80
-const KNOCKBACK_AMOUNT = 1500
+const KNOCKBACK_AMOUNT = 2000
 var direction: Vector2
 var direction_shoot: Vector2
 var DEF = 0
@@ -58,5 +58,5 @@ func on_rececive_damage(target_hurt_box: Area2D, current_damage: int, current_di
 			DEF = 5
 		if current_health == 0:
 			find_child("FiniteStateMachine").change_state("Death")
-			
+
 		

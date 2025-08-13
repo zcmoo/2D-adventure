@@ -5,6 +5,7 @@ extends PlayerStateMachine
 func _enter_tree() -> void:
 	attack_request_timer.stop()
 	animation_player.play("attack_1")
+	SoundManager.play_sfx("Attack")
 	player.is_combo_requested = false
 	hit_box.monitoring = true
 

@@ -14,3 +14,6 @@ func on_animation_complete() -> void:
 
 func can_handle_move() -> bool:
 	return false
+
+func _exit_tree() -> void:
+	hurt_box.monitorable = true	

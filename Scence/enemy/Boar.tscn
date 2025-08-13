@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://gpcdxl8lqrhg"]
+[gd_scene load_steps=18 format=3 uid="uid://gpcdxl8lqrhg"]
 
 [ext_resource type="PackedScene" uid="uid://icss871mb2hk" path="res://Scence/enemy/enemy.tscn" id="1_k3xo0"]
 [ext_resource type="Script" uid="uid://c10nc54uwu0pl" path="res://Scence/enemy/boar.gd" id="2_lx8ay"]
 [ext_resource type="Texture2D" uid="uid://bwjchoucf4xr0" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Idle/Idle-Sheet.png" id="2_ok3qu"]
+[ext_resource type="Texture2D" uid="uid://bpgynwsk14okv" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Idle/Idle-Sheet-export-Back.png" id="3_3aobe"]
 [ext_resource type="Texture2D" uid="uid://b1yb1wag1glp0" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Run/Run-Sheet.png" id="3_bcjiq"]
 [ext_resource type="Texture2D" uid="uid://brvkks7pqex08" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Walk/Walk-Base-Sheet.png" id="4_c8btu"]
 [ext_resource type="Texture2D" uid="uid://v2bo0u0ypf1k" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Hit-Vanish/Hit-Sheet.png" id="5_otako"]
@@ -28,7 +29,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_ok3qu")]
+"values": [ExtResource("3_3aobe")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -356,7 +357,7 @@ health = 50
 
 [node name="Sprite2D" parent="Graphics" index="0"]
 position = Vector2(0, -16)
-texture = ExtResource("2_ok3qu")
+texture = ExtResource("3_3aobe")
 hframes = 4
 
 [node name="WallChecker" type="RayCast2D" parent="Graphics" index="1"]

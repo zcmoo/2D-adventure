@@ -12,6 +12,7 @@ func enter():
 
 func shoot():
 	var bullet = bullet_node.instantiate()
+	SoundManager.play_sfx("Bullet")
 	bullet.position = owner.position
 	bullet.player = owner.player
 	get_tree().current_scene.add_child(bullet)

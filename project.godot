@@ -22,6 +22,7 @@ DamageManager="*res://utils/damage_manager.gd"
 EnergyManager="*res://utils/energy_manager.gd"
 GameManager="*res://utils/game_manager.tscn"
 Vignette="*res://utils/vignette.tscn"
+SoundManager="*res://utils/sound_manager.tscn"
 
 [display]
 
@@ -33,7 +34,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/com.timothyqiu.animation-resetter/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 

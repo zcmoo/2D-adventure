@@ -187,6 +187,7 @@ func on_animation_complete() -> void:
 func on_emit_damage(target_hurt_box: Area2D) -> void:
 	var current_direction = Vector2.LEFT if sprite_2d.flip_h == true else Vector2.RIGHT
 	DamageReceiver.enemy_damage_receiver.emit(target_hurt_box, damage, current_direction)
+	SoundManager.play_sfx("Hit")
 
 func on_rececive_damage(current_damage: int, current_direction: Vector2) -> void:
 	if invincible_timer.time_left > 0:
@@ -194,6 +195,7 @@ func on_rececive_damage(current_damage: int, current_direction: Vector2) -> void
 	hurt_direction = current_direction
 	current_health = clampi(current_health - current_damage, 0, health)
 	DamageManager.health_change.emit(self, current_health, health)
+	SoundManager.play_sfx("Hurt")
 	if current_health > 0 and not is_hurting:
 		switch_state(State.HURT)
 	elif current_health == 0:

@@ -1,4 +1,5 @@
 extends Node2D
+@export var bgm: AudioStream
 @onready var tile_map_layer: TileMapLayer = $TileMap/ground
 @onready var camera_2d: Camera2D = $player/Camera2D
 @onready var player: Player = $player
@@ -13,6 +14,8 @@ func _ready() -> void:
 	camera_2d.limit_left = used.position.x * tile_size.x
 	camera_2d.reset_smoothing()
 	camera_2d.force_update_scroll()
+	if bgm:
+		SoundManager.player_bgm(bgm)
 
 func update_player(pos: Vector2, direction: Player.Direction, player_current_health: int, player_current_energy: int) -> void:
 	player.current_health = player_current_health

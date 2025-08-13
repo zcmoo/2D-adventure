@@ -6,6 +6,9 @@ const DURATION = 2500
 
 func _enter_tree() -> void:
 	animation_player.play("run")
+	if not enemy.is_shout:
+		SoundManager.play_sfx("BoarAttack")
+		enemy.is_shout = true
 	enemy.speed = enemy.max_speed
 	boar_hit_box.monitoring = true
 

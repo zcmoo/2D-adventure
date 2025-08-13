@@ -6,6 +6,7 @@ func _enter_tree() -> void:
 	player.is_combo_requested = false
 	hit_box.monitoring = true
 	animation_player.play("attack_3")
+	SoundManager.play_sfx("Attack")
 
 func _physics_process(delta: float) -> void:
 	player.common_stand(delta)

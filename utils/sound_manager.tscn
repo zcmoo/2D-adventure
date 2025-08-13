@@ -1,0 +1,67 @@
+[gd_scene load_steps=14 format=3 uid="uid://dstvckfqdmqkl"]
+
+[ext_resource type="Script" uid="uid://c2evnu6xnrgqb" path="res://utils/sound_manager.gd" id="1_dfxmr"]
+[ext_resource type="AudioStream" uid="uid://sids465to5lu" path="res://assets/sfx/07_human_atk_sword_1.ogg" id="1_ldht6"]
+[ext_resource type="AudioStream" uid="uid://cq5rw38fi3r8p" path="res://assets/sfx/12_human_jump_3.ogg" id="2_dfxmr"]
+[ext_resource type="AudioStream" uid="uid://gvo4xv6i60fl" path="res://assets/声音/命中1.mp3" id="4_kwsvu"]
+[ext_resource type="AudioStream" uid="uid://cqyt1iqkl4lqq" path="res://assets/声音/受击.mp3" id="5_7gru7"]
+[ext_resource type="AudioStream" uid="uid://cdpuxidok02xc" path="res://assets/声音/落地声_[cut_0sec].mp3" id="5_aolro"]
+[ext_resource type="AudioStream" uid="uid://j5xu381tke50" path="res://assets/声音/冲刺1_[cut_0sec].mp3" id="5_hnxac"]
+[ext_resource type="AudioStream" uid="uid://cudnae5m2k2vd" path="res://assets/声音/野猪冲刺.mp3" id="7_bi2tt"]
+[ext_resource type="AudioStream" uid="uid://clqh74fplv7uf" path="res://assets/声音/野猪死亡.mp3" id="8_aolro"]
+[ext_resource type="AudioStream" uid="uid://bnjirrq51fs5w" path="res://assets/声音/激光.mp3" id="10_81gop"]
+[ext_resource type="AudioStream" uid="uid://fvmonon8qgww" path="res://assets/声音/080884_bullet-hit-39872.mp3" id="11_81gop"]
+[ext_resource type="AudioStream" uid="uid://bv6gihwdkalk1" path="res://assets/声音/sonar-sound-effect-230712.mp3" id="12_dipqv"]
+[ext_resource type="AudioStream" uid="uid://cqwnch5k2qjln" path="res://assets/声音/dramatic-death-collapse-352720.mp3" id="13_d56kl"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_dfxmr")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Attack" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("1_ldht6")
+
+[node name="Hit" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_kwsvu")
+
+[node name="Jump" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("2_dfxmr")
+volume_db = 5.0
+
+[node name="Land" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("5_aolro")
+volume_db = 24.0
+
+[node name="Hurt" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("5_7gru7")
+
+[node name="Slide" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("5_hnxac")
+volume_db = 8.667
+
+[node name="BoarAttack" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_bi2tt")
+volume_db = 8.667
+
+[node name="BoarDie" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_aolro")
+volume_db = 8.667
+
+[node name="Laser" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("10_81gop")
+volume_db = 8.667
+
+[node name="Bullet" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("11_81gop")
+volume_db = 8.667
+
+[node name="LightUp" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("12_dipqv")
+volume_db = 8.667
+
+[node name="Die" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("13_d56kl")
+volume_db = 8.667
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]

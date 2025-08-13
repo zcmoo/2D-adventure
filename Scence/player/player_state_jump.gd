@@ -6,7 +6,7 @@ func _enter_tree() -> void:
 	coyote_timer.stop()
 	jump_request_timer.stop()
 	player.velocity.y = player.JUMP_VELOCITY
-	animation_player.play("jump")
+	SoundManager.play_sfx("Jump")
 
 func _physics_process(_delta: float) -> void:
 	player.move_and_slide()
