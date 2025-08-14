@@ -27,9 +27,4 @@ func can_handle_move() -> bool:
 
 func should_fall() -> bool:
 	return false
-
-func _exit_tree() -> void:
-	await animation_player.animation_finished
-	player.is_dead = false
-	get_tree().reload_current_scene()
 	

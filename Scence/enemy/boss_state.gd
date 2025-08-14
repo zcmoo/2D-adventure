@@ -19,4 +19,4 @@ func transition():
 
 func _physics_process(_delta: float) -> void:
 	transition()
-	boss_debug.text = name
+	boss_debug.text = "Boss" + name

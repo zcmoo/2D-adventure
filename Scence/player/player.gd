@@ -32,7 +32,7 @@ const SLIDE_SPEED = 180.0
 const LANDING_HEIGHT = 80.0
 const DAMMAGE_HEIGHT = 120.0
 const HEIGHT_DAMMAGE = 20
-const SLIDE_ENERGY = 25.0
+const SLIDE_ENERGY = 30.0
 enum State {MOVE, JUMP, FALL, Land, SLIDE, WALL_JUMP, ATTACK_1, ATTACK_2, ATTACK_3, HURT, DIE, SLID_START, SLID_LOOP, SLID_END}
 enum Direction {LEFT = -1, RIGHT = +1}
 var gravity = ProjectSettings.get("physics/2d/default_gravity") as float

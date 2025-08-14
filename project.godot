@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="2d平台"
-run/main_scene="uid://bjur6sqs5aeqy"
+run/main_scene="uid://dirytx613an66"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

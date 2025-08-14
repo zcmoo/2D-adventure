@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://gpcdxl8lqrhg" path="res://Scence/enemy/Boar.tscn" id="9_e7hi8"]
 [ext_resource type="PackedScene" uid="uid://cjgdrumjrr5iy" path="res://Scence/worlds/save_stone.tscn" id="11_m042o"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_euwfo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3p0dx"]
 texture = ExtResource("2_bpbio")
 1:2/0 = 0
 1:2/0/terrain_set = 0
@@ -365,7 +365,7 @@ terrain_set_0/terrain_0/name = "leaves"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 terrain_set_0/terrain_1/name = " trunk"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_euwfo")
+sources/0 = SubResource("TileSetAtlasSource_3p0dx")
 
 [sub_resource type="GDScript" id="GDScript_5pxw7"]
 

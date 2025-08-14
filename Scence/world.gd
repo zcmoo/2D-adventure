@@ -1,3 +1,4 @@
+class_name World
 extends Node2D
 @export var bgm: AudioStream
 @onready var tile_map_layer: TileMapLayer = $TileMap/ground
@@ -16,6 +17,10 @@ func _ready() -> void:
 	camera_2d.force_update_scroll()
 	if bgm:
 		SoundManager.player_bgm(bgm)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		GameManager.back_to_title()
 
 func update_player(pos: Vector2, direction: Player.Direction, player_current_health: int, player_current_energy: int) -> void:
 	player.current_health = player_current_health
@@ -52,8 +57,5 @@ func from_dict(dict: Dictionary) -> void:
 	var player = players[0]
 	player.current_health = dict.player_current_health
 	DamageManager.health_change.emit(player, player.current_health, player.health, true)
-		
-
-	
 
 	

@@ -3,36 +3,46 @@ extends Node
 var world_states = {}
 const SAVE_PATH = "user://data.sav"
 signal camera_should_shake(amount: float)
+var player_current_health: int
+var player_current_energy: float
 
 
 func _ready() -> void:
 	color_rect.color.a = 0
 
+func new_game() -> void:
+	change_scene("res://Scence/worlds/forest.tscn")
+
+func back_to_title() -> void:
+	change_scene("res://UI/title_screen.tscn")
+
 func change_scene(path: String, params = {}) -> void:
 	var tree = get_tree()
 	tree.paused = true	
 	var players = tree.get_nodes_in_group("player")
-	var player = players[0]
-	var player_current_health = player.current_health
-	var player_current_energy = player.current_energy
-	var old_name = tree.current_scene.scene_file_path.get_basename()
-	world_states[old_name] = tree.current_scene.to_dict()
+	if tree.current_scene is World:
+		var player = players[0]
+		player_current_health = player.current_health
+		player_current_energy = player.current_energy
+		var old_name = tree.current_scene.scene_file_path.get_basename()
+		world_states[old_name] = tree.current_scene.to_dict()
 	var tween = create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(color_rect, "color:a", 1, 0.2)
 	await tween.finished
 	tree.change_scene_to_file(path)
 	await tree.tree_changed
-	var new_name = tree.current_scene.scene_file_path.get_basename()
-	if new_name in world_states:
-		tree.current_scene.from_dict(world_states[new_name])
-	if "entry_point" in params:
-		for node in tree.get_nodes_in_group("entry_points"):
-			if node.name == params.entry_point:
-				tree.current_scene.update_player(node.global_position, node.direction, player_current_health, player_current_energy)
-				break
-	if "position" in params and "direction" in params and "current_health" in params and "current_energy" in params:
-		tree.current_scene.update_player(params.position, params.direction, int(params.current_health), float(params.current_energy))
+	if tree.current_scene is World:
+		var new_name = tree.current_scene.scene_file_path.get_basename()
+		if new_name in world_states:
+			tree.current_scene.from_dict(world_states[new_name])
+		if "entry_point" in params:
+			for node in tree.get_nodes_in_group("entry_points"):
+				if node.name == params.entry_point:
+					tree.current_scene.update_player(node.global_position, node.direction, player_current_health, player_current_energy)
+					break
+		if "position" in params and "direction" in params and "current_health" in params and "current_energy" in params:
+			tree.current_scene.update_player(params.position, params.direction, int(params.current_health), float(params.current_energy))
 	tree.paused = false
 	tween = create_tween()
 	tween.tween_property(color_rect, "color:a", 0, 0.2)
@@ -83,6 +93,9 @@ func load_game() -> void:
 			data.player.position.y
 		)
 	})
+
+func has_save() -> bool:
+	return FileAccess.file_exists(SAVE_PATH)
 
 func shake_camera(amount: float) -> void:
 	camera_should_shake.emit(amount)

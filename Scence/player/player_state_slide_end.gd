@@ -4,6 +4,7 @@ extends PlayerStateMachine
 
 func _enter_tree() -> void:
 	animation_player.play("slide_end")
+	hurt_box.monitorable = false
 
 func _physics_process(delta: float) -> void:
 	player.common_stand(delta)
