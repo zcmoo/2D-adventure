@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b7cp1116h8e6q"]
+[gd_scene load_steps=33 format=3 uid="uid://b7cp1116h8e6q"]
 
 [ext_resource type="Texture2D" uid="uid://48bs33e0lld1" path="res://assets/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" id="2_eyl83"]
 [ext_resource type="Script" uid="uid://dpn0aswd6wf0k" path="res://Scence/enemy/boss.gd" id="2_o2o5t"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://c41e56e5j05yg" path="res://Scence/enemy/armcr_buff.gd" id="11_i0s8v"]
 [ext_resource type="Script" uid="uid://bn2w3x3h28owa" path="res://Scence/enemy/dash.gd" id="11_mk0ry"]
 [ext_resource type="Script" uid="uid://b4rctf7r125m4" path="res://Scence/enemy/death.gd" id="13_i0s8v"]
+[ext_resource type="PackedScene" uid="uid://cqlwr8lk2583g" path="res://UI/game_end_screen.tscn" id="14_oxtqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oxtqr"]
 size = Vector2(249, 15)
@@ -466,6 +467,8 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_ugvon")
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GameEndScreen" parent="UI" instance=ExtResource("14_oxtqr")]
 
 [node name="BossDebug" type="Label" parent="UI"]
 unique_name_in_owner = true

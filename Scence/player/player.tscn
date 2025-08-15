@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://lb2lmkheerjb"]
+[gd_scene load_steps=32 format=3 uid="uid://lb2lmkheerjb"]
 
 [ext_resource type="Texture2D" uid="uid://cyerq502ex70b" path="res://assets/generic_char_v0.2/png/blue/char_blue_1.png" id="1_h70dg"]
 [ext_resource type="Script" uid="uid://5nuu1xojbsrv" path="res://Scence/player/player.gd" id="1_k2gvr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dkba4uem8wiw4" path="res://assets/generic_char_v0.2/png/blue/char_blue_2.png" id="4_25f5b"]
 [ext_resource type="Script" uid="uid://cgnex3or3ditd" path="res://Scence/player/camera_2d.gd" id="4_wtb61"]
 [ext_resource type="Texture2D" uid="uid://c4oj2qyci1fui" path="res://assets/gdb-keyboard-2.png" id="7_pyjfy"]
+[ext_resource type="PackedScene" uid="uid://bfaicq42lc1ho" path="res://UI/GameOverSreen.tscn" id="7_qx7c1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h70dg"]
 
@@ -1031,7 +1032,7 @@ animations = [{
 collision_layer = 2
 script = ExtResource("1_k2gvr")
 damage = 10
-health = 200
+health = 150
 energy = 100.0
 energy_regen = 8.0
 
@@ -1129,6 +1130,8 @@ frame_progress = 0.277532
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="GameOverSreen" parent="UI" instance=ExtResource("7_qx7c1")]
+
 [node name="PlayerDebug" type="Label" parent="UI"]
 unique_name_in_owner = true
 anchors_preset = 5
@@ -1138,6 +1141,18 @@ offset_left = -17.0
 offset_right = 17.0
 offset_bottom = 18.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "debug"
+horizontal_alignment = 1
+
+[node name="Fps" type="Label" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_bottom = 18.0
+grow_horizontal = 0
 theme_override_font_sizes/font_size = 10
 text = "debug"
 horizontal_alignment = 1

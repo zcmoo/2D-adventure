@@ -9,6 +9,19 @@ func play_sfx(name: String) -> void:
 		return
 	player.play()
 
+func stop_all_sfx() -> void:
+	for child in sfx.get_children():
+		var player = child as AudioStreamPlayer
+		player.stop()
+
+func setup_ui_sounds(node: Node) -> void:
+	var button = node as Button
+	if button:
+		button.pressed.connect(play_sfx.bind("UIPress"))
+		button.focus_entered.connect(play_sfx.bind("UIFocus"))
+	for child in node.get_children():
+		setup_ui_sounds(child)
+
 func player_bgm(stream: AudioStream) -> void:
 	if bgm_player.stream == stream and bgm_player.playing:
 		return

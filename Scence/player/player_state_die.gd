@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 
 func on_animation_complete() -> void:
 	player.is_dead = false
-	get_tree().reload_current_scene()
+	game_over_sreen.show_game_over()
 
 func can_handle_move() -> bool:
 	return false

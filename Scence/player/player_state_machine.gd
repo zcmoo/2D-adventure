@@ -13,9 +13,10 @@ var hurt_box: Area2D = null
 var invincible_timer: Timer = null
 var attack_request_timer: Timer = null
 var slide_request_timer: Timer = null
+var game_over_sreen: Control = null
 
 
-func setup(context_player: Player, context_sprite_2d: Sprite2D, context_animation_player: AnimationPlayer, context_coyote_timer: Timer, context_jump_request_timer: Timer, context_hand_checker: RayCast2D, context_foot_checker: RayCast2D, context_hit_box: Area2D, context_hurt_box: Area2D, context_invincible_timer: Timer, context_attack_request_timer: Timer, context_slide_request_timer: Timer) -> void:
+func setup(context_player: Player, context_sprite_2d: Sprite2D, context_animation_player: AnimationPlayer, context_coyote_timer: Timer, context_jump_request_timer: Timer, context_hand_checker: RayCast2D, context_foot_checker: RayCast2D, context_hit_box: Area2D, context_hurt_box: Area2D, context_invincible_timer: Timer, context_attack_request_timer: Timer, context_slide_request_timer: Timer, context_game_over_sreen: Control) -> void:
 	player = context_player
 	sprite_2d = context_sprite_2d
 	animation_player = context_animation_player
@@ -28,6 +29,7 @@ func setup(context_player: Player, context_sprite_2d: Sprite2D, context_animatio
 	invincible_timer = context_invincible_timer
 	attack_request_timer = context_attack_request_timer
 	slide_request_timer = context_slide_request_timer
+	game_over_sreen = context_game_over_sreen
 
 func transition_state(new_state: Player.State) -> void:
 	state_transition_requested.emit(new_state)

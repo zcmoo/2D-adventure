@@ -22,6 +22,8 @@ extends CharacterBody2D
 @onready var attack_point: Marker2D = $attack_points/attack_point
 @onready var attack_point_2: Marker2D = $attack_points/attack_point2
 @onready var attack_point_3: Marker2D = $attack_points/attack_point3
+@onready var fps: Label = %Fps
+@onready var game_over_sreen: Control = $UI/GameOverSreen
 const JUMP_VELOCITY = -380.0
 const WALL_JUMP_VELOCITY = Vector2(400, -280)
 const RUN_SPEED = 160.0
@@ -85,6 +87,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		interacting_with.back().interact()
 
 func _physics_process(delta: float) -> void:
+	fps.text = "Fps = " + str(Engine.get_frames_per_second())
 	energy_revive(delta)
 	interation_icon.visible = not interacting_with.is_empty()
 	direction = Input.get_axis("向左移动","向右移动")
@@ -102,7 +105,7 @@ func switch_state(state: State) -> void:
 	if current_state != null:
 		current_state.queue_free()
 	current_state = state_factory.get_fresh_state(state)
-	current_state.setup(self, sprite_2d, animation_player, coyote_timer, jump_request_timer, hand_checker, foot_checker, hit_box, hurt_box, invincible_timer, attack_request_timer, slide_request_timer)
+	current_state.setup(self, sprite_2d, animation_player, coyote_timer, jump_request_timer, hand_checker, foot_checker, hit_box, hurt_box, invincible_timer, attack_request_timer, slide_request_timer, game_over_sreen)
 	current_state.state_transition_requested.connect(switch_state.bind())
 	current_state.name = "PlayerState" + str(State.keys()[state])
 	player_debug.text = current_state.name

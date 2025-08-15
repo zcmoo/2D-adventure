@@ -14,6 +14,10 @@ func _physics_process(_delta: float) -> void:
 			coyote_timer.start()
 		else:
 			coyote_timer.stop()
+	if hurt_box.monitorable == false:
+		hurt_box.monitorable = true
+	if hit_box.monitoring == true:
+		hit_box.monitoring = false
 	if jump_request_timer.time_left > 0:
 		transition_state(Player.State.JUMP)
 	if attack_request_timer.time_left > 0:

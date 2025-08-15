@@ -726,7 +726,6 @@ scale = Vector2(-1, 1)
 
 [node name="Boss" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_wm5s2")]
 position = Vector2(1336, 440)
-up_direction = Vector2(-0.0449545, -0.998989)
 player = NodePath("../player")
 
 [node name="StatusPanel" parent="." node_paths=PackedStringArray("player", "boss") instance=ExtResource("2_2rwh3")]

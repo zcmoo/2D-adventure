@@ -35,6 +35,8 @@ func _process(_delta: float) -> void:
 		sprite_2d.flip_h = true
 	else:
 		sprite_2d.flip_h = false
+	if player.current_health == 0:
+		find_child("FiniteStateMachine").change_state("Idle")
 
 func _physics_process(delta: float) -> void:
 	if can_move:

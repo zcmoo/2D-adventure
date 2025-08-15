@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dstvckfqdmqkl"]
+[gd_scene load_steps=17 format=3 uid="uid://dstvckfqdmqkl"]
 
 [ext_resource type="Script" uid="uid://c2evnu6xnrgqb" path="res://utils/sound_manager.gd" id="1_dfxmr"]
 [ext_resource type="AudioStream" uid="uid://sids465to5lu" path="res://assets/sfx/07_human_atk_sword_1.ogg" id="1_ldht6"]
@@ -13,6 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://fvmonon8qgww" path="res://assets/声音/080884_bullet-hit-39872.mp3" id="11_81gop"]
 [ext_resource type="AudioStream" uid="uid://bv6gihwdkalk1" path="res://assets/声音/sonar-sound-effect-230712.mp3" id="12_dipqv"]
 [ext_resource type="AudioStream" uid="uid://cqwnch5k2qjln" path="res://assets/声音/dramatic-death-collapse-352720.mp3" id="13_d56kl"]
+[ext_resource type="AudioStream" uid="uid://dqq3y8e0yrvjf" path="res://assets/sfx/impactGlass_heavy_004.ogg" id="14_pnjoj"]
+[ext_resource type="AudioStream" uid="uid://c006rsldccc0t" path="res://assets/sfx/impactTin_medium_004.ogg" id="15_lk8n8"]
+[ext_resource type="AudioStream" uid="uid://b02e4k13kp5n3" path="res://assets/声音/failure-1-89170.mp3" id="17_2rl6c"]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_dfxmr")
@@ -21,47 +24,64 @@ script = ExtResource("1_dfxmr")
 
 [node name="Attack" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("1_ldht6")
+bus = &"SFX"
 
 [node name="Hit" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("4_kwsvu")
+bus = &"SFX"
 
 [node name="Jump" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("2_dfxmr")
 volume_db = 5.0
+bus = &"SFX"
 
 [node name="Land" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("5_aolro")
 volume_db = 24.0
+bus = &"SFX"
 
 [node name="Hurt" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("5_7gru7")
+bus = &"SFX"
 
 [node name="Slide" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("5_hnxac")
-volume_db = 8.667
+bus = &"SFX"
 
 [node name="BoarAttack" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("7_bi2tt")
-volume_db = 8.667
+bus = &"SFX"
 
 [node name="BoarDie" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("8_aolro")
-volume_db = 8.667
+bus = &"SFX"
 
 [node name="Laser" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("10_81gop")
-volume_db = 8.667
+bus = &"SFX"
 
 [node name="Bullet" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("11_81gop")
-volume_db = 8.667
+bus = &"SFX"
 
 [node name="LightUp" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("12_dipqv")
-volume_db = 8.667
+bus = &"SFX"
 
 [node name="Die" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("13_d56kl")
-volume_db = 8.667
+bus = &"SFX"
+
+[node name="UIPress" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("14_pnjoj")
+bus = &"SFX"
+
+[node name="UIFocus" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("15_lk8n8")
+bus = &"SFX"
+
+[node name="BossDie" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("17_2rl6c")
+bus = &"SFX"
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
