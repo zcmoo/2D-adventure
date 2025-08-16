@@ -2,6 +2,7 @@ extends Node
 @onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 var world_states = {}
 const SAVE_PATH = "user://data.sav"
+const CONFIG_PATH = "user://config.ini"
 signal camera_should_shake(amount: float)
 var player_current_health: int
 var player_current_energy: float
@@ -9,6 +10,7 @@ var player_current_energy: float
 
 func _ready() -> void:
 	color_rect.color.a = 0
+	load_config()
 
 func new_game() -> void:
 	change_scene("res://Scence/worlds/forest.tscn", {}, true, 1.0)
@@ -16,6 +18,15 @@ func new_game() -> void:
 func back_to_title() -> void:
 	world_states = {}
 	change_scene("res://UI/title_screen.tscn", {}, false, 1.0)
+
+func to_audio_option() -> void:
+	change_scene("res://UI/option_screen.tscn")
+
+func to_key_option() -> void:
+	change_scene("res://utils/remaping_input.tscn")
+
+func to_start() -> void:
+	change_scene("res://UI/game_start_sreen.tscn")
 
 func change_scene(path: String, params = {}, should_init = false, duration = 0.5) -> void:
 	var tree = get_tree()
@@ -101,3 +112,27 @@ func has_save() -> bool:
 
 func shake_camera(amount: float) -> void:
 	camera_should_shake.emit(amount)
+
+func save_config():
+	var config = ConfigFile.new()
+	config.set_value("audio", "master", SoundManager.get_volume(SoundManager.Bus.MASTER))
+	config.set_value("audio", "sfx", SoundManager.get_volume(SoundManager.Bus.SFX))
+	config.set_value("audio", "bgm", SoundManager.get_volume(SoundManager.Bus.BGM))
+	config.save(CONFIG_PATH)
+
+func load_config():
+	var config = ConfigFile.new()
+	config.load(CONFIG_PATH)
+	SoundManager.set_volume(
+		SoundManager.Bus.MASTER,
+		config.get_value("audio", "master", 0.5)
+	)
+	SoundManager.set_volume(
+		SoundManager.Bus.SFX,
+		config.get_value("audio", "sfx", 1.0)
+	)
+	SoundManager.set_volume(
+		SoundManager.Bus.BGM,
+		config.get_value("audio", "bgm", 1.0)
+	)
+	

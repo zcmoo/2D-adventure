@@ -85,3 +85,4 @@ stream = ExtResource("17_2rl6c")
 bus = &"SFX"
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"

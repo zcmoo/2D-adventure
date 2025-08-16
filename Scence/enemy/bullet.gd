@@ -4,6 +4,7 @@ extends Area2D
 var acceleration: Vector2 = Vector2.ZERO
 var velocity: Vector2 = Vector2.ZERO
 var player: Player
+var boss: Boss
 
 
 func _physics_process(delta):
@@ -12,6 +13,8 @@ func _physics_process(delta):
 	rotation = velocity.angle()
 	velocity = velocity.limit_length(150)
 	position += velocity * delta
+	if boss.current_health <= 0:
+		queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
 	var current_direction = Vector2.LEFT if global_position.x > player.global_position.x else Vector2.RIGHT 

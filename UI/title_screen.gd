@@ -7,16 +7,24 @@ extends Control
 func _ready() -> void:
 	load_game.disabled = not GameManager.has_save()
 	new_game.grab_focus()
-	for button: Button in v.get_children():
-		button.mouse_entered.connect(button.grab_focus)
 	SoundManager.player_bgm(preload("res://assets/bgm/02 1 titles LOOP.mp3"))
 	SoundManager.setup_ui_sounds(self)
 
 func _on_new_game_pressed() -> void:
-	GameManager.new_game()
+	var file = FileAccess.open(GameManager.SAVE_PATH, FileAccess.READ)
+	if not file:
+		GameManager.to_start()
+	else:
+		GameManager.new_game()
 
 func _on_load_game_pressed() -> void:
 	GameManager.load_game()
+
+func _on_option_pressed() -> void:
+	GameManager.to_audio_option()
+
+func _on_key_settings_pressed() -> void:
+	GameManager.to_key_option()
 
 func _on_exit_game_pressed() -> void:
 	get_tree().quit()

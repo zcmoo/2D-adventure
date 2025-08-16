@@ -24,6 +24,7 @@ extends CharacterBody2D
 @onready var attack_point_3: Marker2D = $attack_points/attack_point3
 @onready var fps: Label = %Fps
 @onready var game_over_sreen: Control = $UI/GameOverSreen
+@onready var pause_screen: Control = $UI/PauseScreen
 const JUMP_VELOCITY = -380.0
 const WALL_JUMP_VELOCITY = Vector2(400, -280)
 const RUN_SPEED = 160.0
@@ -85,6 +86,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		is_combo_requested = true
 	if event.is_action_pressed("交互") and interacting_with:
 		interacting_with.back().interact()
+	if event.is_action_pressed("暂停"):
+		pause_screen.show_pause()
 
 func _physics_process(delta: float) -> void:
 	fps.text = "Fps = " + str(Engine.get_frames_per_second())

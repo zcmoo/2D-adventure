@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://lb2lmkheerjb"]
+[gd_scene load_steps=33 format=3 uid="uid://lb2lmkheerjb"]
 
 [ext_resource type="Texture2D" uid="uid://cyerq502ex70b" path="res://assets/generic_char_v0.2/png/blue/char_blue_1.png" id="1_h70dg"]
 [ext_resource type="Script" uid="uid://5nuu1xojbsrv" path="res://Scence/player/player.gd" id="1_k2gvr"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cgnex3or3ditd" path="res://Scence/player/camera_2d.gd" id="4_wtb61"]
 [ext_resource type="Texture2D" uid="uid://c4oj2qyci1fui" path="res://assets/gdb-keyboard-2.png" id="7_pyjfy"]
 [ext_resource type="PackedScene" uid="uid://bfaicq42lc1ho" path="res://UI/GameOverSreen.tscn" id="7_qx7c1"]
+[ext_resource type="PackedScene" uid="uid://bm75vgfif76i7" path="res://UI/pause_screen.tscn" id="8_qx7c1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h70dg"]
 
@@ -1156,3 +1157,5 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 10
 text = "debug"
 horizontal_alignment = 1
+
+[node name="PauseScreen" parent="UI" instance=ExtResource("8_qx7c1")]

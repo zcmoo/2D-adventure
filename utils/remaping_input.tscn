@@ -1,0 +1,183 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtdbqalru8ait"]
+
+[ext_resource type="Script" uid="uid://vl6mcm3fuiba" path="res://utils/Remaping_input.gd" id="1_sfugw"]
+[ext_resource type="Theme" uid="uid://crod70pfqco3b" path="res://UI/main.tres" id="1_yu47h"]
+
+[node name="Remaping_input" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("1_yu47h")
+script = ExtResource("1_sfugw")
+
+[node name="RemapableBtnsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -70.0
+offset_right = -8.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="RemapableBtnsContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -76.0
+offset_right = -72.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="RemapableBtnsContainer2"]
+layout_mode = 2
+text = "向左移动"
+
+[node name="Control" type="Control" parent="RemapableBtnsContainer2"]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="RemapableBtnsContainer2"]
+layout_mode = 2
+
+[node name="Control6" type="Control" parent="RemapableBtnsContainer2"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="RemapableBtnsContainer2"]
+layout_mode = 2
+text = "向右移动"
+
+[node name="Control2" type="Control" parent="RemapableBtnsContainer2"]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="RemapableBtnsContainer2"]
+layout_mode = 2
+
+[node name="Control5" type="Control" parent="RemapableBtnsContainer2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="RemapableBtnsContainer2"]
+layout_mode = 2
+text = "跳跃"
+
+[node name="Control7" type="Control" parent="RemapableBtnsContainer2"]
+layout_mode = 2
+
+[node name="Control8" type="Control" parent="RemapableBtnsContainer2"]
+layout_mode = 2
+
+[node name="Control9" type="Control" parent="RemapableBtnsContainer2"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="RemapableBtnsContainer2"]
+layout_mode = 2
+text = "暂停"
+
+[node name="RemapableBtnsContainer3" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_top = -68.0
+offset_right = 156.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="RemapableBtnsContainer4" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 38.0
+offset_top = -70.0
+offset_right = 118.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="RemapableBtnsContainer4"]
+layout_mode = 2
+text = "攻击"
+
+[node name="Control" type="Control" parent="RemapableBtnsContainer4"]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="RemapableBtnsContainer4"]
+layout_mode = 2
+
+[node name="Control6" type="Control" parent="RemapableBtnsContainer4"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="RemapableBtnsContainer4"]
+layout_mode = 2
+text = "滑铲"
+
+[node name="Control2" type="Control" parent="RemapableBtnsContainer4"]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="RemapableBtnsContainer4"]
+layout_mode = 2
+
+[node name="Control5" type="Control" parent="RemapableBtnsContainer4"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="RemapableBtnsContainer4"]
+layout_mode = 2
+text = "交互"
+
+[node name="Reset" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "返回标题"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "按键设置"
+
+[connection signal="button_up" from="Reset" to="." method="_on_reset_button_up"]

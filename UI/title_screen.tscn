@@ -33,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(0.574349, 1),
 "update": 0,
-"values": [Vector2(144, 216), Vector2(144, 115)]
+"values": [Vector2(144, 216), Vector2(144, 64)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_udsnl"]
@@ -62,17 +62,20 @@ centered = false
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 16.0
-offset_bottom = 39.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 63.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.927686, 0.79143, 0.177099, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 6
 theme_override_fonts/font = ExtResource("1_iaef4")
 theme_override_font_sizes/font_size = 45
-text = "Legend of the Brave"
+text = "勇者之路"
 horizontal_alignment = 1
 
 [node name="V" type="VBoxContainer" parent="."]
@@ -83,22 +86,31 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -48.0
-offset_top = -101.0
+offset_top = -152.0
 offset_right = 48.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="NewGame" type="Button" parent="V"]
 layout_mode = 2
-text = "New Game"
+text = "新的游戏"
 
 [node name="LoadGame" type="Button" parent="V"]
 layout_mode = 2
-text = "Load Game"
+text = "加载存档"
+
+[node name="KeySettings" type="Button" parent="V"]
+layout_mode = 2
+text = "按键设置"
+
+[node name="AudioSettings" type="Button" parent="V"]
+layout_mode = 2
+text = "声音设置"
 
 [node name="ExitGame" type="Button" parent="V"]
 layout_mode = 2
-text = "Exit Game"
+text = "退出游戏"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -108,4 +120,6 @@ autoplay = "enter"
 
 [connection signal="pressed" from="V/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="V/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="V/KeySettings" to="." method="_on_key_settings_pressed"]
+[connection signal="pressed" from="V/AudioSettings" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="V/ExitGame" to="." method="_on_exit_game_pressed"]

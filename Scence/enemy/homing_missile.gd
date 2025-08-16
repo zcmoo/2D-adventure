@@ -15,6 +15,7 @@ func shoot():
 	SoundManager.play_sfx("Bullet")
 	bullet.position = owner.position
 	bullet.player = owner.player
+	bullet.boss = owner
 	get_tree().current_scene.add_child(bullet)
 
 func transition():

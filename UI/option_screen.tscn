@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc2os0ff6kcn7"]
+
+[ext_resource type="Theme" uid="uid://crod70pfqco3b" path="res://UI/main.tres" id="1_ptc63"]
+[ext_resource type="Script" uid="uid://cqubbh3m7ukal" path="res://UI/option_screen.gd" id="2_4b1pu"]
+[ext_resource type="Texture2D" uid="uid://d2wmdpvxi0i5o" path="res://assets/pixel-art-background-forest-dense-trees-dappled-sunlight-muted-green-palette__91af759c.png" id="2_ptc63"]
+[ext_resource type="PackedScene" uid="uid://kxl8ya2u8lxc" path="res://UI/volume_slider.tscn" id="3_fax2v"]
+
+[node name="OptionScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ptc63")
+script = ExtResource("2_4b1pu")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.419922)
+texture = ExtResource("2_ptc63")
+centered = false
+
+[node name="v" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = -38.0
+offset_right = 103.5
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="v"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.443137)
+
+[node name="Label" type="Label" parent="v"]
+layout_mode = 2
+text = "声音设置"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioSettings" type="PanelContainer" parent="v"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="v/AudioSettings"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+columns = 2
+
+[node name="Label" type="Label" parent="v/AudioSettings/GridContainer"]
+layout_mode = 2
+text = "主音量"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Master" parent="v/AudioSettings/GridContainer" instance=ExtResource("3_fax2v")]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="v/AudioSettings/GridContainer"]
+layout_mode = 2
+text = "音乐"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Bgm" parent="v/AudioSettings/GridContainer" instance=ExtResource("3_fax2v")]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bus = "BGM"
+
+[node name="Label3" type="Label" parent="v/AudioSettings/GridContainer"]
+layout_mode = 2
+text = "音效"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Sfx" parent="v/AudioSettings/GridContainer" instance=ExtResource("3_fax2v")]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bus = "SFX"
+
+[node name="Actions" type="PanelContainer" parent="v"]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="v/Actions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "返回标题"
+
+[connection signal="pressed" from="v/Actions/Quit" to="." method="_on_quit_pressed"]

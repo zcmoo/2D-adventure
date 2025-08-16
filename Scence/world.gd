@@ -18,10 +18,6 @@ func _ready() -> void:
 	if bgm:
 		SoundManager.player_bgm(bgm)
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		GameManager.back_to_title()
-
 func update_player(pos: Vector2, direction: Player.Direction, player_current_health: int, player_current_energy: int) -> void:
 	player.current_health = player_current_health
 	DamageManager.health_change.emit(player, player.current_health, player.health, true)
