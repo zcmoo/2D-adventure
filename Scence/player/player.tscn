@@ -1135,6 +1135,7 @@ frame_progress = 0.277532
 
 [node name="PlayerDebug" type="Label" parent="UI"]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1148,6 +1149,7 @@ horizontal_alignment = 1
 
 [node name="Fps" type="Label" parent="UI"]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

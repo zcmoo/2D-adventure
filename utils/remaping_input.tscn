@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtdbqalru8ait"]
+[gd_scene load_steps=4 format=3 uid="uid://dtdbqalru8ait"]
 
 [ext_resource type="Script" uid="uid://vl6mcm3fuiba" path="res://utils/Remaping_input.gd" id="1_sfugw"]
 [ext_resource type="Theme" uid="uid://crod70pfqco3b" path="res://UI/main.tres" id="1_yu47h"]
+[ext_resource type="Texture2D" uid="uid://d2wmdpvxi0i5o" path="res://assets/pixel-art-background-forest-dense-trees-dappled-sunlight-muted-green-palette__91af759c.png" id="3_8jmpc"]
 
 [node name="Remaping_input" type="Control"]
 layout_mode = 3
@@ -15,6 +16,11 @@ size_flags_vertical = 4
 mouse_filter = 2
 theme = ExtResource("1_yu47h")
 script = ExtResource("1_sfugw")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.421875)
+texture = ExtResource("3_8jmpc")
+centered = false
 
 [node name="RemapableBtnsContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

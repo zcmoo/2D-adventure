@@ -472,6 +472,7 @@ shape = SubResource("CircleShape2D_ugvon")
 
 [node name="BossDebug" type="Label" parent="UI"]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

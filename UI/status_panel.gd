@@ -7,6 +7,8 @@ extends CanvasLayer
 @onready var boss_health_bar: TextureProgressBar = $VBoxContainer2/BossHealthBar
 @onready var boss_ease_health_bar: TextureProgressBar = $VBoxContainer2/BossHealthBar/BossEaseHealthBar
 @onready var sprite_2d: Sprite2D = $VBoxContainer2/Sprite2D
+@onready var avatar_box: PanelContainer = $AvatarBox
+@onready var v_box_container: VBoxContainer = $VBoxContainer
 @onready var v_box_container_2: VBoxContainer = $VBoxContainer2
 
 
@@ -22,6 +24,13 @@ func on_health_change(character: CharacterBody2D, current_health: int, max_healt
 			create_tween().tween_property(player_eased_health_bar, "value", percentage, 0.3)
 		else:
 			player_eased_health_bar.value = percentage
+		if current_health > 0:
+			avatar_box.visible = true
+			v_box_container.visible = true
+		else:
+			v_box_container_2.visible = false
+			avatar_box.visible = false
+			v_box_container.visible = false
 	if character == boss:
 		boss_health_bar.value = percentage
 		create_tween().tween_property(boss_ease_health_bar, "value", percentage, 0.3)

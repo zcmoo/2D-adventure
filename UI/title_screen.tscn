@@ -86,19 +86,19 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -48.0
-offset_top = -152.0
+offset_top = -101.0
 offset_right = 48.0
-offset_bottom = 4.0
+offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="NewGame" type="Button" parent="V"]
 layout_mode = 2
-text = "新的游戏"
+text = "新的故事"
 
 [node name="LoadGame" type="Button" parent="V"]
 layout_mode = 2
-text = "加载存档"
+text = "旧的回忆"
 
 [node name="KeySettings" type="Button" parent="V"]
 layout_mode = 2
